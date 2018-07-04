@@ -1,4 +1,5 @@
 ﻿using Rocket.Unturned.Player;
+using SDG.Unturned;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,14 @@ namespace DynShop
         {
             newCost = 0;
             return curBallance;
+        }
+
+        public static string AssetName(this ShopObject type, ushort itemID)
+        {
+            if (type is ShopItem)
+                return ((ItemAsset)Assets.find(EAssetType.ITEM, itemID)).itemName;
+            else
+                return ((VehicleAsset)Assets.find(EAssetType.VEHICLE, itemID)).vehicleName;
         }
     }
 }

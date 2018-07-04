@@ -5,26 +5,46 @@ using System.Text;
 
 namespace DynShop
 {
-    internal class XMLDatabaseManager : DataManager
+    internal class XMLDatabaseManager : DataManagerFields, DataManager
     {
         private Dictionary<ushort, ShopVehicle> Vehicles = new Dictionary<ushort, ShopVehicle>();
         private Dictionary<ushort, ShopItem> Items = new Dictionary<ushort, ShopItem>();
-        public int SchemaVersion { get { return 1; } }
 
 
         internal XMLDatabaseManager()
         {
             Items = DShop.Instance.Configuration.Instance.Items.ToDictionary(v => v.ItemID, v => v);
             Vehicles = DShop.Instance.Configuration.Instance.Vehicles.ToDictionary(v => v.ItemID, v => v);
+            Backend = BackendType.XML;
             CheckSchema();
         }
 
         public void CheckSchema()
         {
-            if (DShop.Instance.Configuration.Instance.FlatFileSchemaVersion < SchemaVersion)
                 DShop.Instance.Configuration.Instance.DefaultItems();
         }
 
+        public bool ConvertDB(BackendType toBackend)
+        {
+            if (toBackend == Backend)
+                return false;
+            else if (toBackend == BackendType.MySQL)
+            {
+                DataManager database = new MySQLDatabaseManager();
+                foreach (ShopItem item in Items.Values)
+                {
+                    database.AddItem(ItemType.Item, item);
+                }
+                foreach (ShopVehicle vehicle in Vehicles.Values)
+                {
+                    database.AddItem(ItemType.Vehicle, vehicle);
+                }
+                database.Unload();
+                return true;
+            }
+            return false;
+
+        }
 
         public bool AddItem(ItemType type, ShopObject shopObject)
         {
@@ -86,20 +106,20 @@ namespace DynShop
 
         public ShopObject GetItem(ItemType type, ushort itemID)
         {
+            ShopObject shopObject = new ShopObject();
             if (type == ItemType.Item)
             {
-                if (!Items.ContainsKey(itemID))
-                    return new ShopItem();
-                else
-                    return Items[itemID];
+                if (Items.ContainsKey(itemID))
+                    shopObject = Items[itemID];
+                    
             }
             else
             {
-                if (!Vehicles.ContainsKey(itemID))
-                    return new ShopVehicle();
-                else
-                    return Vehicles[itemID];
+                if (Vehicles.ContainsKey(itemID))
+                    shopObject = Vehicles[itemID];
             }
+            // Return ShopObject if an id isn't found, Returns the right type of class otherwise(after conversion).
+            return shopObject;
         }
 
         private void Save()

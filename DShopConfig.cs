@@ -3,12 +3,13 @@ using Rocket.API;
 using System.Xml.Serialization;
 using Rocket.Core.Logging;
 using System.Collections.Generic;
+using SDG.Unturned;
 
 namespace DynShop
 {
     public class DShopConfig : IRocketPluginConfiguration
     {
-        public int ConfigVersion = 0;
+        public int ObjectListConfigVersion = 0;
         [XmlIgnore]
         public BackendType Backend = BackendType.MySQL;
         [XmlAttribute("Backend")]
@@ -31,16 +32,13 @@ namespace DynShop
                 }
             }
         }
-
-
+        public string DatabaseTablePrefix = "dshop";
 
         public decimal DefaultSellMultiplier = .25m;
         public decimal MinDefaultBuyCost = .4m;
         public decimal MaxBuyCost = 6000m;
         public decimal DefaultIncrement = .01m;
 
-
-        public int FlatFileSchemaVersion = 0;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]
         public List<ShopItem> Items = new List<ShopItem>();
 
@@ -49,15 +47,24 @@ namespace DynShop
 
         public void DefaultItems()
         {
-            if (FlatFileSchemaVersion == 0)
+            if (ObjectListConfigVersion == 0)
             {
-                FlatFileSchemaVersion = 1;
-                
+                ObjectListConfigVersion = 1;
+                // Items
+                AddItemDB(new ShopItem(2, 2, .5m, .5m, .01m));
+
+                // Vehicles
+                AddItemDB(new ShopVehicle(1, 397));
             }
         }
 
-        public bool AddItemDB(ItemType type, ShopObject shopObject)
+        public bool AddItemDB(ShopObject shopObject)
         {
+            ItemType type;
+            if (shopObject is ShopItem)
+                type = ItemType.Item;
+            else
+                type = ItemType.Vehicle;
             // Only add items to database if they're not present.
             if (DShop.Database.GetItem(type, shopObject.ItemID).ItemID == 0)
                 return DShop.Database.AddItem(type, shopObject);

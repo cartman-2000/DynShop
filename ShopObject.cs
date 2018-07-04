@@ -14,6 +14,5 @@ namespace DynShop
         public decimal BuyCost = 10;
         [XmlAttribute]
         public string ItemName = "";
-
     }
 }

@@ -8,11 +8,11 @@ namespace DynShop
     public class ShopVehicle : ShopObject
     {
         public ShopVehicle() {}
-        public ShopVehicle(ushort itemID, decimal buyCost, string itemName)
+        public ShopVehicle(ushort itemID, decimal buyCost)
         {
             ItemID = itemID;
             BuyCost = buyCost;
-            ItemName = itemName;
+            ItemName = this.AssetName(itemID);
         }
     }
 }

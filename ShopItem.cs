@@ -16,14 +16,14 @@ namespace DynShop
         public decimal Change = .01m;
 
         public ShopItem() {}
-        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change, string itemName)
+        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change)
         {
             ItemID = itemID;
             BuyCost = buyCost;
             SellMultiplier = sellMultiplier;
             MinBuyPrice = minBuyPrice;
             Change = change;
-            ItemName = itemName;
+            ItemName = this.AssetName(itemID);
         }
     }
 }

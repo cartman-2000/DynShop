@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="BackendType.cs" />
     <Compile Include="CommandDShop.cs" />
+    <Compile Include="DataManagerFields.cs" />
     <Compile Include="MySQLDatabaseManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DShop.cs" />

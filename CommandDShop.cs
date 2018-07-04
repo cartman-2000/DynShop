@@ -1,4 +1,5 @@
 using Rocket.API;
+using Rocket.Unturned.Chat;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -49,7 +50,48 @@ namespace DynShop
 
         public void Execute(IRocketPlayer caller, string[] command)
         {
-
+            if (command.Length == 0)
+            {
+                UnturnedChat.Say(caller, Name + " - " + Syntax);
+                return;
+            }
+            switch (command[0].ToLower())
+            {
+                case "convert":
+                    {
+                        if (command.Length != 2)
+                        {
+                            return;
+                        }
+                        BackendType backend;
+                        try
+                        {
+                            backend = (BackendType)Enum.Parse(typeof(BackendType), command[1], true);
+                            DShop.Database.ConvertDB(backend);
+                        }
+                        catch
+                        {
+                            
+                        }
+                        break;
+                    }
+                case "add":
+                    {
+                        break;
+                    }
+                case "remove":
+                    {
+                        break;
+                    }
+                case "get":
+                    {
+                        break;
+                    }
+                case "update":
+                    {
+                        break;
+                    }
+            }
         }
     }
 }
