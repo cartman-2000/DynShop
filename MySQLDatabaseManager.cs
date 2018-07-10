@@ -31,13 +31,14 @@ namespace DynShop
 
         public void CheckSchema()
         {
+            MySqlCommand command = null;
             try
             {
                 if (!CreateConnection())
                     return;
                 ushort version = 0;
-                MySqlCommand command = Connection.CreateCommand();
-                command.CommandText = "show tables like `" + TableConfig + "`;";
+                command = Connection.CreateCommand();
+                command.CommandText = new QueryBuilder(QueryBuilderType.SHOW).Table(TableConfig).Build();
                 object test = command.ExecuteScalar();
 
                 if (test == null)
@@ -67,7 +68,7 @@ namespace DynShop
                 }
                 else
                 {
-                    command.CommandText = "SELECT `value` FROM `" + TableConfig + "` WHERE `key` = 'version';";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("value").Table(TableConfig).Where("key", "version").Build();
                     object result = command.ExecuteScalar();
                     if (result != null)
                     {
@@ -85,7 +86,6 @@ namespace DynShop
                         return;
                     }
                 }
-                command.Dispose();
             }
             catch (MySqlException ex)
             {
@@ -93,6 +93,8 @@ namespace DynShop
             }
             finally
             {
+                if (command != null)
+                    command.Dispose();
                 Connection.Close();
             }
         }
@@ -105,7 +107,7 @@ namespace DynShop
                 if (version < 1)
                 {
                     updatingVersion = 1;
-                    command.CommandText = "INSERT INTO `" + TableConfig + "` (`key`, `value`) VALUES ('version', '1');";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableConfig).Column("key", "version").Column("value", "1").Build();
                     command.ExecuteNonQuery();
                 }
             }
@@ -141,7 +143,7 @@ namespace DynShop
                 {
                     if (!CreateConnection())
                         return false;
-                    command.CommandText = "SELECT `ItemID`, `BuyCost`, `SellMultiplier`, `MinBuyPrice`, `ChangeRate`, `ItemName` FROM `" + TableItems + "`;";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Table(TableItems).Build();
                     reader = command.ExecuteReader();
                     if (!reader.HasRows)
                         return false;
@@ -150,7 +152,7 @@ namespace DynShop
                         database.AddItem(ItemType.Item, ShopObjectBuild(ItemType.Item, reader));
                     }
                     reader.Dispose();
-                    command.CommandText = "SELECT `ItemID`, `BuyCost`, `ItemName` FROM `" + TableVehicles + "`;";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Table(TableVehicles).Build();
                     reader = command.ExecuteReader();
                     if (!reader.HasRows)
                         return false;
@@ -209,9 +211,41 @@ namespace DynShop
                 return new ShopVehicle(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"));
         }
 
-        public bool AddItem(ItemType type, ShopObject item)
+        public bool AddItem(ItemType type, ShopObject shopObject)
         {
-            throw new NotImplementedException();
+            MySqlCommand command = null;
+            bool result = false;
+            try
+            {
+                if (!CreateConnection())
+                    return result;
+                command.Connection.CreateCommand();
+                command.Parameters.AddWithValue("@itemName", shopObject.ItemName);
+                if (type == ItemType.Item)
+                {
+                    ShopItem item = shopObject as ShopItem;
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Column("ItemID", item.ItemID).Column("BuyCost", item.BuyCost).Column("SellMultiplier", item.SellMultiplier).Column("MinBuyPrice", item.MinBuyPrice).
+                        Column("ChangeRate", item.Change).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
+                }
+                else
+                {
+                    ShopVehicle vehicle = shopObject as ShopVehicle;
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Column("ItemID", vehicle.ItemID).Column("BuyCost", vehicle.BuyCost).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
+                }
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch (MySqlException ex)
+            {
+                HandleException(ex);
+            }
+            finally
+            {
+                if (command != null)
+                    command.Dispose();
+                Connection.Close();
+            }
+            return result;
         }
 
         public ShopObject GetItem(ItemType type, ushort itemID)
@@ -225,9 +259,9 @@ namespace DynShop
                     return shopObject;
                 command = Connection.CreateCommand();
                 if (type == ItemType.Item)
-                    command.CommandText = "SELECT `ItemID`, `BuyCost`, `SellMultiplier`, `MinBuyPrice`, `ChangeRate`, `ItemName` FROM `"+ TableItems +"` WHERE `ItemID` = "+ itemID +";";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Where("ItemID", itemID).Table(TableItems).Build();
                 else
-                    command.CommandText = "SELECT `ItemID`, `BuyCost`, `ItemName` FROM `" + TableVehicles + "` WHERE `ItemID` = " + itemID + ";";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("itemID").Column("BuyCost").Table(TableVehicles).Where("ItemID", itemID).Build();
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
@@ -267,10 +301,7 @@ namespace DynShop
                     if (!CreateConnection())
                         return result;
                     command = Connection.CreateCommand();
-                    if (type == ItemType.Item)
-                        command.CommandText = "DELETE FROM `"+ TableItems +"` WHERE `ItemID` = "+ itemID +";";
-                    else
-                        command.CommandText = "DELETE FROM `" + TableVehicles + "` WHERE `ItemID` = " + itemID + ";";
+                    command.CommandText = new QueryBuilder(QueryBuilderType.DELETE).Table(type == ItemType.Item ? TableItems : TableVehicles).Where("ItemID", itemID).Build();
                     command.ExecuteNonQuery();
                     result = true;
                 }
