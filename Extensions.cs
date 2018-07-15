@@ -15,12 +15,20 @@ namespace DynShop
             return curBallance;
         }
 
-        public static string AssetName(this ShopObject type, ushort itemID)
+        public static string AssetName(this ushort itemID, ItemType type)
         {
-            if (type is ShopItem)
+            if (type == ItemType.Item)
                 return ((ItemAsset)Assets.find(EAssetType.ITEM, itemID)).itemName;
             else
                 return ((VehicleAsset)Assets.find(EAssetType.VEHICLE, itemID)).vehicleName;
+        }
+
+        public static string AssetName(this string itemName, ItemType type)
+        {
+            if (type == ItemType.Item)
+                return ((ItemAsset)Assets.find(EAssetType.ITEM, itemName)).itemName;
+            else
+                return ((VehicleAsset)Assets.find(EAssetType.VEHICLE, itemName)).vehicleName;
         }
     }
 }

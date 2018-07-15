@@ -5,23 +5,38 @@ using System.Text;
 
 namespace DynShop
 {
-    internal class XMLDatabaseManager : DataManagerFields, DataManager
+    internal class XMLDatabaseManager : DataManager
     {
         private Dictionary<ushort, ShopVehicle> Vehicles = new Dictionary<ushort, ShopVehicle>();
         private Dictionary<ushort, ShopItem> Items = new Dictionary<ushort, ShopItem>();
+
+        public bool IsLoaded { get; set; }
+
+        public BackendType Backend { get { return BackendType.XML; } }
+
 
 
         internal XMLDatabaseManager()
         {
             Items = DShop.Instance.Configuration.Instance.Items.ToDictionary(v => v.ItemID, v => v);
             Vehicles = DShop.Instance.Configuration.Instance.Vehicles.ToDictionary(v => v.ItemID, v => v);
-            Backend = BackendType.XML;
             CheckSchema();
+            IsLoaded = true;
+        }
+
+        public int SchemaVersion
+        {
+            get { return DShop.Instance.Configuration.Instance.FlatFileSchemaVersion; }
+            set { DShop.Instance.Configuration.Instance.FlatFileSchemaVersion = value; }
         }
 
         public void CheckSchema()
         {
-                DShop.Instance.Configuration.Instance.DefaultItems();
+            if (SchemaVersion < 1)
+            {
+                SchemaVersion = 1;
+            }
+
         }
 
         public bool ConvertDB(BackendType toBackend)
@@ -31,6 +46,8 @@ namespace DynShop
             else if (toBackend == BackendType.MySQL)
             {
                 DataManager database = new MySQLDatabaseManager();
+                if (!database.IsLoaded)
+                    return false;
                 foreach (ShopItem item in Items.Values)
                 {
                     database.AddItem(ItemType.Item, item);
@@ -40,6 +57,7 @@ namespace DynShop
                     database.AddItem(ItemType.Vehicle, vehicle);
                 }
                 database.Unload();
+                database = null;
                 return true;
             }
             return false;
@@ -134,6 +152,7 @@ namespace DynShop
             Save();
             Vehicles.Clear();
             Items.Clear();
+            IsLoaded = false;
         }
     }
 }

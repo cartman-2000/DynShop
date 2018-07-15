@@ -23,7 +23,7 @@ namespace DynShop
             SellMultiplier = sellMultiplier;
             MinBuyPrice = minBuyPrice;
             Change = change;
-            ItemName = this.AssetName(itemID);
+            ItemName = AssetName(this, itemID);
         }
     }
 }

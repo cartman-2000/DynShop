@@ -1,5 +1,4 @@
-﻿using fr34kyn01535.Uconomy;
-using I18N.West;
+﻿using I18N.West;
 using MySql.Data.MySqlClient;
 using Rocket.Core.Logging;
 using System;
@@ -9,7 +8,7 @@ using System.Text;
 
 namespace DynShop
 {
-    internal class MySQLDatabaseManager : DataManagerFields, DataManager
+    internal class MySQLDatabaseManager : DataManager
     {
         private MySqlConnection Connection = null;
 
@@ -18,10 +17,13 @@ namespace DynShop
         private string TableItems;
         private string TableVehicles;
 
+        public bool IsLoaded { get; set; }
+
+        public BackendType Backend { get { return BackendType.MySQL; } }
+
         internal MySQLDatabaseManager()
         {
             CP1250 cP1250 = new CP1250();
-            Backend = BackendType.MySQL;
             Prefix = DShop.Instance.Configuration.Instance.DatabaseTablePrefix;
             TableConfig = Prefix + "_config";
             TableItems = Prefix + "_items";
@@ -57,7 +59,7 @@ namespace DynShop
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
                         " PRIMARY KEY (`ItemID`)" +
                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
-                    command.CommandText += "CREATE TABLE `" + TableItems + "` (" +
+                    command.CommandText += "CREATE TABLE `" + TableVehicles + "` (" +
                         " `ItemID` SMALLINT UNSIGNED NOT NULL," +
                         " `BuyCost` DECIMAL(11, 4) NOT NULL," +
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
@@ -86,6 +88,7 @@ namespace DynShop
                         return;
                     }
                 }
+                IsLoaded = true;
             }
             catch (MySqlException ex)
             {
@@ -137,6 +140,8 @@ namespace DynShop
             else if (toBackend == BackendType.XML)
             {
                 DataManager database = new XMLDatabaseManager();
+                if (!database.IsLoaded)
+                    return false;
                 MySqlCommand command = null;
                 MySqlDataReader reader = null;
                 try
@@ -173,8 +178,10 @@ namespace DynShop
                     if (reader != null)
                         reader.Dispose();
                     Connection.Close();
+                    if (database.IsLoaded)
+                        database.Unload();
+                    database = null;
                 }
-
                 return true;
             }
             return false;
@@ -185,8 +192,8 @@ namespace DynShop
             try
             {
                 if (Connection == null)
-                    Connection = new MySqlConnection(string.Format("SERVER={0};DATABASE={1};UID={2};PASSWORD={3};PORT={4};", Uconomy.Instance.Configuration.Instance.DatabaseAddress, Uconomy.Instance.Configuration.Instance.DatabaseName,
-                        Uconomy.Instance.Configuration.Instance.DatabaseUsername, Uconomy.Instance.Configuration.Instance.DatabasePassword, Uconomy.Instance.Configuration.Instance.DatabasePort));
+                    Connection = new MySqlConnection(string.Format("SERVER={0};DATABASE={1};UID={2};PASSWORD={3};PORT={4};", DShop.Instance.Configuration.Instance.DatabaseAddress, DShop.Instance.Configuration.Instance.DatabaseName,
+                        DShop.Instance.Configuration.Instance.DatabaseUsername, DShop.Instance.Configuration.Instance.DatabasePassword, DShop.Instance.Configuration.Instance.DatabasePort));
                 Connection.Open();
                 return true;
             }
@@ -201,6 +208,7 @@ namespace DynShop
         {
             Connection.Dispose();
             Connection = null;
+            IsLoaded = false;
         }
 
         private ShopObject ShopObjectBuild(ItemType type, MySqlDataReader reader)
@@ -219,18 +227,19 @@ namespace DynShop
             {
                 if (!CreateConnection())
                     return result;
-                command.Connection.CreateCommand();
+                command = Connection.CreateCommand();
                 command.Parameters.AddWithValue("@itemName", shopObject.ItemName);
+
                 if (type == ItemType.Item)
                 {
                     ShopItem item = shopObject as ShopItem;
-                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Column("ItemID", item.ItemID).Column("BuyCost", item.BuyCost).Column("SellMultiplier", item.SellMultiplier).Column("MinBuyPrice", item.MinBuyPrice).
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableItems).Column("ItemID", item.ItemID).Column("BuyCost", item.BuyCost).Column("SellMultiplier", item.SellMultiplier).Column("MinBuyPrice", item.MinBuyPrice).
                         Column("ChangeRate", item.Change).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
                 }
                 else
                 {
                     ShopVehicle vehicle = shopObject as ShopVehicle;
-                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Column("ItemID", vehicle.ItemID).Column("BuyCost", vehicle.BuyCost).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableVehicles).Column("ItemID", vehicle.ItemID).Column("BuyCost", vehicle.BuyCost).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
                 }
                 command.ExecuteNonQuery();
                 result = true;

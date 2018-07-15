@@ -12,7 +12,7 @@ namespace DynShop
         public int ObjectListConfigVersion = 0;
         [XmlIgnore]
         public BackendType Backend = BackendType.MySQL;
-        [XmlAttribute("Backend")]
+        [XmlElement("Backend")]
         public string XmlBackend
         {
             get
@@ -32,6 +32,11 @@ namespace DynShop
                 }
             }
         }
+        public string DatabaseAddress = "address";
+        public string DatabaseName = "Database Name";
+        public string DatabaseUsername = "Username";
+        public string DatabasePassword = "Password";
+        public ushort DatabasePort = 3306;
         public string DatabaseTablePrefix = "dshop";
 
         public decimal DefaultSellMultiplier = .25m;
@@ -39,6 +44,7 @@ namespace DynShop
         public decimal MaxBuyCost = 6000m;
         public decimal DefaultIncrement = .01m;
 
+        public int FlatFileSchemaVersion = 0;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]
         public List<ShopItem> Items = new List<ShopItem>();
 
@@ -58,7 +64,7 @@ namespace DynShop
             }
         }
 
-        public bool AddItemDB(ShopObject shopObject)
+        public void AddItemDB(ShopObject shopObject)
         {
             ItemType type;
             if (shopObject is ShopItem)
@@ -67,13 +73,11 @@ namespace DynShop
                 type = ItemType.Vehicle;
             // Only add items to database if they're not present.
             if (DShop.Database.GetItem(type, shopObject.ItemID).ItemID == 0)
-                return DShop.Database.AddItem(type, shopObject);
-            return false;
+            {
+                DShop.Database.AddItem(type, shopObject);
+            }
         }
 
-        public void LoadDefaults()
-        {
-            
-        }
+        public void LoadDefaults() {}
     }
 }

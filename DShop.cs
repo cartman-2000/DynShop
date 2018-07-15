@@ -19,6 +19,9 @@ namespace DynShop
                 Database = new MySQLDatabaseManager();
             else
                 Database = new XMLDatabaseManager();
+            if (Database.IsLoaded)
+                Instance.Configuration.Instance.DefaultItems();
+            Instance.Configuration.Save();
         }
 
         protected override void Unload()

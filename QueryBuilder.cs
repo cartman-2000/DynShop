@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rocket.Core.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,14 @@ namespace DynShop
 
         public QueryBuilder Column(string columnName, object value = null)
         {
-            _columns.Add(columnName, value.ToString());
+            string sValue = string.Empty;
+            if (value != null && !string.IsNullOrEmpty(value.ToString()))
+            {
+                sValue = value.ToString();
+                if (!sValue.Contains("@"))
+                    sValue = "'" + sValue + "'";
+            }
+            _columns.Add(columnName, sValue);
             return this;
         }
         public QueryBuilder DuplicateInsertUpdate()
@@ -36,7 +44,14 @@ namespace DynShop
         }
         public QueryBuilder Where(string column, object value)
         {
-            _where.Add(column, value.ToString());
+            string sValue = string.Empty;
+            if (value != null && !string.IsNullOrEmpty(value.ToString()))
+            {
+                sValue = value.ToString();
+                if (!sValue.Contains("@"))
+                    sValue = "'" + sValue + "'";
+            }
+            _where.Add(column, sValue);
             return this;
         }
         public QueryBuilder WhereAnd(bool isAnd)
@@ -112,11 +127,12 @@ namespace DynShop
                     }
                 case QueryBuilderType.SHOW:
                     {
-                        query = "SHOW TABLES LIKE `" + _table + "`";
+                        query = "SHOW TABLES LIKE '" + _table + "'";
                         break;
                     }
             }
             query += ";";
+            Logger.LogWarning("Prepared query string: \"" + query + "\"");
             return query;
         }
     }
