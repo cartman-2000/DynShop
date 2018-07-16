@@ -82,6 +82,7 @@
     <Compile Include="CommandBuy.cs" />
     <Compile Include="CommandCost.cs" />
     <Compile Include="CommandDShop.cs" />
+    <Compile Include="DefaultValues.cs" />
     <Compile Include="MySQLDatabaseManager.cs" />
     <Compile Include="DataManager.cs" />
     <Compile Include="DShop.cs" />

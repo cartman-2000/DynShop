@@ -12,7 +12,7 @@ namespace DynShop
         {
             ItemID = itemID;
             BuyCost = buyCost;
-            ItemName = AssetName(this, itemID);
+            ItemName = AssetName(this);
         }
     }
 }

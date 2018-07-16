@@ -4,6 +4,8 @@ using System.Xml.Serialization;
 using Rocket.Core.Logging;
 using System.Collections.Generic;
 using SDG.Unturned;
+using Rocket.Core.Assets;
+using System.IO;
 
 namespace DynShop
 {
@@ -39,8 +41,10 @@ namespace DynShop
         public ushort DatabasePort = 3306;
         public string DatabaseTablePrefix = "dshop";
 
+        public bool RunInStaticPrices = false;
         public decimal DefaultSellMultiplier = .25m;
         public decimal MinDefaultBuyCost = .4m;
+        public decimal DefaultBuyCost = 10;
         public decimal MaxBuyCost = 6000m;
         public decimal DefaultIncrement = .01m;
 
@@ -53,29 +57,48 @@ namespace DynShop
 
         public void DefaultItems()
         {
-            if (ObjectListConfigVersion == 0)
-            {
-                ObjectListConfigVersion = 1;
-                // Items
-                AddItemDB(new ShopItem(2, 2, .5m, .5m, .01m));
+            IAsset<DefaultValues> defaultValues = null;
+            string text = Path.Combine(DShop.Instance.Directory, string.Format("{0}.defaultvalues.xml", DShop.Instance.Name));
 
-                // Vehicles
-                AddItemDB(new ShopVehicle(1, 397));
-            }
-        }
-
-        public void AddItemDB(ShopObject shopObject)
-        {
-            ItemType type;
-            if (shopObject is ShopItem)
-                type = ItemType.Item;
-            else
-                type = ItemType.Vehicle;
-            // Only add items to database if they're not present.
-            if (DShop.Database.GetItem(type, shopObject.ItemID).ItemID == 0)
+            try
             {
-                DShop.Database.AddItem(type, shopObject);
+                defaultValues = new XMLFileAsset<DefaultValues>(text, null, null);
+                defaultValues.Load();
+                if (ObjectListConfigVersion < defaultValues.Instance.FileVersion)
+                {
+                    ObjectListConfigVersion = defaultValues.Instance.FileVersion;
+                    Dictionary<ushort, ShopObject> items = DShop.Database.GetAllItems(ItemType.Item);
+                    Dictionary<ushort, ShopObject> vehicles = DShop.Database.GetAllItems(ItemType.Vehicle);
+                    Logger.Log("Adding new Default items to database!");
+                    // Start adding items to the database from the defaults file that aren't present in the database.
+                    foreach (ShopItem item in defaultValues.Instance.Items)
+                    {
+                        if (!items.ContainsKey(item.ItemID))
+                        {
+                            // Get generate the asset name for the database.
+                            item.ItemName = item.AssetName(item);
+                            DShop.Database.AddItem(ItemType.Item, item as ShopObject);
+                        }
+                    }
+                    foreach (ShopVehicle vehicle in defaultValues.Instance.Vehicles)
+                    {
+                        if (!vehicles.ContainsKey(vehicle.ItemID))
+                        {
+                            // Get generate the asset name for the database.
+                            vehicle.ItemName = vehicle.AssetName(vehicle);
+                            DShop.Database.AddItem(ItemType.Vehicle, vehicle as ShopObject);
+                        }
+                    }
+                    Logger.Log("Finished!");
+                }
+                defaultValues.Save();
             }
+            catch
+            {
+                Logger.LogWarning("Error parsing the defaults file, skipping loading shop defaults!");
+                return;
+            }
+
         }
 
         public void LoadDefaults() {}

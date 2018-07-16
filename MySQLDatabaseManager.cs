@@ -135,37 +135,28 @@ namespace DynShop
 
         public bool ConvertDB(BackendType toBackend)
         {
+            bool result = false;
             if (toBackend == Backend)
-                return false;
+                return result;
             else if (toBackend == BackendType.XML)
             {
                 DataManager database = new XMLDatabaseManager();
                 if (!database.IsLoaded)
-                    return false;
-                MySqlCommand command = null;
-                MySqlDataReader reader = null;
+                    return result;
                 try
                 {
-                    if (!CreateConnection())
-                        return false;
-                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Table(TableItems).Build();
-                    reader = command.ExecuteReader();
-                    if (!reader.HasRows)
-                        return false;
-                    while (reader.Read())
+                    Dictionary<ushort, ShopObject> items = GetAllItems(ItemType.Item);
+                    Dictionary<ushort, ShopObject> vehicles = GetAllItems(ItemType.Vehicle);
+
+                    foreach (ShopObject item in items.Values)
                     {
-                        database.AddItem(ItemType.Item, ShopObjectBuild(ItemType.Item, reader));
+                        database.AddItem(ItemType.Item, item);
                     }
-                    reader.Dispose();
-                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Table(TableVehicles).Build();
-                    reader = command.ExecuteReader();
-                    if (!reader.HasRows)
-                        return false;
-                    while (reader.Read())
+                    foreach (ShopObject vehicle in vehicles.Values)
                     {
-                        database.AddItem(ItemType.Vehicle, ShopObjectBuild(ItemType.Vehicle, reader));
+                        database.AddItem(ItemType.Vehicle, vehicle);
                     }
-                    reader.Dispose();
+                    result = true;
                 }
                 catch(MySqlException ex)
                 {
@@ -173,19 +164,63 @@ namespace DynShop
                 }
                 finally
                 {
-                    if (command != null)
-                        command.Dispose();
-                    if (reader != null)
-                        reader.Dispose();
-                    Connection.Close();
                     if (database.IsLoaded)
                         database.Unload();
                     database = null;
                 }
-                return true;
             }
-            return false;
+            return result;
         }
+
+        public Dictionary<ushort, ShopObject> GetAllItems(ItemType type)
+        {
+            MySqlCommand command = null;
+            MySqlDataReader reader = null;
+            Dictionary<ushort, ShopObject> itemList = new Dictionary<ushort, ShopObject>();
+            ShopObject item = null;
+            try
+            {
+                if (!CreateConnection())
+                    return itemList;
+                command = Connection.CreateCommand();
+                if (type == ItemType.Item)
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Table(TableItems).Build();
+                else
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Table(TableVehicles).Build();
+                reader = command.ExecuteReader();
+                if (!reader.HasRows)
+                    return itemList;
+                while (reader.Read())
+                {
+                    if (type == ItemType.Item)
+                    {
+                        item = ShopObjectBuild(ItemType.Item, reader);
+                        itemList.Add(item.ItemID, item);
+                    }
+                    else
+                    {
+                        item = ShopObjectBuild(ItemType.Vehicle, reader);
+                        itemList.Add(item.ItemID, item);
+
+                    }
+                }
+                reader.Dispose();
+            }
+            catch (MySqlException ex)
+            {
+                HandleException(ex);
+            }
+            finally
+            {
+                if (command != null)
+                    command.Dispose();
+                if (reader != null)
+                    reader.Dispose();
+                Connection.Close();
+            }
+            return itemList;
+        }
+
 
         private bool CreateConnection()
         {
@@ -301,7 +336,7 @@ namespace DynShop
         {
             bool result = false;
             MySqlCommand command = null;
-            if (GetItem(type, itemID) is ShopObject)
+            if (GetItem(type, itemID).ItemID != itemID)
                 return result;
             else
             {
