@@ -91,7 +91,7 @@ namespace DynShop
                     }
                     Logger.Log("Finished!");
                 }
-                defaultValues.Save();
+                //defaultValues.Save();
             }
             catch
             {

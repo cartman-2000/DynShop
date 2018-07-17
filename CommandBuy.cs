@@ -15,7 +15,7 @@ namespace DynShop
 
         public AllowedCaller AllowedCaller
         {
-            get { return AllowedCaller.Both; }
+            get { return AllowedCaller.Player; }
         }
 
         public string Help
