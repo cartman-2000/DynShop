@@ -46,10 +46,9 @@ namespace DynShop
                 return false;
 
             decimal oldCost = BuyCost;
-            for (int i = 1; i <= numItems; i++)
+            for (int i = 0; i < numItems; i++)
             {
-                curBallance -= BuyCost;
-                if (curBallance < 0)
+                if (curBallance- totalCost - BuyCost < 0)
                 {
                     sufficientAmount = false;
                     break;
@@ -80,7 +79,8 @@ namespace DynShop
             }
             if (oldCost != BuyCost)
                 DShop.Database.AddItem(ItemType.Item, this);
-
+            if (totalItems > 0)
+                DShop.Instance._OnShopBuy(curBallance, player, numItems, this, ItemType.Item, newCost, totalCost, totalItems);
             return sufficientAmount;
         }
 
@@ -193,7 +193,8 @@ namespace DynShop
                         DShop.Database.AddItem(ItemType.Item, item.Value);
                 }
             }
-
+            if (totalItems > 0)
+                DShop.Instance._OnShopSell(curBallance, player, numItems, this, ItemType.Item, newCost, totalCost, totalItems, totalAttatchmentCost);
             return sufficientAmount;
         }
 

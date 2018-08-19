@@ -87,17 +87,23 @@ namespace DynShop
             decimal newCost = sObject.BuyCost;
             decimal totalCost = 0;
             ushort actualCount = 0;
-
+            string moneyName = Uconomy.Instance.Configuration.Instance.MoneyName;
             if (type == ItemType.Item)
             {
                 ShopItem sItem = sObject as ShopItem;
                 if (sItem.Buy(balance, player, count, out newCost, out totalCost, out actualCount))
                 {
-
+                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), your current balance is now: {3} {4}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
                 }
                 else
                 {
-
+                    if (actualCount == 0)
+                    {
+                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}(2)!", moneyName, sObject.ItemName, sObject.ItemID));
+                        return;
+                    }
+                    if (actualCount < count)
+                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), your current balance is now: {4} {5}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
                 }
             }
             else
@@ -106,19 +112,21 @@ namespace DynShop
                 if (sVehicle.Buy(balance, player, out totalCost, out actualCount))
                 {
 
+                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
                 }
                 else
                 {
-
+                    if (actualCount == 0)
+                    {
+                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}(2)!", moneyName, sObject.ItemName, sObject.ItemID));
+                        return;
+                    }
+                    if (actualCount < 0)
+                    {
+                        UnturnedChat.Say(caller, string.Format("There was an error giving you the vehicle: {0}(1), you haven't been charged!", sObject.ItemName, sObject.ItemID));
+                    }
                 }
             }
-
-            if (sObject.BuyCost != newCost)
-            {
-                DShop.Database.AddItem(type, sObject);
-                DShop.Instance._OnShopBuy(player, totalCost, actualCount, itemID, type);
-            }
-
         }
     }
 }

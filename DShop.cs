@@ -30,20 +30,21 @@ namespace DynShop
             Database = null;
         }
 
-        public delegate void PlayerDShopBuy(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type);
+        public delegate void PlayerDShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems);
+
         public event PlayerDShopBuy OnShopBuy;
 
-        internal void _OnShopBuy(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type)
+        internal void _OnShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems)
         {
-            OnShopBuy?.Invoke(player, amt, numItems, itemID, type);
+            OnShopBuy?.Invoke(curBallance, player, numItems, sObject, type, newCost, totalCost, totalItems);
         }
 
-        public delegate void PlayerDShopSell(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type);
+        public delegate void PlayerDShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems, decimal totalAttatchmentCost);
         public event PlayerDShopSell OnShopSell;
 
-        internal void _OnShopSell(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type)
+        internal void _OnShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems, decimal totalAttatchmentCost)
         {
-            OnShopSell?.Invoke(player, amt, numItems, itemID, type);
+            OnShopSell?.Invoke(curBallance, player, numItems, sObject, type, newCost, totalCost, totalItems, totalAttatchmentCost);
         }
 
     }

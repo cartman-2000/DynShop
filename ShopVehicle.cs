@@ -29,7 +29,7 @@ namespace DynShop
             totalCost = 0;
             Asset itemAsset = Assets.find(EAssetType.VEHICLE, ItemID);
             curBallance -= BuyCost;
-            if (curBallance < 0)
+            if (curBallance - BuyCost < 0)
                 return false;
             if (itemAsset == null)
                 return false;
@@ -38,13 +38,15 @@ namespace DynShop
                 player.GiveVehicle(ItemID);
                 totalCost += BuyCost;
                 totalItems++;
-                return true;
             }
             catch (Exception ex)
             {
                 Logger.LogException(ex);
+                totalItems--;
                 return false;
             }
+            DShop.Instance._OnShopBuy(curBallance, player, 1, this, ItemType.Vehicle, 0, totalCost, totalItems);
+            return true;
         }
 
         internal bool Sell()
