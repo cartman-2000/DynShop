@@ -64,7 +64,7 @@ namespace DynShop
             ShopObject shopObject = DShop.Database.GetItem(type, itemID);
             if (shopObject.ItemID != itemID)
             {
-                UnturnedChat.Say(caller, "Item not in the shop database.");
+                UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.",itemID.AssetFromID(type), itemID));
             }
 
             if (type == ItemType.Item)

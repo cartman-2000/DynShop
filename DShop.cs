@@ -30,10 +30,21 @@ namespace DynShop
             Database = null;
         }
 
-        public delegate void PlayerDShopBuy(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type = ItemType.Item);
+        public delegate void PlayerDShopBuy(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type);
         public event PlayerDShopBuy OnShopBuy;
-        public delegate void PlayerDShopSell(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type = ItemType.Item);
+
+        internal void _OnShopBuy(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type)
+        {
+            OnShopBuy?.Invoke(player, amt, numItems, itemID, type);
+        }
+
+        public delegate void PlayerDShopSell(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type);
         public event PlayerDShopSell OnShopSell;
+
+        internal void _OnShopSell(UnturnedPlayer player, decimal amt, ushort numItems, ushort itemID, ItemType type)
+        {
+            OnShopSell?.Invoke(player, amt, numItems, itemID, type);
+        }
 
     }
 }

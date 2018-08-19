@@ -42,11 +42,14 @@ namespace DynShop
         public string DatabaseTablePrefix = "dshop";
 
         public bool RunInStaticPrices = false;
+        public bool UseItemQuality = true;
+        public bool SellAttatchmentsOnGun = false;
         public decimal DefaultSellMultiplier = .25m;
         public decimal MinDefaultBuyCost = .4m;
         public decimal DefaultBuyCost = 10;
         public decimal MaxBuyCost = 6000m;
         public decimal DefaultIncrement = .01m;
+        public ushort MaxBuyCount = 300;
 
         public int FlatFileSchemaVersion = 0;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]
@@ -76,7 +79,7 @@ namespace DynShop
                         if (!items.ContainsKey(item.ItemID))
                         {
                             // Get generate the asset name for the database.
-                            item.ItemName = item.AssetName(item);
+                            item.ItemName = item.AssetName();
                             DShop.Database.AddItem(ItemType.Item, item as ShopObject);
                         }
                     }
@@ -85,7 +88,7 @@ namespace DynShop
                         if (!vehicles.ContainsKey(vehicle.ItemID))
                         {
                             // Get generate the asset name for the database.
-                            vehicle.ItemName = vehicle.AssetName(vehicle);
+                            vehicle.ItemName = vehicle.AssetName();
                             DShop.Database.AddItem(ItemType.Vehicle, vehicle as ShopObject);
                         }
                     }
