@@ -58,7 +58,7 @@ namespace DynShop
 
             if (command.Length == 2 && type == ItemType.Item)
             {
-                if (!ushort.TryParse(command[type == ItemType.Item ? 1 : 2], out count))
+                if (!ushort.TryParse(command[1], out count))
                     UnturnedChat.Say(caller, "Invalid item count value used.");
                 if (count > DShop.Instance.Configuration.Instance.MaxBuyCount)
                     count = DShop.Instance.Configuration.Instance.MaxBuyCount;
@@ -93,17 +93,17 @@ namespace DynShop
                 ShopItem sItem = sObject as ShopItem;
                 if (sItem.Buy(balance, player, count, out newCost, out totalCost, out actualCount))
                 {
-                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), your current balance is now: {3} {4}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), your current balance is now: {3} {4}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {
                     if (actualCount == 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}(2)!", moneyName, sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}({2})!", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
                     if (actualCount < count)
-                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), your current balance is now: {4} {5}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), your current balance is now: {4} {5}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
                 }
             }
             else
@@ -112,21 +112,23 @@ namespace DynShop
                 if (sVehicle.Buy(balance, player, out totalCost, out actualCount))
                 {
 
-                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost), moneyName));
+                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {
                     if (actualCount == 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}(2)!", moneyName, sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}({2})!", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
                     if (actualCount < 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("There was an error giving you the vehicle: {0}(1), you haven't been charged!", sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, string.Format("There was an error giving you the vehicle: {0}({1}), you haven't been charged!", sObject.ItemName, sObject.ItemID));
                     }
                 }
             }
+            if (totalCost > 0)
+                Uconomy.Instance.Database.IncreaseBalance(caller.Id, -(Math.Round(totalCost, 2)));
         }
     }
 }

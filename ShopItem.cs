@@ -53,8 +53,6 @@ namespace DynShop
                     sufficientAmount = false;
                     break;
                 }
-                totalCost += BuyCost;
-                totalItems++;
                 try
                 {
 
@@ -96,6 +94,9 @@ namespace DynShop
 
             Asset itemAsset = Assets.find(EAssetType.ITEM, ItemID);
             List<InventorySearch> items = player.Inventory.search(ItemID, true, true);
+            // if num items is maxed, set to the found item count in the inventory.
+            if (numItems == ushort.MaxValue)
+                numItems = (ushort)items.Count;
             Dictionary<ushort, ShopItem> attatchments = new Dictionary<ushort, ShopItem>();
 
             if (items.Count == 0)
@@ -103,7 +104,7 @@ namespace DynShop
             if (itemAsset == null)
                 return false;
             decimal oldCost = BuyCost;
-            for (int i = 1; i <= numItems; i++)
+            for (int i = 0; i < numItems; i++)
             {
 
                 if (items.Count == 0)
