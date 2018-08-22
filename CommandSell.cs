@@ -98,7 +98,12 @@ namespace DynShop
                     ShopItem sItem = sObject as ShopItem;
                     if (sItem.Sell(balance, player, count, out newCost, out totalCost, out actualCount, out totalAttatchmentCost))
                     {
-                        UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), your current balance is now: {3} {4}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                        if (totalAttatchmentCost > 0)
+                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) ({5} {6}(s) is from attachments.) , your current balance is now: {7} {8}(s)", actualCount, sObject.ItemName, sObject.ItemID,
+                                Math.Round(totalCost, 2), moneyName, Math.Round(totalAttatchmentCost, 2), moneyName,  Math.Round(balance + totalCost, 2), moneyName));
+                        else
+                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) , your current balance is now: {5} {6}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
+
                     }
                     else
                     {
@@ -108,7 +113,16 @@ namespace DynShop
                             return;
                         }
                         if (actualCount < count)
-                            UnturnedChat.Say(caller, string.Format("You only had enough to sell: {0} of {1} items, of: {2}({3}), your current balance is now: {4} {5}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                        {
+                            if (totalAttatchmentCost > 0)
+                                UnturnedChat.Say(caller, string.Format("You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s) ({6} {7}(s) is from attachments.), your current balance is now: {8} {9}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, 
+                                    Math.Round(totalCost, 2), moneyName, Math.Round(totalAttatchmentCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
+                            else
+                                UnturnedChat.Say(caller, string.Format("You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s), your current balance is now: {6} {7}(s)", actualCount, count, sObject.ItemName, sObject.ItemID,
+    Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
+
+
+                        }
                     }
                 }
                 else
@@ -117,7 +131,7 @@ namespace DynShop
                     // placeholder code until the vehicle buy/sell tracking update.
                     if (sVehicle.Sell())
                     {
-                        UnturnedChat.Say(caller, string.Format("You've sold the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You've sold the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance + totalCost, 2), moneyName));
                     }
                     else
                     {
@@ -128,12 +142,12 @@ namespace DynShop
                         }
                         if (actualCount < 0)
                         {
-                            UnturnedChat.Say(caller, string.Format("There was an error selliing your vehicle: {0}(1), you haven't been charged!", sObject.ItemName, sObject.ItemID));
+                            UnturnedChat.Say(caller, string.Format("There was an error selliing your vehicle: {0}({1}), you haven't been charged!", sObject.ItemName, sObject.ItemID));
                         }
                     }
                 }
                 if (totalCost > 0)
-                    Uconomy.Instance.Database.IncreaseBalance(caller.Id, -(Math.Round(totalCost, 2)));
+                    Uconomy.Instance.Database.IncreaseBalance(caller.Id, (Math.Round(totalCost, 2)));
             }
         }
     }

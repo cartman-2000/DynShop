@@ -29,11 +29,6 @@ namespace DynShop
             ItemName = AssetName();
         }
 
-        public string AssetName()
-        {
-            return AssetName(this);
-        }
-
         internal bool Buy(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out ushort totalItems)
         {
             bool sufficientAmount = true;
@@ -97,7 +92,7 @@ namespace DynShop
             // if num items is maxed, set to the found item count in the inventory.
             if (numItems == ushort.MaxValue)
                 numItems = (ushort)items.Count;
-            Dictionary<ushort, ShopItem> attatchments = new Dictionary<ushort, ShopItem>();
+            Dictionary<ushort, ShopObject> attatchments = new Dictionary<ushort, ShopObject>();
 
             if (items.Count == 0)
                 return false;
@@ -122,7 +117,7 @@ namespace DynShop
                 if (player.Player.equipment.checkSelection(items[0].page, items[0].jar.x, items[0].jar.y))
                     player.Player.equipment.dequip();
 
-                totalCost += CalcSellCost(itemAsset, items[0].jar.item);
+                totalCost = decimal.Add(totalCost, CalcSellCost(itemAsset, items[0].jar.item));
                 totalItems++;
 
                 if (DShop.Instance.Configuration.Instance.SellAttatchmentsOnGun)
@@ -188,7 +183,7 @@ namespace DynShop
             // Update costs for all sold attachments.
             if(!runStaticPrices && attatchments.Count != 0)
             {
-                foreach (KeyValuePair<ushort, ShopItem> item in attatchments)
+                foreach (KeyValuePair<ushort, ShopObject> item in attatchments)
                 {
                     if (item.Key == item.Value.ItemID)
                         DShop.Database.AddItem(ItemType.Item, item.Value);
@@ -199,39 +194,40 @@ namespace DynShop
             return sufficientAmount;
         }
 
-        private void ProccessAttatchment(ushort itemID, byte amount, byte health, ref Dictionary<ushort, ShopItem> attatchments, ref decimal totalAttatchmentCost, ref decimal totalCost)
+        private void ProccessAttatchment(ushort itemID, byte amount, byte health, ref Dictionary<ushort, ShopObject> attatchments, ref decimal totalAttatchmentCost, ref decimal totalCost)
         {
-            ShopItem sItem = null;
+            ShopObject sObject = null;
             if (attatchments.ContainsKey(itemID))
-                sItem = attatchments[itemID];
+                sObject = attatchments[itemID];
             else
             {
-                sItem = (ShopItem)DShop.Database.GetItem(ItemType.Item, itemID);
-                attatchments.Add(itemID, sItem);
+                sObject = DShop.Database.GetItem(ItemType.Item, itemID);
+                attatchments.Add(itemID, sObject);
             }
-            if (sItem.ItemID == itemID)
+            if (sObject.ItemID == itemID)
             {
                 Item item = new Item(itemID, amount, health);
                 Asset iAsset = Assets.find(EAssetType.ITEM, itemID);
                 if (iAsset != null)
                 {
-                    totalAttatchmentCost += sItem.CalcSellCost(iAsset, item);
-                    totalCost += sItem.CalcSellCost(iAsset, item);
-                    if (sItem.BuyCost - sItem.Change >= MinBuyPrice)
-                        sItem.BuyCost -= sItem.Change;
+                    ShopItem tmp = sObject as ShopItem;
+                    totalAttatchmentCost = decimal.Add(totalAttatchmentCost, tmp.CalcSellCost(iAsset, item));
+                    totalCost = decimal.Add(totalCost, tmp.CalcSellCost(iAsset, item));
+                    if (sObject.BuyCost - tmp.Change >= MinBuyPrice)
+                        sObject.BuyCost -= tmp.Change;
                 }
             }
         }
 
         internal decimal CalcSellCost(Asset asset, Item item)
         {
-            decimal sellCost = BuyCost * SellMultiplier;
+            decimal sellCost = decimal.Multiply(BuyCost, SellMultiplier);
             if (DShop.Instance.Configuration.Instance.UseItemQuality)
             {
                 if (asset is ItemMagazineAsset || asset is ItemSupplyAsset)
-                    sellCost = (sellCost * (item.amount / ((ItemAsset)asset).countMax));
+                    sellCost = decimal.Multiply(sellCost, decimal.Divide(item.amount, ((ItemAsset)asset).amount));
                 else
-                    sellCost = (sellCost * (item.durability / 100));
+                    sellCost = decimal.Multiply(sellCost, decimal.Divide(item.durability, 100));
             }
             return sellCost;
         }

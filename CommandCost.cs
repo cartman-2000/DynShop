@@ -27,7 +27,7 @@ namespace DynShop
 
         public string Name
         {
-            get { return "cost"; }
+            get { return "dcost"; }
         }
 
         public List<string> Permissions

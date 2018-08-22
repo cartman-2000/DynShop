@@ -16,13 +16,13 @@ namespace DynShop
         [XmlAttribute]
         public string ItemName = "";
 
-        public string AssetName(ShopObject type)
+        public string AssetName()
         {
             string assetName = "NULL";
-            Asset asset = Assets.find(type is ShopItem? EAssetType.ITEM : EAssetType.VEHICLE, ItemID);
+            Asset asset = Assets.find(this is ShopItem? EAssetType.ITEM : EAssetType.VEHICLE, ItemID);
             if (asset == null)
                 return assetName;
-            if (type is ShopItem)
+            if (this is ShopItem)
             {
                 ItemAsset item = asset as ItemAsset;
                 if (item.itemName != null)

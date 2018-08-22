@@ -93,7 +93,7 @@ namespace DynShop
                 ShopItem sItem = sObject as ShopItem;
                 if (sItem.Buy(balance, player, count, out newCost, out totalCost, out actualCount))
                 {
-                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), your current balance is now: {3} {4}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), for {3} {4}(s), your current balance is now: {5} {6}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {
@@ -103,7 +103,7 @@ namespace DynShop
                         return;
                     }
                     if (actualCount < count)
-                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), your current balance is now: {4} {5}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), for {4} {5}(s), your current balance is now: {6} {7}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
             }
             else
@@ -112,7 +112,7 @@ namespace DynShop
                 if (sVehicle.Buy(balance, player, out totalCost, out actualCount))
                 {
 
-                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance - totalCost, 2), moneyName));
+                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), for {2} {3}(s), your current balance is now: {4} {5}(s)", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {

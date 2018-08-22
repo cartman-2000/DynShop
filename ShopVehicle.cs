@@ -18,11 +18,6 @@ namespace DynShop
             ItemName = AssetName();
         }
 
-        public string AssetName()
-        {
-            return AssetName(this);
-        }
-
         internal bool Buy(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out ushort totalItems)
         {
             totalItems = 0;
