@@ -51,7 +51,7 @@ namespace DynShop
                     // Give items to client
                     Item item = new Item(ItemID, EItemOrigin.CRAFT);
                     player.Inventory.forceAddItem(item, true);
-                    totalCost += BuyCost;
+                    totalCost = decimal.Add(totalCost, BuyCost);
                     totalItems++;
                 }
                 catch (Exception ex)
@@ -61,9 +61,9 @@ namespace DynShop
                 }
                 if (!DShop.Instance.Configuration.Instance.RunInStaticPrices)
                 {
-                    if ((BuyCost + Change) > DShop.Instance.Configuration.Instance.MaxBuyCost)
+                    if (decimal.Add(BuyCost, Change) > DShop.Instance.Configuration.Instance.MaxBuyCost)
                         continue;
-                    BuyCost += Change;
+                    BuyCost = decimal.Add(BuyCost, Change);
                     newCost = BuyCost;
                 }
             }
@@ -168,9 +168,9 @@ namespace DynShop
 
                 if (!runStaticPrices)
                 {
-                    if ((BuyCost - Change) < MinBuyPrice)
+                    if (decimal.Subtract(BuyCost, Change) < MinBuyPrice)
                         continue;
-                    BuyCost -= Change;
+                    BuyCost = decimal.Subtract(BuyCost, Change); ;
                     newCost = BuyCost;
                 }
             }
@@ -194,26 +194,25 @@ namespace DynShop
         private void ProccessAttatchment(ushort itemID, byte amount, byte health, ref Dictionary<ushort, ShopObject> attatchments, ref decimal totalAttatchmentCost, ref decimal totalCost, UnturnedPlayer player)
         {
             ShopObject sObject = null;
-            if (attatchments.ContainsKey(itemID))
-                sObject = attatchments[itemID];
-            else
-            {
-                sObject = DShop.Database.GetItem(ItemType.Item, itemID);
-                attatchments.Add(itemID, sObject);
-            }
             Asset iAsset = Assets.find(EAssetType.ITEM, itemID);
             Item item = null;
             if (iAsset != null)
             {
-
+                if (attatchments.ContainsKey(itemID))
+                    sObject = attatchments[itemID];
+                else
+                {
+                    sObject = DShop.Database.GetItem(ItemType.Item, itemID);
+                    attatchments.Add(itemID, sObject);
+                }
                 if (sObject.ItemID == itemID)
                 {
                     item = new Item(itemID, amount, health);
                     ShopItem tmp = sObject as ShopItem;
                     totalAttatchmentCost = decimal.Add(totalAttatchmentCost, tmp.CalcSellCost(iAsset, item));
                     totalCost = decimal.Add(totalCost, tmp.CalcSellCost(iAsset, item));
-                    if (sObject.BuyCost - tmp.Change >= MinBuyPrice)
-                        sObject.BuyCost -= tmp.Change;
+                    if (decimal.Subtract(sObject.BuyCost, tmp.Change) > tmp.MinBuyPrice)
+                        sObject.BuyCost = decimal.Subtract(sObject.BuyCost, tmp.Change);
                 }
                 else
                 {

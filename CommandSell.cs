@@ -105,10 +105,10 @@ namespace DynShop
                     if (sItem.Sell(balance, player, count, out newCost, out totalCost, out actualCount, out totalAttatchmentCost))
                     {
                         if (totalAttatchmentCost > 0)
-                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) ({5} {6}(s) is from attachments.) , your current balance is now: {7} {8}(s)", actualCount, sObject.ItemName, sObject.ItemID,
+                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) ({5} {6}(s) is from attachments.), your current balance is now: {7} {8}(s)", actualCount, sObject.ItemName, sObject.ItemID,
                                 Math.Round(totalCost, 2), moneyName, Math.Round(totalAttatchmentCost, 2), moneyName,  Math.Round(balance + totalCost, 2), moneyName));
                         else
-                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) , your current balance is now: {5} {6}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
+                            UnturnedChat.Say(caller, string.Format("You've sold: {0} items, of: {1}({2}), for: {3} {4}(s), your current balance is now: {5} {6}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
 
                     }
                     else
@@ -142,7 +142,7 @@ namespace DynShop
                     }
                     if (sVehicle.Sell(balance, player, out totalCost, out actualCount))
                     {
-                        UnturnedChat.Say(caller, string.Format("You've sold the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance + totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, string.Format("You've sold the Vehicle: {0}({1}), for: {3} {4}(s), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
                     }
                     else
                     {

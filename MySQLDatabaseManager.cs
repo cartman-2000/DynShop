@@ -66,7 +66,7 @@ namespace DynShop
                         " `BuyCost` DECIMAL(11, 4) NOT NULL DEFAULT '10.0000'," +
                         " `SellMultiplier` DECIMAL(11, 4) NOT NULL DEFAULT '0.2500'," +
                         " `MinBuyPrice` DECIMAL(11, 4) NOT NULL DEFAULT '0.2000'," +
-                        " `ChangeRate` DECIMAL(11, 4) NOT NULL DEFAULT '0.1000'," +
+                        " `ChangeRate` DECIMAL(11, 4) NOT NULL DEFAULT '0.0100'," +
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
                         " PRIMARY KEY (`ItemID`)" +
                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
