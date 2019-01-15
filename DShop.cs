@@ -11,6 +11,7 @@ namespace DynShop
     {
         public static DShop Instance;
         internal static DataManager Database;
+        internal static bool Debug = false;
 
         protected override void Load()
         {
@@ -22,6 +23,7 @@ namespace DynShop
             if (Database.IsLoaded)
                 Instance.Configuration.Instance.DefaultItems();
             Instance.Configuration.Save();
+            Debug = Instance.Configuration.Instance.Debug;
         }
 
         protected override void Unload()

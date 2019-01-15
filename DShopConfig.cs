@@ -41,6 +41,8 @@ namespace DynShop
         public ushort DatabasePort = 3306;
         public string DatabaseTablePrefix = "dshop";
 
+        public bool Debug = false;
+
         public bool RunInStaticPrices = false;
         public bool UseItemQuality = true;
         public bool SellAttatchmentsOnGun = false;

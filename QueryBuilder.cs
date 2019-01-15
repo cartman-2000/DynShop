@@ -177,7 +177,8 @@ namespace DynShop
                     }
             }
             query += ";";
-            Logger.LogWarning("Prepared query string: \"" + query + "\"");
+            if (DShop.Debug)
+                Logger.LogWarning("Prepared query string: \"" + query + "\"");
             return query;
         }
 
