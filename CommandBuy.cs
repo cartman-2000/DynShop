@@ -53,6 +53,12 @@ namespace DynShop
                 return;
             }
 
+            if (!DShop.Database.IsLoaded)
+            {
+                UnturnedChat.Say(caller, "The command can't be ran, There was an issue with loading the plugin.");
+                return;
+            }
+
             ushort itemID = 0;
             ushort count = 1;
 

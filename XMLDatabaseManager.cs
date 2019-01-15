@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SDG.Unturned;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -158,6 +159,28 @@ namespace DynShop
             Vehicles.Clear();
             Items.Clear();
             IsLoaded = false;
+        }
+
+        public bool AddVehicleInfo(ulong SteamID, ushort vehicleID)
+        {
+            DShop.Instance.Configuration.Instance.VehicleInfos.Add(new VehicleInfo(SteamID, vehicleID));
+            return true;
+        }
+
+        public VehicleInfo GetVehicleInfo(ulong SteamID, ushort vehicleID)
+        {
+            VehicleInfo vInfo = null;
+            if (DShop.Instance.Configuration.Instance.IgnoreVehicleInfoMap)
+                vInfo = DShop.Instance.Configuration.Instance.VehicleInfos.FirstOrDefault(i => i.SteamID == SteamID && i.VehicleID == vehicleID);
+            else
+                vInfo = DShop.Instance.Configuration.Instance.VehicleInfos.FirstOrDefault(i => i.SteamID == SteamID && i.VehicleID == vehicleID && i.MapName.ToLower() == Provider.map.ToLower());
+
+            throw new NotImplementedException();
+        }
+
+        public bool DeleteVehicleInfo(VehicleInfo vInfo)
+        {
+            return DShop.Instance.Configuration.Instance.VehicleInfos.Remove(vInfo);
         }
     }
 }

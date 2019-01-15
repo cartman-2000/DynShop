@@ -12,8 +12,6 @@ namespace DynShop
     public class ShopItem : ShopObject
     {
         [XmlAttribute]
-        public decimal SellMultiplier = .25m;
-        [XmlAttribute]
         public decimal MinBuyPrice = .2m;
         [XmlAttribute]
         public decimal Change = .01m;
@@ -26,7 +24,7 @@ namespace DynShop
             SellMultiplier = sellMultiplier;
             MinBuyPrice = minBuyPrice;
             Change = change;
-            ItemName = AssetName();
+            AssetName();
         }
 
         internal bool Buy(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out ushort totalItems)
@@ -50,7 +48,6 @@ namespace DynShop
                 }
                 try
                 {
-
                     // Give items to client
                     Item item = new Item(ItemID, EItemOrigin.CRAFT);
                     player.Inventory.forceAddItem(item, true);
@@ -144,23 +141,23 @@ namespace DynShop
 
                         if (sightID != 0)
                         {
-                            ProccessAttatchment(sightID, 1, sightHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost);
+                            ProccessAttatchment(sightID, 1, sightHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
                         if (tacticalID != 0)
                         {
-                            ProccessAttatchment(tacticalID, 1, tacticalHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost);
+                            ProccessAttatchment(tacticalID, 1, tacticalHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
                         if (gripID != 0)
                         {
-                            ProccessAttatchment(gripID, 1, gripHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost);
+                            ProccessAttatchment(gripID, 1, gripHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
                         if (barrelID != 0)
                         {
-                            ProccessAttatchment(barrelID, 1, barrelHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost);
+                            ProccessAttatchment(barrelID, 1, barrelHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
                         if (magazineID != 0)
                         {
-                            ProccessAttatchment(magazineID, magazineAmount, magazineHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost);
+                            ProccessAttatchment(magazineID, magazineAmount, magazineHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
 
                     }
@@ -194,7 +191,7 @@ namespace DynShop
             return sufficientAmount;
         }
 
-        private void ProccessAttatchment(ushort itemID, byte amount, byte health, ref Dictionary<ushort, ShopObject> attatchments, ref decimal totalAttatchmentCost, ref decimal totalCost)
+        private void ProccessAttatchment(ushort itemID, byte amount, byte health, ref Dictionary<ushort, ShopObject> attatchments, ref decimal totalAttatchmentCost, ref decimal totalCost, UnturnedPlayer player)
         {
             ShopObject sObject = null;
             if (attatchments.ContainsKey(itemID))
@@ -204,17 +201,26 @@ namespace DynShop
                 sObject = DShop.Database.GetItem(ItemType.Item, itemID);
                 attatchments.Add(itemID, sObject);
             }
-            if (sObject.ItemID == itemID)
+            Asset iAsset = Assets.find(EAssetType.ITEM, itemID);
+            Item item = null;
+            if (iAsset != null)
             {
-                Item item = new Item(itemID, amount, health);
-                Asset iAsset = Assets.find(EAssetType.ITEM, itemID);
-                if (iAsset != null)
+
+                if (sObject.ItemID == itemID)
                 {
+                    item = new Item(itemID, amount, health);
                     ShopItem tmp = sObject as ShopItem;
                     totalAttatchmentCost = decimal.Add(totalAttatchmentCost, tmp.CalcSellCost(iAsset, item));
                     totalCost = decimal.Add(totalCost, tmp.CalcSellCost(iAsset, item));
                     if (sObject.BuyCost - tmp.Change >= MinBuyPrice)
                         sObject.BuyCost -= tmp.Change;
+                }
+                else
+                {
+                    // give the attachment to the player as it's not in the shop db.
+                    item = new Item(itemID, EItemOrigin.CRAFT, health);
+                    item.amount = amount;
+                    player.Inventory.forceAddItem(item, true);
                 }
             }
         }
@@ -224,6 +230,7 @@ namespace DynShop
             decimal sellCost = decimal.Multiply(BuyCost, SellMultiplier);
             if (DShop.Instance.Configuration.Instance.UseItemQuality)
             {
+                // for mags/ammo boxes, calc quality percentage based on number of rounds left divided by the capacity in the asset.
                 if (asset is ItemMagazineAsset || asset is ItemSupplyAsset)
                     sellCost = decimal.Multiply(sellCost, decimal.Divide(item.amount, ((ItemAsset)asset).amount));
                 else

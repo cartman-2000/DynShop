@@ -14,27 +14,31 @@ namespace DynShop
         [XmlAttribute]
         public decimal BuyCost = 10;
         [XmlAttribute]
+        public decimal SellMultiplier = .25m;
+        [XmlAttribute]
         public string ItemName = "";
 
-        public string AssetName()
+        public void AssetName()
         {
-            string assetName = "NULL";
             Asset asset = Assets.find(this is ShopItem? EAssetType.ITEM : EAssetType.VEHICLE, ItemID);
             if (asset == null)
-                return assetName;
-            if (this is ShopItem)
-            {
-                ItemAsset item = asset as ItemAsset;
-                if (item.itemName != null)
-                    assetName = item.itemName;
-            }
+                ItemName = string.Empty;
             else
             {
-                VehicleAsset item = asset as VehicleAsset;
-                if (item.vehicleName != null)
-                    assetName = item.vehicleName;
+                if (this is ShopItem)
+                {
+                    ItemAsset item = asset as ItemAsset;
+                    if (item.itemName != null)
+                        ItemName = item.itemName;
+                }
+                else
+                {
+                    VehicleAsset item = asset as VehicleAsset;
+                    if (item.vehicleName != null)
+                        ItemName = item.vehicleName;
+                }
             }
-            return assetName;
+            return;
         }
 
     }

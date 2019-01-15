@@ -16,8 +16,6 @@ namespace DynShop
 
         public void LoadDefaults()
         {
-            Items.Add(new ShopItem(2, 2, .5m, .5m, .01m));
-            Vehicles.Add(new ShopVehicle(1, 397));
         }
     }
 }

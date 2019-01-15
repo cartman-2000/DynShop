@@ -54,6 +54,12 @@ namespace DynShop
                     return;
                 }
 
+                if (!DShop.Database.IsLoaded)
+                {
+                    UnturnedChat.Say(caller, "The command can't be ran, There was an issue with loading the plugin.");
+                    return;
+                }
+
                 ushort itemID = 0;
                 ushort count = 1;
 
@@ -129,7 +135,12 @@ namespace DynShop
                 {
                     ShopVehicle sVehicle = sObject as ShopVehicle;
                     // placeholder code until the vehicle buy/sell tracking update.
-                    if (sVehicle.Sell())
+                    if (!DShop.Instance.Configuration.Instance.CanSellVehicles)
+                    {
+                        UnturnedChat.Say(caller, "You can't sell vehicles on this server!");
+                        return;
+                    }
+                    if (sVehicle.Sell(balance, player, out totalCost, out actualCount))
                     {
                         UnturnedChat.Say(caller, string.Format("You've sold the Vehicle: {0}({1}), your current balance is now: {2} {3}(s)", sObject.ItemName, sObject.ItemID, Math.Round(balance + totalCost, 2), moneyName));
                     }
@@ -137,12 +148,18 @@ namespace DynShop
                     {
                         if (actualCount == 0)
                         {
-                            UnturnedChat.Say(caller, string.Format("You don't have any of: {0}({1}), to sell!", sObject.ItemName, sObject.ItemID));
+                            UnturnedChat.Say(caller, string.Format("You don't own any of: {0}({1}), to sell, on this map!", sObject.ItemName, sObject.ItemID));
                             return;
                         }
-                        if (actualCount < 0)
+                        if (actualCount == 2)
                         {
-                            UnturnedChat.Say(caller, string.Format("There was an error selliing your vehicle: {0}({1}), you haven't been charged!", sObject.ItemName, sObject.ItemID));
+                            UnturnedChat.Say(caller, string.Format("You don't have any of: {0}({1}), locked to you on the map!", sObject.ItemName, sObject.ItemID));
+                            return;
+                        }
+                        if (actualCount == 3)
+                        {
+                            UnturnedChat.Say(caller, string.Format("There was an error selliing your vehicle: {0}({1}), you need to be standing next to it(within 10 units)!", sObject.ItemName, sObject.ItemID));
+                            return;
                         }
                     }
                 }

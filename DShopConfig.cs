@@ -51,12 +51,19 @@ namespace DynShop
         public decimal DefaultIncrement = .01m;
         public ushort MaxBuyCount = 300;
 
+        public bool CanSellVehicles = true;
+        public bool IgnoreVehicleInfoMap = false;
+        public bool IgnoreVehicleInfoSpecificServer = false;
+
         public int FlatFileSchemaVersion = 0;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]
         public List<ShopItem> Items = new List<ShopItem>();
 
         [XmlArray("Vehicles"), XmlArrayItem(ElementName = "Vehicle")]
         public List<ShopVehicle> Vehicles = new List<ShopVehicle>();
+
+        [XmlArray("VehicleInfos"), XmlArrayItem(ElementName = "VehicleInfo")]
+        public List<VehicleInfo> VehicleInfos = new List<VehicleInfo>();
 
         public void DefaultItems()
         {
@@ -79,7 +86,7 @@ namespace DynShop
                         if (!items.ContainsKey(item.ItemID))
                         {
                             // Get generate the asset name for the database.
-                            item.ItemName = item.AssetName();
+                            item.AssetName();
                             DShop.Database.AddItem(ItemType.Item, item as ShopObject);
                         }
                     }
@@ -88,7 +95,7 @@ namespace DynShop
                         if (!vehicles.ContainsKey(vehicle.ItemID))
                         {
                             // Get generate the asset name for the database.
-                            vehicle.ItemName = vehicle.AssetName();
+                            vehicle.AssetName();
                             DShop.Database.AddItem(ItemType.Vehicle, vehicle as ShopObject);
                         }
                     }

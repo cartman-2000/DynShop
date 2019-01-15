@@ -1,6 +1,7 @@
 ﻿using I18N.West;
 using MySql.Data.MySqlClient;
 using Rocket.Core.Logging;
+using SDG.Unturned;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace DynShop
         private string TableConfig;
         private string TableItems;
         private string TableVehicles;
+        private string TableVehicleInfos;
+        private string TableServerInstance;
+        private string TableMaps;
+
+        private int ServerInstance;
+        private int ServerMapID;
 
         public bool IsLoaded { get; set; }
 
@@ -28,12 +35,16 @@ namespace DynShop
             TableConfig = Prefix + "_config";
             TableItems = Prefix + "_items";
             TableVehicles = Prefix + "_vehicles";
+            TableVehicleInfos = Prefix + "_vehicleinfos";
+            TableServerInstance = Prefix + "_serverinstance";
+            TableMaps = Prefix + "_maps";
             CheckSchema();
         }
 
         public void CheckSchema()
         {
             MySqlCommand command = null;
+            MySqlDataReader reader = null;
             try
             {
                 if (!CreateConnection())
@@ -52,19 +63,40 @@ namespace DynShop
                             ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
                     command.CommandText += "CREATE TABLE `" + TableItems + "` (" +
                         " `ItemID` SMALLINT UNSIGNED NOT NULL," +
-                        " `BuyCost` DECIMAL(11, 4) NOT NULL," +
-                        " `SellMultiplier` DECIMAL(11, 4) NOT NULL," +
-                        " `MinBuyPrice` DECIMAL(11, 4) NOT NULL," +
-                        " `ChangeRate` DECIMAL(11, 4) NOT NULL," +
+                        " `BuyCost` DECIMAL(11, 4) NOT NULL DEFAULT '10.0000'," +
+                        " `SellMultiplier` DECIMAL(11, 4) NOT NULL DEFAULT '0.2500'," +
+                        " `MinBuyPrice` DECIMAL(11, 4) NOT NULL DEFAULT '0.2000'," +
+                        " `ChangeRate` DECIMAL(11, 4) NOT NULL DEFAULT '0.1000'," +
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
                         " PRIMARY KEY (`ItemID`)" +
                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
                     command.CommandText += "CREATE TABLE `" + TableVehicles + "` (" +
                         " `ItemID` SMALLINT UNSIGNED NOT NULL," +
-                        " `BuyCost` DECIMAL(11, 4) NOT NULL," +
+                        " `BuyCost` DECIMAL(11, 4) NOT NULL DEFAULT '150.0000'," +
+                        " `SellMultiplier` DECIMAL(11, 4) NOT NULLDEFAULT '0.5000'," +
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
                         " PRIMARY KEY (`ItemID`)" +
                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
+                    command.CommandText += "CREATE TABLE `" + TableVehicleInfos + "` (" +
+                        " `ID` INT NOT NULL AUTO_INCREMENT," +
+                        " `ServerID` INT NOT NULL," +
+                        " `MapID` INT NOT NULL," +
+                        " `VehicleID` SMALLINT UNSIGNED NOT NULL," +
+                        " `SteamID` BIGINT UNSIGNED NOT NULL," +
+                        " `BoughtTime` BIGINT NOT NULL," +
+                        " PRIMARY KEY (`ID`)" +
+                        ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;";
+                    command.CommandText += "CREATE TABLE `" + TableServerInstance + " ` (" +
+                        " `ID` INT NOT NULL AUTO_INCREMENT," +
+                        " `InstanceName` VARCHAR(60) NOT NULL," +
+                        " `ServerName` VARCHAR(255) NOT NULL," +
+                        " PRIMARY KEY (`ID`)" +
+                        ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;";
+                    command.CommandText += "CREATE TABLE `" + TableMaps + "` (" +
+                        " `ID` INT NOT NULL AUTO_INCREMENT," +
+                        " `MapName` VARCHAR(255) NOT NULL," +
+                        " PRIMARY KEY (`ID`)" +
+                        ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;";
                     command.ExecuteNonQuery();
                     CheckVersion(version, command);
                 }
@@ -88,6 +120,44 @@ namespace DynShop
                         return;
                     }
                 }
+                command.Parameters.AddWithValue("@instname", Provider.serverID.ToLower());
+                command.Parameters.AddWithValue("@servername", Provider.serverName);
+                command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ID").Column("ServerName").Table(TableServerInstance).Where("InstanceName", "@instname").Build();
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    ServerInstance = reader.GetInt32("ID");
+                    if (reader.GetString("ServerName") != Provider.serverName)
+                    {
+                        reader.Dispose();
+                        command.CommandText = new QueryBuilder(QueryBuilderType.UPDATE).Table(TableServerInstance).Column("ServerName", "@servername").Where("InstanceName", "@instname").Build();
+                        command.ExecuteNonQuery();
+                    }
+                }
+                // No value in the database, add one.
+                else
+                {
+                    if (!reader.IsClosed)
+                        reader.Dispose();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableServerInstance).Column("InstanceName", "@instname").Column("ServerName", "@servername").Build();
+                    command.ExecuteNonQuery();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ID").Table(TableServerInstance).Where("InstanceName", "@instname").Build();
+                    ServerInstance = int.Parse(command.ExecuteScalar().ToString());
+                }
+                if (!reader.IsClosed)
+                    reader.Dispose();
+
+                command.Parameters.AddWithValue("@mapname", Provider.map.ToLower());
+                command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ID").Table(TableMaps).Where("MapName", "@mapname").Build();
+                object mapID = command.ExecuteScalar();
+                if (!int.TryParse(mapID != null ? mapID.ToString() : "null", out ServerMapID))
+                {
+                    // No value in the database, add one.
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableMaps).Column("MapName", "@mapname").Build();
+                    command.ExecuteNonQuery();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ID").Table(TableMaps).Where("MapName", "@mapname").Build();
+                    ServerMapID = int.Parse(command.ExecuteScalar().ToString());
+                }
                 IsLoaded = true;
             }
             catch (MySqlException ex)
@@ -96,6 +166,8 @@ namespace DynShop
             }
             finally
             {
+                if (reader != null && !reader.IsClosed)
+                    reader.Dispose();
                 if (command != null)
                     command.Dispose();
                 Connection.Close();
@@ -251,7 +323,7 @@ namespace DynShop
             if (type == ItemType.Item)
                 return new ShopItem(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"), reader.GetDecimal("SellMultiplier"), reader.GetDecimal("MinBuyPrice"), reader.GetDecimal("ChangeRate"));
             else
-                return new ShopVehicle(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"));
+                return new ShopVehicle(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"), reader.GetDecimal("SellMultiplier"));
         }
 
         public bool AddItem(ItemType type, ShopObject shopObject)
@@ -274,7 +346,7 @@ namespace DynShop
                 else
                 {
                     ShopVehicle vehicle = shopObject as ShopVehicle;
-                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableVehicles).Column("ItemID", vehicle.ItemID).Column("BuyCost", vehicle.BuyCost).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableVehicles).Column("ItemID", vehicle.ItemID).Column("BuyCost", vehicle.BuyCost).Column("SellMultiplier", vehicle.SellMultiplier).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
                 }
                 command.ExecuteNonQuery();
                 result = true;
@@ -305,13 +377,10 @@ namespace DynShop
                 if (type == ItemType.Item)
                     command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Where("ItemID", itemID).Table(TableItems).Build();
                 else
-                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("itemID").Column("BuyCost").Table(TableVehicles).Where("ItemID", itemID).Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("itemID").Column("BuyCost").Column("SellMultiplier").Table(TableVehicles).Where("ItemID", itemID).Build();
                 reader = command.ExecuteReader();
                 if (reader.Read())
                 {
-                    if (type == ItemType.Item)
-                        shopObject = ShopObjectBuild(type, reader);
-                    else
                         shopObject = ShopObjectBuild(type, reader);
                 }
             }
@@ -355,12 +424,107 @@ namespace DynShop
                 }
                 finally
                 {
-                    if (command == null)
+                    if (command != null)
                         command.Dispose();
                     Connection.Close();
                 }
                 return result;
             }
+        }
+
+        public bool AddVehicleInfo(ulong SteamID, ushort vehicleID)
+        {
+            VehicleInfo info = new VehicleInfo(SteamID, vehicleID);
+            bool result = false;
+            MySqlCommand command = null;
+            try
+            {
+                if (!CreateConnection())
+                    return result;
+                command = Connection.CreateCommand();
+                command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableVehicleInfos).Column("ServerID", ServerInstance).Column("MapID", ServerMapID).Column("VehicleID", vehicleID).Column("SteamID", SteamID).Column("BoughtTime", info.TimeBought.ToBinary()).Build();
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch(MySqlException ex)
+            {
+                HandleException(ex);
+            }
+            finally
+            {
+                if (command != null)
+                    command.Dispose();
+                Connection.Close();
+            }
+            return result;
+        }
+
+        public VehicleInfo GetVehicleInfo(ulong SteamID, ushort vehicleID)
+        {
+            VehicleInfo vInfo = null;
+            MySqlDataReader reader = null;
+            MySqlCommand command = null;
+            try
+            {
+                if (!CreateConnection())
+                    return vInfo;
+                command = Connection.CreateCommand();
+                QueryBuilder qB = new QueryBuilder(QueryBuilderType.SELECT).Column("a.ID").Column("a.ServerID").Column("a.MapID").Column("a.VehicleID").Column("a.SteamID").Column("a.BoughtTime").Column("b.MapName").Table(TableVehicleInfos, "a").LeftJoin(TableMaps, "a.MapID", "b.ID", "b").Where("a.SteamID", SteamID).Where("a.VehicleID", vehicleID).WhereAnd().OrderBy("a.ID", true).Limit(1);
+                if (!DShop.Instance.Configuration.Instance.IgnoreVehicleInfoMap)
+                    qB.Where("a.MapID", ServerMapID);
+                if (!DShop.Instance.Configuration.Instance.IgnoreVehicleInfoSpecificServer)
+                    qB.Where("a.ServerID", ServerInstance);
+                command.CommandText = qB.Build();
+                reader = command.ExecuteReader();
+                if (reader.Read())
+                {
+                    vInfo = new VehicleInfo();
+                    vInfo.InfoID = reader.GetInt32("ID");
+                    vInfo.MapName = reader.GetString("MapName");
+                    vInfo.SteamID = reader.GetUInt64("SteamID");
+                    vInfo.TimeBought = DateTime.FromBinary(reader.GetInt64("BoughtTime"));
+                    vInfo.VehicleID = reader.GetUInt16("VehicleID");
+                }
+            }
+            catch (MySqlException ex)
+            {
+                HandleException(ex);
+            }
+            finally
+            {
+                if (reader != null)
+                    reader.Dispose();
+                if (command != null)
+                    command.Dispose();
+                Connection.Close();
+            }
+            return vInfo;
+        }
+
+        public bool DeleteVehicleInfo(VehicleInfo vInfo)
+        {
+            bool result = false;
+            MySqlCommand command = null;
+            try
+            {
+                if (!CreateConnection())
+                    return result;
+                command = Connection.CreateCommand();
+                command.CommandText = new QueryBuilder(QueryBuilderType.DELETE).Table(TableVehicleInfos).Where("ID", vInfo.InfoID).Build();
+                command.ExecuteNonQuery();
+                result = true;
+            }
+            catch(MySqlException ex)
+            {
+                HandleException(ex);
+            }
+            finally
+            {
+                if (command != null)
+                    command.Dispose();
+                Connection.Close();
+            }
+            return result;
         }
     }
 }

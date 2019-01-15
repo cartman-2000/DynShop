@@ -11,6 +11,9 @@ namespace DynShop
         ShopObject GetItem(ItemType type, ushort itemID);
         Dictionary<ushort, ShopObject> GetAllItems(ItemType type);
         bool DeleteItem(ItemType type, ushort itemID);
+        bool AddVehicleInfo(ulong SteamID, ushort vehicleID);
+        VehicleInfo GetVehicleInfo(ulong SteamID, ushort vehicleID);
+        bool DeleteVehicleInfo(VehicleInfo vInfo);
         bool IsLoaded { get; set; }
         BackendType Backend { get; }
     }

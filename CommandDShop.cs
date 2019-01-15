@@ -55,6 +55,13 @@ namespace DynShop
                 UnturnedChat.Say(caller, Name + " - " + Syntax);
                 return;
             }
+
+            if (!DShop.Database.IsLoaded)
+            {
+                UnturnedChat.Say(caller, "The command can't be ran, There was an issue with loading the plugin.");
+                return;
+            }
+
             ItemType type = ItemType.Item;
             if (command.Length >= 2 && command[1].ToLower() == "v")
                 type = ItemType.Vehicle;
@@ -87,7 +94,7 @@ namespace DynShop
                     }
                 case "add":
                     {
-                        if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 6 : 4))
+                        if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 6 : 5))
                         {
                             UnturnedChat.Say(caller, "add <ItemID|\"Item Name\"> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] || add v <VehicleID| \"VehicleName\"> [cost]");
                             return;
@@ -108,10 +115,10 @@ namespace DynShop
                         // Parse the vars used in command, if short of variables, or can't parse, defaults would be used for those vars.
                         decimal buyCost = DShop.Instance.Configuration.Instance.DefaultBuyCost;
                         if (command.Length >= (type == ItemType.Item ? 3 : 4) && !decimal.TryParse(type == ItemType.Item ? command[2] : command[3], out buyCost))
-                            UnturnedChat.Say(caller, "Warning: Couldn't parse the Sell Multiplier, using default!");
+                            UnturnedChat.Say(caller, "Warning: Couldn't parse the Buy Cost, using default!");
 
                         decimal sellMultiplier = DShop.Instance.Configuration.Instance.DefaultSellMultiplier;
-                        if (type == ItemType.Item && command.Length >= 4 && !decimal.TryParse(command[3], out sellMultiplier))
+                        if (command.Length >= (type == ItemType.Item ? 4 : 5) && !decimal.TryParse(type == ItemType.Item ? command[3] : command[4], out sellMultiplier))
                             UnturnedChat.Say(caller, "Warning: Couldn't parse the Sell Multiplier, using default!");
 
                         decimal minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
@@ -123,11 +130,11 @@ namespace DynShop
                             UnturnedChat.Say(caller, "Warning: Couldn't parse the Change rate, using default!");
 
                         // Construct new item to add to the database.
-                        shopObject = (type == ItemType.Item ? (ShopObject)new ShopItem(itemID, buyCost, sellMultiplier, minBuyPrice, changeRate) : new ShopVehicle(itemID, buyCost));
+                        shopObject = (type == ItemType.Item ? (ShopObject)new ShopItem(itemID, buyCost, sellMultiplier, minBuyPrice, changeRate) : new ShopVehicle(itemID, buyCost, sellMultiplier));
 
                         if (DShop.Database.AddItem(type, shopObject))
                         {
-                            UnturnedChat.Say(caller, FormatItemInfo("Item: {0}({1}), With Type: {2}, With BuyCost: {3}{4} Added to the Database!", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} Added to the Database!", shopObject, type));
                         }
                         else
                             UnturnedChat.Say(caller, "Failed to add Item to Database!");
@@ -152,7 +159,7 @@ namespace DynShop
                         shopObject = DShop.Database.GetItem(type, itemID);
 
                         if (DShop.Database.DeleteItem(type, itemID))
-                            UnturnedChat.Say(caller, FormatItemInfo("Deleted Item: {0}({1}), With Type: {2}, With BuyCost: {3}{4} From the Database!", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("Deleted Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} From the Database!", shopObject, type));
                         else
                             UnturnedChat.Say(caller, "Item Not in Database!");
 
@@ -175,7 +182,7 @@ namespace DynShop
                         shopObject = DShop.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
-                            UnturnedChat.Say(caller, FormatItemInfo("Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}{4}.", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}.", shopObject, type));
                         }
                         else
                             UnturnedChat.Say(caller, "Item Not in Database!");
@@ -225,16 +232,16 @@ namespace DynShop
                                 }
                             case "mult":
                                 {
-                                    if (command.Length != 4)
+                                    if (command.Length != (type == ItemType.Item ? 4 : 5))
                                         goto default;
 
                                     decimal sellMult = DShop.Instance.Configuration.Instance.DefaultSellMultiplier;
-                                    if (!decimal.TryParse(command[3], out sellMult))
+                                    if (!decimal.TryParse(type == ItemType.Item ? command[3] : command[4], out sellMult))
                                     {
                                         UnturnedChat.Say(caller, "Error: Couldn't parse the Sell Multiplier value!");
                                         return;
                                     }
-                                    ((ShopItem)shopObject).SellMultiplier = sellMult;
+                                    shopObject.SellMultiplier = sellMult;
                                     goto set;
                                 }
                             case "min":
@@ -273,7 +280,7 @@ namespace DynShop
                             set:
                                 {
                                     if (DShop.Database.AddItem(type, shopObject))
-                                        UnturnedChat.Say(caller, FormatItemInfo("Updated Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}{4}.", shopObject, type));
+                                        UnturnedChat.Say(caller, FormatItemInfo("Updated Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}.", shopObject, type));
                                     else
                                         UnturnedChat.Say(caller, "Failed to Update Database Record!");
                                     break;
@@ -290,8 +297,8 @@ namespace DynShop
 
         public string FormatItemInfo(string primaryLiteral, ShopObject shopObject, ItemType type)
         {
-            return string.Format(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost,
-                (type == ItemType.Item ? string.Format(", With Sell Multiplier: {0}, With Min Cost: {1}, With Change Rate: {2}", ((ShopItem)shopObject).SellMultiplier, ((ShopItem)shopObject).MinBuyPrice, ((ShopItem)shopObject).Change) : string.Empty));
+            return string.Format(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost, shopObject.SellMultiplier, 
+                type == ItemType.Item ? string.Format(", With Min Cost: {0}, With Change Rate: {1}", ((ShopItem)shopObject).MinBuyPrice, ((ShopItem)shopObject).Change) : string.Empty);
         }
     }
 }

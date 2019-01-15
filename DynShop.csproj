@@ -92,9 +92,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueryBuilder.cs" />
     <Compile Include="CommandSell.cs" />
+    <Compile Include="QueryJoin.cs" />
     <Compile Include="ShopObject.cs" />
     <Compile Include="ShopVehicle.cs" />
     <Compile Include="ShopItem.cs" />
+    <Compile Include="VehicleInfo.cs" />
     <Compile Include="XMLDatabaseManager.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -104,12 +106,6 @@
     <Content Include="lib\Rocket.Core.dll" />
     <Content Include="lib\Rocket.Unturned.dll" />
     <Content Include="lib\UnityEngine.dll" />
-    <Content Include="Libraries\I18N.dll" />
-    <Content Include="Libraries\I18N.West.dll" />
-    <Content Include="Libraries\MySql.Data.dll" />
-    <Content Include="Libraries\System.Data.dll" />
-    <Content Include="Libraries\System.Management.dll" />
-    <Content Include="Libraries\System.Transactions.dll" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Libraries\I18N.dll">
@@ -129,6 +125,10 @@
     </Content>
     <Content Include="Libraries\System.Transactions.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DynShop\DynShop.defaultvalues.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
