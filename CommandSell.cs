@@ -2,6 +2,7 @@ using fr34kyn01535.Uconomy;
 using Rocket.API;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
+using SDG.Unturned;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace DynShop
 
         public string Name
         {
-            get { return "dsell"; }
+            get { return "sell"; }
         }
 
         public List<string> Permissions
@@ -38,7 +39,7 @@ namespace DynShop
 
         public string Syntax
         {
-            get { return "<\"Item Name\" | ItemID> [amount]"; }
+            get { return "<\"Item Name\" | ItemID> [amount(use 'all' for sell all.)]"; }
         }
 
         public void Execute(IRocketPlayer caller, string[] command)
@@ -88,7 +89,12 @@ namespace DynShop
                 ShopObject sObject = DShop.Database.GetItem(type, itemID);
                 if (sObject.ItemID != itemID)
                 {
-                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", itemID.AssetFromID(type), itemID));
+                    Asset asset = itemID.AssetFromID(type);
+                    if (type == ItemType.Item)
+                        UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
+                    else
+                        UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
+                    return;
                 }
 
                 UnturnedPlayer player = caller as UnturnedPlayer;

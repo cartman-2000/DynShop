@@ -35,12 +35,12 @@ namespace DynShop
 
         public string Name
         {
-            get { return "dshop"; }
+            get { return "shop"; }
         }
 
         public List<string> Permissions
         {
-            get { return new List<string> { "dshop.dshop" }; }
+            get { return new List<string> { "dshop.shop" }; }
         }
 
         public string Syntax

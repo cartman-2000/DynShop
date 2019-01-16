@@ -1,6 +1,7 @@
 using fr34kyn01535.Uconomy;
 using Rocket.API;
 using Rocket.Unturned.Chat;
+using SDG.Unturned;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace DynShop
 
         public string Name
         {
-            get { return "dcost"; }
+            get { return "cost"; }
         }
 
         public List<string> Permissions
@@ -64,7 +65,12 @@ namespace DynShop
             ShopObject shopObject = DShop.Database.GetItem(type, itemID);
             if (shopObject.ItemID != itemID)
             {
-                UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.",itemID.AssetFromID(type), itemID));
+                Asset asset = itemID.AssetFromID(type);
+                if (type == ItemType.Item)
+                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
+                else
+                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
+                return;
             }
 
             if (type == ItemType.Item)
