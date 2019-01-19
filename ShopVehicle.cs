@@ -62,7 +62,7 @@ namespace DynShop
                 for (int i = 0; i < VehicleManager.vehicles.Count; i++)
                 {
                     vehicle = VehicleManager.vehicles[i];
-                    if (vehicle.id == ItemID && vehicle.lockedOwner == player.CSteamID)
+                    if (vehicle.id == ItemID && vehicle.isLocked && vehicle.lockedOwner == player.CSteamID)
                     {
                         hasLocked = true;
                         if (Vector3.Distance(player.Position, vehicle.transform.position) <= 10 && !vehicle.isDead && !vehicle.isDrowned)

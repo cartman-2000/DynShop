@@ -12,6 +12,8 @@ namespace DynShop
 {
     public class CommandBuy : IRocketCommand
     {
+        internal static readonly string help = "Buys an item off of the shop.";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID> [amount] || <v> <\"Vehicle Name\" | VehicleID>";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -24,7 +26,7 @@ namespace DynShop
 
         public string Help
         {
-            get { return "Buys an item off of the shop."; }
+            get { return help; }
         }
 
         public string Name
@@ -39,7 +41,7 @@ namespace DynShop
 
         public string Syntax
         {
-            get { return "<\"Item Name\" | ItemID> [amount] | <v> <\"Vehicle Name\" | VehicleID>"; }
+            get { return syntax; }
         }
 
         public void Execute(IRocketPlayer caller, string[] command)
@@ -50,13 +52,13 @@ namespace DynShop
 
             if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > 2)
             {
-                UnturnedChat.Say(caller, Name + " - " + Syntax);
+                UnturnedChat.Say(caller, DShop.Instance.Translate("buy_help"));
                 return;
             }
 
             if (!DShop.Database.IsLoaded)
             {
-                UnturnedChat.Say(caller, "The command can't be ran, There was an issue with loading the plugin.");
+                UnturnedChat.Say(caller, DShop.Instance.Translate("db_load_error"));
                 return;
             }
 
@@ -66,7 +68,10 @@ namespace DynShop
             if (command.Length == 2 && type == ItemType.Item)
             {
                 if (!ushort.TryParse(command[1], out count))
+                {
                     UnturnedChat.Say(caller, "Invalid item count value used.");
+                    return;
+                }
                 if (count > DShop.Instance.Configuration.Instance.MaxBuyCount)
                     count = DShop.Instance.Configuration.Instance.MaxBuyCount;
                 if (count == 0)
@@ -79,7 +84,7 @@ namespace DynShop
                 itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
             if (itemID.AssetFromID(type) == null)
             {
-                UnturnedChat.Say(caller, "Invalid ID or Name entered.");
+                UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                 return;
             }
             ShopObject sObject = DShop.Database.GetItem(type, itemID);
@@ -87,9 +92,9 @@ namespace DynShop
             {
                 Asset asset = itemID.AssetFromID(type);
                 if (type == ItemType.Item)
-                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_db", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
                 else
-                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_db", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
                 return;
             }
 
@@ -105,17 +110,17 @@ namespace DynShop
                 ShopItem sItem = sObject as ShopItem;
                 if (sItem.Buy(balance, player, count, out newCost, out totalCost, out actualCount))
                 {
-                        UnturnedChat.Say(caller, string.Format("You've bought: {0} items, of: {1}({2}), for {3} {4}(s), your current balance is now: {5} {6}(s)", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("bought_item_complete", actualCount, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {
                     if (actualCount == 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}({2})!", moneyName, sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("not_enough_to_buy", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
                     if (actualCount < count)
-                        UnturnedChat.Say(caller, string.Format("You only had enough to buy: {0} of {1} items, of: {2}({3}), for {4} {5}(s), your current balance is now: {6} {7}(s)", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("bought_item_partial", actualCount, count, sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
             }
             else
@@ -124,18 +129,18 @@ namespace DynShop
                 if (sVehicle.Buy(balance, player, out totalCost, out actualCount))
                 {
 
-                    UnturnedChat.Say(caller, string.Format("You've bought the Vehicle: {0}({1}), for {2} {3}(s), your current balance is now: {4} {5}(s)", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("bought_vehicle", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance - totalCost, 2), moneyName));
                 }
                 else
                 {
                     if (actualCount == 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("You don't have enough {0}(s) to buy any of: {1}({2})!", moneyName, sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("not_enough_to_buy", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
                     if (actualCount < 0)
                     {
-                        UnturnedChat.Say(caller, string.Format("There was an error giving you the vehicle: {0}({1}), you haven't been charged!", sObject.ItemName, sObject.ItemID));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("bought_vehicle_error", sObject.ItemName, sObject.ItemID));
                     }
                 }
             }

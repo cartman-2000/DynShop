@@ -42,5 +42,27 @@ namespace DynShop
             }
             return assetID;
         }
+
+        public static bool IsFraction(this string value, out decimal fraction)
+        {
+            fraction = 0;
+            decimal p1 = 0;
+            decimal p2 = 0;
+            if (value.Contains("/"))
+            {
+                if (decimal.TryParse(value.Split('/')[0], out p1) && decimal.TryParse(value.Split('/')[1], out p2))
+                {
+                    try
+                    {
+                        fraction = decimal.Divide(p1, p2);
+                        return true;
+                    }
+                    catch
+                    {
+                    }
+                }
+            }
+            return false;
+        }
     }
 }

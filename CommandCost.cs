@@ -11,6 +11,8 @@ namespace DynShop
 {
     public class CommandCost : IRocketCommand
     {
+        internal static readonly string help = "Displays the cost of an item.";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID> || <v> <\"Vehicle Name\" | VehicleID>";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -23,7 +25,7 @@ namespace DynShop
 
         public string Help
         {
-            get { return "Displays the cost of an item."; }
+            get { return help; }
         }
 
         public string Name
@@ -38,7 +40,7 @@ namespace DynShop
 
         public string Syntax
         {
-            get { return "<\"Item Name\" | ItemID> | <v> <\"Vehicle Name\" | VehicleID>"; }
+            get { return syntax; }
         }
 
         public void Execute(IRocketPlayer caller, string[] command)
@@ -49,7 +51,13 @@ namespace DynShop
 
             if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > (type == ItemType.Item ? 1 : 2))
             {
-                UnturnedChat.Say(caller, Name + " - " + Syntax);
+                UnturnedChat.Say(caller, DShop.Instance.Translate("cost_help"));
+                return;
+            }
+
+            if (!DShop.Database.IsLoaded)
+            {
+                UnturnedChat.Say(caller, DShop.Instance.Translate("db_load_error"));
                 return;
             }
 
@@ -59,7 +67,7 @@ namespace DynShop
                 itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
             if (itemID.AssetFromID(type) == null)
             {
-                UnturnedChat.Say(caller, "Invalid ID or Name entered.");
+                UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                 return;
             }
             ShopObject shopObject = DShop.Database.GetItem(type, itemID);
@@ -67,17 +75,14 @@ namespace DynShop
             {
                 Asset asset = itemID.AssetFromID(type);
                 if (type == ItemType.Item)
-                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_db", (asset != null && ((ItemAsset)asset).itemName != null) ? ((ItemAsset)asset).itemName : string.Empty, itemID));
                 else
-                    UnturnedChat.Say(caller, string.Format("Item/Vehicle: {0}({1}) not in the shop database.", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_db", (asset != null && ((VehicleAsset)asset).vehicleName != null) ? ((VehicleAsset)asset).vehicleName : string.Empty, itemID));
                 return;
             }
 
-            if (type == ItemType.Item)
-                UnturnedChat.Say(caller, string.Format("Item: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell.", shopObject.ItemName, shopObject.ItemID, Math.Round(shopObject.BuyCost, 2), Uconomy.Instance.Configuration.Instance.MoneyName,
-                    Math.Round(decimal.Multiply(shopObject.BuyCost, ((ShopItem)shopObject).SellMultiplier), 2), Uconomy.Instance.Configuration.Instance.MoneyName));
-            else
-                UnturnedChat.Say(caller, string.Format("Vehicle: {0}({1}), Costs: {2} {3}(s) to buy.", shopObject.ItemName, shopObject.ItemID, Math.Round(shopObject.BuyCost, 2), Uconomy.Instance.Configuration.Instance.MoneyName));
+                UnturnedChat.Say(caller, DShop.Instance.Translate(type == ItemType.Item ? "costs_item" : "costs_vehicle", shopObject.ItemName, shopObject.ItemID, Math.Round(shopObject.BuyCost, 2), Uconomy.Instance.Configuration.Instance.MoneyName,
+                    Math.Round(decimal.Multiply(shopObject.BuyCost, shopObject.SellMultiplier), 2), Uconomy.Instance.Configuration.Instance.MoneyName));
         }
     }
 }
