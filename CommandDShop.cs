@@ -108,14 +108,14 @@ namespace DynShop
                         }
 
                         // Parse the vars used in command, if short of variables, or can't parse, defaults would be used for those vars.
-                        decimal buyCost = 0;
+                        decimal buyCost = DShop.Instance.Configuration.Instance.DefaultBuyCost;
                         if (command.Length >= (type == ItemType.Item ? 3 : 4) && !decimal.TryParse(type == ItemType.Item ? command[2] : command[3], out buyCost))
                         {
                             buyCost = DShop.Instance.Configuration.Instance.DefaultBuyCost;
                             UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_cost"));
                         }
 
-                        decimal sellMultiplier = 0;
+                        decimal sellMultiplier = DShop.Instance.Configuration.Instance.DefaultSellMultiplier;
                         if (command.Length >= (type == ItemType.Item ? 4 : 5) && !decimal.TryParse(type == ItemType.Item ? command[3] : command[4], out sellMultiplier))
                         {
                             decimal fraction = 0;
@@ -129,14 +129,14 @@ namespace DynShop
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_mult"));
                             }
                         }
-                        decimal minBuyPrice = 0;
+                        decimal minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
                         if (type == ItemType.Item && command.Length >= 5 && !decimal.TryParse(command[4], out minBuyPrice))
                         {
                             minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
                             UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_minprice"));
                         }
 
-                        decimal changeRate = 0;
+                        decimal changeRate = DShop.Instance.Configuration.Instance.DefaultIncrement;
                         if (type == ItemType.Item && command.Length == 6 && !decimal.TryParse(command[5], out changeRate))
                         {
                             changeRate = DShop.Instance.Configuration.Instance.DefaultIncrement;

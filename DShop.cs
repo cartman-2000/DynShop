@@ -89,7 +89,7 @@ namespace DynShop
                     { "vehicel_sell_no_own", "You don't own any of: {0}({1}), to sell, on this map!" },
                     { "vehicle_sell_unlocked", "You don't have any of: {0}({1}), locked to you on the map!" },
                     { "vehicle_sell_to_far", "There was an error selliing your vehicle: {0}({1}), you need to be standing next to it(within 10 units)!" },
-                    { "vehicle_sold", "You've sold the Vehicle: {0}({1}), for: {3} {4}(s), your current balance is now: {2} {3}(s)" },
+                    { "vehicle_sold2", "You've sold the Vehicle: {0}({1}), for: {2} {3}(s), your current balance is now: {4} {5}(s)" },
 
                     // Shop command.
 

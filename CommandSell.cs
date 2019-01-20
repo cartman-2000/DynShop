@@ -153,7 +153,7 @@ namespace DynShop
                     }
                     if (sVehicle.Sell(balance, player, out totalCost, out actualCount))
                     {
-                        UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sold", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sold2", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
                     }
                     else
                     {
