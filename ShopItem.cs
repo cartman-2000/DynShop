@@ -44,7 +44,7 @@ namespace DynShop
             decimal oldCost = BuyCost;
             for (int i = 0; i < numItems; i++)
             {
-                if (curBallance- totalCost - BuyCost < 0)
+                if (decimal.Subtract(decimal.Subtract(curBallance, totalCost), BuyCost) < 0m)
                 {
                     sufficientAmount = false;
                     break;

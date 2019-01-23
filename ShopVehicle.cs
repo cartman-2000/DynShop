@@ -27,7 +27,7 @@ namespace DynShop
             totalCost = 0;
             Asset itemAsset = Assets.find(EAssetType.VEHICLE, ItemID);
             curBallance -= BuyCost;
-            if (curBallance - BuyCost < 0)
+            if (decimal.Subtract(curBallance, BuyCost) < 0m)
                 return false;
             if (itemAsset == null)
                 return false;
@@ -35,7 +35,7 @@ namespace DynShop
             {
                 DShop.Database.AddVehicleInfo((ulong)player.CSteamID, ItemID);
                 player.GiveVehicle(ItemID);
-                totalCost += BuyCost;
+                totalCost = decimal.Add(totalCost, BuyCost);
                 totalItems++;
             }
             catch (Exception ex)

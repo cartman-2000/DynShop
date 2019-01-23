@@ -241,7 +241,6 @@ namespace DynShop
                                 }
                             case QueryBuilderType.ALTERTABLE_CHANGE:
                                 {
-                                    // ALTER TABLE `dshop_items` CHANGE `BuyCost` `BuyCost` DECIMAL(11,6) NOT NULL DEFAULT '10.0000', CHANGE `SellMultiplier` `SellMultiplier` DECIMAL(11,6) NOT NULL DEFAULT '0.2500', CHANGE `ChangeRate` `ChangeRate` DECIMAL(11,6) NOT NULL DEFAULT '0.0100';
                                     foreach (KeyValuePair<string, QueryJoin> value in _leftJoins)
                                     {
                                         query += "CHANGE `" + value.Key + "` `" + value.Value.ValueA + "` " + value.Value.ValueB;
