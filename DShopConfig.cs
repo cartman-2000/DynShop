@@ -44,6 +44,7 @@ namespace DynShop
         public bool Debug = false;
 
         public bool RunInStaticPrices = false;
+        public bool GasCansEmptyOnBuy = false;
         public bool UseItemQuality = true;
         public bool SellAttatchmentsOnGun = false;
         public decimal DefaultSellMultiplier = .25m;

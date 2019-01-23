@@ -51,8 +51,11 @@ namespace DynShop
                 }
                 try
                 {
-                    // Give items to client
+                    // Give items to client, try to bypass cheats setting on server.
                     Item item = new Item(ItemID, EItemOrigin.CRAFT);
+                    // set full amount of fuel in gas cans.
+                    if (itemAsset is ItemFuelAsset && !DShop.Instance.Configuration.Instance.GasCansEmptyOnBuy)
+                        item.state = BitConverter.GetBytes(((ItemFuelAsset)itemAsset).fuel);
                     player.Inventory.forceAddItem(item, true);
                     totalCost = decimal.Add(totalCost, BuyCost);
                     totalItems++;
