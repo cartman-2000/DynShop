@@ -1,6 +1,7 @@
 using fr34kyn01535.Uconomy;
 using Rocket.API;
 using Rocket.Unturned.Chat;
+using Rocket.Unturned.Player;
 using SDG.Unturned;
 using System;
 using System.Collections.Generic;
@@ -12,7 +13,7 @@ namespace DynShop
     public class CommandCost : IRocketCommand
     {
         internal static readonly string help = "Displays the cost of an item.";
-        internal static readonly string syntax = "<\"Item Name\" | ItemID> || <v> <\"Vehicle Name\" | VehicleID>";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> || <v> <\"Vehicle Name\" | VehicleID | h(in vehicle)>";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -51,7 +52,7 @@ namespace DynShop
 
             if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > (type == ItemType.Item ? 1 : 2))
             {
-                UnturnedChat.Say(caller, DShop.Instance.Translate("cost_help"));
+                UnturnedChat.Say(caller, DShop.Instance.Translate("cost_help2"));
                 return;
             }
 
@@ -62,9 +63,27 @@ namespace DynShop
             }
 
             ushort itemID = 0;
-
+            UnturnedPlayer player = caller as UnturnedPlayer;
             if (!ushort.TryParse(type == ItemType.Item ? command[0] : command[1], out itemID))
-                itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
+            {
+                if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[0].ToLower() == "h" : command[1].ToLower() == "h"))
+                {
+                    if (type == ItemType.Item)
+                        itemID = player.Player.equipment.itemID;
+                    else if (player.IsInVehicle)
+                        itemID = player.CurrentVehicle.id;
+                    if (itemID == 0)
+                    {
+                        if (type == ItemType.Item)
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
+                        else
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held_vehicle"));
+                        return;
+                    }
+                }
+                else
+                    itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
+            }
             if (itemID.AssetFromID(type) == null)
             {
                 UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));

@@ -57,9 +57,9 @@ namespace DynShop
                 return new TranslationList
                 {
                     // Command help messages.
-                    { "buy_help", CommandBuy.syntax + " - " + CommandBuy.help },
-                    { "cost_help", CommandCost.syntax + " - " + CommandCost.help },
-                    { "sell_help", CommandSell.syntax + " - " + CommandSell.help },
+                    { "buy_help2", CommandBuy.syntax + " - " + CommandBuy.help },
+                    { "cost_help2", CommandCost.syntax + " - " + CommandCost.help },
+                    { "sell_help2", CommandSell.syntax + " - " + CommandSell.help },
                     { "shop_help", CommandDShop.syntax + " - " + CommandDShop.help },
 
                     // Shared messages.
@@ -67,6 +67,8 @@ namespace DynShop
                     { "invalid_amount", "Invalid item count value used." },
                     { "item_not_in_db", "Item/Vehicle: {0}({1}) not in the shop database." },
                     { "db_load_error", "The command can't be ran, There was an issue with loading the plugin." },
+                    { "no_item_held", "There's no item being held." },
+                    { "no_item_held_vehicle", "You're currently not in a vehicle." },
 
                     // Cost Command.
                     { "costs_item", "Item: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell." },
@@ -94,10 +96,10 @@ namespace DynShop
                     // Shop command.
 
                     { "convert_help", "convert <mysql|xml>" },
-                    { "add_help", "add <ItemID|\"Item Name\"> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] || add v <VehicleID| \"VehicleName\"> [cost] [mult]" },
-                    { "remove_help", "rem <ItemID|\"Item Name\"> | rem v <VehicleID|\"Vehicle Name\">" },
-                    { "get_help", "get <ItemID|\"Item Name\"> | get v <VehicleID|\"Vehicle Name\">" },
-                    { "update_help", "update <cost|mult|min|rate> <ItemID|\"Item Name\"> <amount> | update <cost|mult> v <VehicleID|\"Vehicle Name\"> <amount>" },
+                    { "add_help3", "add <ItemID | \"Item Name\" | h(held item)> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] [MaxBuyPrice] || add v <VehicleID | \"VehicleName\" | h(in vehicle)> [cost] [mult]" },
+                    { "remove_help2", "rem <ItemID | \"Item Name\" | h(held item)> | rem v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
+                    { "get_help2", "get <ItemID | \"Item Name\" | h(held item)> | get v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
+                    { "update_help3", "update <cost|mult|min|rate|max> <ItemID | \"Item Name\" | h(held item)> <amount> | update <cost|mult> v <VehicleID | \"Vehicle Name\" | h(in vehicle)> <amount>" },
 
                     { "converting", "Converting Database to: {0}." },
                     { "conversion_success", "Database conversion Successful!" },
@@ -109,19 +111,21 @@ namespace DynShop
                     { "parse_fail_mult", "Warning: Couldn't parse the Sell Multiplier, using default!" },
                     { "parse_fail_minprice", "Warning: Couldn't parse the Min Buy Price, using default!" },
                     { "parse_fail_chagerate", "Warning: Couldn't parse the Change rate, using default!" },
+                    { "parse_fail_maxprice", "Warning: Couldn't parse the Max Buy Price, using default!" },
                     { "item_add_fail", "Failed to add Item to Database!" },
 
                     { "bad_cost", "Error: Couldn't parse the Buy Cost value!" },
                     { "bad_mult", "Error: Couldn't parse the Sell Multiplier value!" },
                     { "bad_minprice", "Error: Couldn't parse the Minimum Buy Price value!" },
                     { "bad_chagerate", "Error: Couldn't parse the Change Rate value!" },
+                    { "bad_maxprice", "Error: Couldn't parse the Maximum Buy Price value!" },
                     { "update_fail", "Failed to Update Database Record!" },
 
                     { "format_item_info_p1_add", "Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} Added to the Database!" },
                     { "format_item_info_p1_delete", "Deleted Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} From the Database!" },
                     { "format_item_info_p1_get", "Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}." },
                     { "format_item_info_p1_update", "Updated Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}." },
-                    { "format_item_info_p2", ", With Min Cost: {0}, With Change Rate: {1}" },
+                    { "format_item_info_p2v2", ", With Min Cost: {0}, With Change Rate: {1}, With Max Buy Price: {2}" },
                     { "item_not_in_shop_db", "Item Not in Database!" },
 
                     // Misc

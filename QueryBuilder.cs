@@ -20,7 +20,10 @@ namespace DynShop
         private int _limitCount = 1;
         private int _limitIndex = 0;
         private bool _duplicateInsertUpdate = false;
+        private string _after = string.Empty;
         private QueryBuilderType _type;
+        private bool _first = false;
+        private bool _dropdefault = false;
 
         public QueryBuilder(QueryBuilderType queryType)
         {
@@ -39,6 +42,16 @@ namespace DynShop
             _columns.Add(columnName, sValue);
             return this;
         }
+        public QueryBuilder AlterColumn(string columnName, string value = null)
+        {
+            string sValue = string.Empty;
+            if (!string.IsNullOrEmpty(value))
+            {
+                sValue = value;
+            }
+            _columns.Add(columnName, sValue);
+            return this;
+        }
         public QueryBuilder DuplicateInsertUpdate()
         {
             _duplicateInsertUpdate = true;
@@ -53,6 +66,11 @@ namespace DynShop
         public QueryBuilder LeftJoin(string otherTable, string ColumnA, string ColumnB, string As = null)
         {
             _leftJoins.Add(otherTable, new QueryJoin(ColumnA, ColumnB, As));
+            return this;
+        }
+        public QueryBuilder ChangeColumn(string oldName, string newName, string definition)
+        {
+            _leftJoins.Add(oldName, new QueryJoin(newName, definition, null));
             return this;
         }
         public QueryBuilder OrderBy(string column, bool byAsc)
@@ -85,7 +103,21 @@ namespace DynShop
             _whereAnd = true;
             return this;
         }
-
+        public QueryBuilder After(string v)
+        {
+            _after = v;
+            return this;
+        }
+        public QueryBuilder First()
+        {
+            _first = true;
+            return this;
+        }
+        public QueryBuilder DropDefault()
+        {
+            _dropdefault = true;
+            return this;
+        }
         public string Build()
         {
             string query = string.Empty;
@@ -175,6 +207,65 @@ namespace DynShop
                         query = "SHOW TABLES LIKE '" + _table + "'";
                         break;
                     }
+                case QueryBuilderType.ALTERTABLE_ADD:
+                case QueryBuilderType.ALTERTABLE_ALTER:
+                case QueryBuilderType.ALTERTABLE_CHANGE:
+                case QueryBuilderType.ALTERTABLE_DROP:
+                    {
+                        query = "ALTER TABLE `" + _table + "` ";
+                        switch (_type)
+                        {
+                            case QueryBuilderType.ALTERTABLE_ADD:
+                                {
+                                    foreach (KeyValuePair<string, string> value in _columns)
+                                    {
+                                        query += "ADD `" + value.Key + "` " + value.Value;
+                                        i++;
+                                        if (i < _columns.Count)
+                                            query += ", ";
+                                    }
+                                    if (_first && _columns.Count == 1)
+                                        query += " FIRST";
+                                    else if (!string.IsNullOrEmpty(_after) && _columns.Count == 1)
+                                        query += " AFTER `" + _after + "`";
+                                    break;
+                                }
+                            case QueryBuilderType.ALTERTABLE_ALTER:
+                                {
+                                    query += "ALTER `" + _columns.First().Key + "`";
+                                    if (_dropdefault)
+                                        query += " DROP DEFAULT";
+                                    else if (!string.IsNullOrEmpty(_columns.First().Value))
+                                        query += " SET DEFAULT " + _columns.First().Value;
+                                    break;
+                                }
+                            case QueryBuilderType.ALTERTABLE_CHANGE:
+                                {
+                                    // ALTER TABLE `dshop_items` CHANGE `BuyCost` `BuyCost` DECIMAL(11,6) NOT NULL DEFAULT '10.0000', CHANGE `SellMultiplier` `SellMultiplier` DECIMAL(11,6) NOT NULL DEFAULT '0.2500', CHANGE `ChangeRate` `ChangeRate` DECIMAL(11,6) NOT NULL DEFAULT '0.0100';
+                                    foreach (KeyValuePair<string, QueryJoin> value in _leftJoins)
+                                    {
+                                        query += "CHANGE `" + value.Key + "` `" + value.Value.ValueA + "` " + value.Value.ValueB;
+                                        i++;
+                                        if (i < _leftJoins.Count)
+                                            query += ", ";
+                                    }
+                                    if (_first && _leftJoins.Count == 1)
+                                        query += " FIRST";
+                                    else if (!string.IsNullOrEmpty(_after) && _leftJoins.Count == 1)
+                                        query += " AFTER `" + _after + "`";
+                                    break;
+                                }
+                            default:
+                                {
+                                    throw new NotImplementedException();
+                                }
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        throw new NotImplementedException();
+                    }
             }
             query += ";";
             if (DShop.Debug)
@@ -203,5 +294,9 @@ namespace DynShop
         UPDATE,
         DELETE,
         SHOW,
+        ALTERTABLE_ADD,
+        ALTERTABLE_ALTER,
+        ALTERTABLE_CHANGE,
+        ALTERTABLE_DROP
     }
 }

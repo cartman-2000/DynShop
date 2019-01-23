@@ -15,15 +15,18 @@ namespace DynShop
         public decimal MinBuyPrice = .2m;
         [XmlAttribute]
         public decimal Change = .01m;
+        [XmlAttribute]
+        public decimal MaxBuyPrice = 0;
 
         public ShopItem() {}
-        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change)
+        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change, decimal maxBuyPrice)
         {
             ItemID = itemID;
             BuyCost = buyCost;
             SellMultiplier = sellMultiplier;
             MinBuyPrice = minBuyPrice;
             Change = change;
+            MaxBuyPrice = maxBuyPrice;
             AssetName();
         }
 
@@ -61,7 +64,8 @@ namespace DynShop
                 }
                 if (!DShop.Instance.Configuration.Instance.RunInStaticPrices)
                 {
-                    if (decimal.Add(BuyCost, Change) > DShop.Instance.Configuration.Instance.MaxBuyCost)
+                    // if there's no MaxBuyPrice set on the item, use the one set in the config.
+                    if ((MaxBuyPrice == 0 && decimal.Add(BuyCost, Change) > DShop.Instance.Configuration.Instance.MaxBuyCost) || (MaxBuyPrice > 0 && decimal.Add(BuyCost, Change) > MaxBuyPrice))
                         continue;
                     BuyCost = decimal.Add(BuyCost, Change);
                     newCost = BuyCost;
@@ -139,19 +143,19 @@ namespace DynShop
                         byte magazineAmount = state[10];
                         byte magazineHealth = state[17];
 
-                        if (sightID != 0)
+                        if (sightID != 0 && ((ItemGunAsset)itemAsset).hasSight)
                         {
                             ProccessAttatchment(sightID, 1, sightHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
-                        if (tacticalID != 0)
+                        if (tacticalID != 0 && ((ItemGunAsset)itemAsset).hasTactical)
                         {
                             ProccessAttatchment(tacticalID, 1, tacticalHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
-                        if (gripID != 0)
+                        if (gripID != 0 && ((ItemGunAsset)itemAsset).hasGrip)
                         {
                             ProccessAttatchment(gripID, 1, gripHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
-                        if (barrelID != 0)
+                        if (barrelID != 0 && ((ItemGunAsset)itemAsset).hasBarrel)
                         {
                             ProccessAttatchment(barrelID, 1, barrelHealth, ref attatchments, ref totalAttatchmentCost, ref totalCost, player);
                         }
@@ -229,11 +233,13 @@ namespace DynShop
             decimal sellCost = decimal.Multiply(BuyCost, SellMultiplier);
             if (DShop.Instance.Configuration.Instance.UseItemQuality)
             {
-                // for mags/ammo boxes, calc quality percentage based on number of rounds left divided by the capacity in the asset.
+                // for mags/ammo boxes, calc quality percentage based on number of rounds left divided by the capacity in the asset. Also limit the amount down to asset capacity/full health, if the amount is more than that.
                 if (asset is ItemMagazineAsset || asset is ItemSupplyAsset)
-                    sellCost = decimal.Multiply(sellCost, decimal.Divide(item.amount, ((ItemAsset)asset).amount));
-                else
-                    sellCost = decimal.Multiply(sellCost, decimal.Divide(item.durability, 100));
+                    sellCost = item.amount >= ((ItemAsset)asset).amount ? sellCost : decimal.Multiply(sellCost, decimal.Divide(item.amount, ((ItemAsset)asset).amount));
+                else if (asset is ItemFuelAsset)
+                    sellCost = BitConverter.ToUInt16(item.state, 0) >= ((ItemFuelAsset)asset).fuel ? sellCost : decimal.Multiply(sellCost, decimal.Divide(BitConverter.ToUInt16(item.state, 0), ((ItemFuelAsset)asset).fuel));
+                else if (((ItemAsset)asset).showQuality)
+                    sellCost = item.durability >= 100 ? sellCost : decimal.Multiply(sellCost, decimal.Divide(item.durability, 100));
             }
             return sellCost;
         }

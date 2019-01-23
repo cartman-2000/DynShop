@@ -179,12 +179,28 @@ namespace DynShop
             ushort updatingVersion = 0;
             try
             {
+                bool updated = false;
                 if (version < 1)
                 {
+                    updated = true;
                     updatingVersion = 1;
-                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableConfig).Column("key", "version").Column("value", "1").Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableConfig).Column("key", "version").Column("value", updatingVersion).Build();
                     command.ExecuteNonQuery();
                 }
+                if (version < 2)
+                {
+                    updated = true;
+                    updatingVersion = 2;
+                    command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD).Table(TableItems).AlterColumn("MaxBuyPrice", "DECIMAL(15,4) NOT NULL DEFAULT '0'").After("ChangeRate").Build();
+                    command.ExecuteNonQuery();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_CHANGE).Table(TableItems).ChangeColumn("BuyCost", "BuyCost", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").
+                        ChangeColumn("SellMultiplier", "SellMultiplier", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").ChangeColumn("ChangeRate", "ChangeRate", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").Build();
+                   command.ExecuteNonQuery();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.UPDATE).Table(TableConfig).Column("value", updatingVersion).Where("key", "version").Build();
+                    command.ExecuteNonQuery();
+                }
+                if (updated)
+                    Logger.LogWarning("The dshop database has been updated to version: " + updatingVersion.ToString());
             }
             catch (MySqlException ex)
             {
@@ -256,7 +272,7 @@ namespace DynShop
                     return itemList;
                 command = Connection.CreateCommand();
                 if (type == ItemType.Item)
-                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Table(TableItems).Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Column("MaxBuyPrice").Table(TableItems).Build();
                 else
                     command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Table(TableVehicles).Build();
                 reader = command.ExecuteReader();
@@ -321,7 +337,7 @@ namespace DynShop
         private ShopObject ShopObjectBuild(ItemType type, MySqlDataReader reader)
         {
             if (type == ItemType.Item)
-                return new ShopItem(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"), reader.GetDecimal("SellMultiplier"), reader.GetDecimal("MinBuyPrice"), reader.GetDecimal("ChangeRate"));
+                return new ShopItem(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"), reader.GetDecimal("SellMultiplier"), reader.GetDecimal("MinBuyPrice"), reader.GetDecimal("ChangeRate"), reader.GetDecimal("MaxBuyPrice"));
             else
                 return new ShopVehicle(reader.GetUInt16("ItemID"), reader.GetDecimal("BuyCost"), reader.GetDecimal("SellMultiplier"));
         }
@@ -341,7 +357,7 @@ namespace DynShop
                 {
                     ShopItem item = shopObject as ShopItem;
                     command.CommandText = new QueryBuilder(QueryBuilderType.INSERT).Table(TableItems).Column("ItemID", item.ItemID).Column("BuyCost", item.BuyCost).Column("SellMultiplier", item.SellMultiplier).Column("MinBuyPrice", item.MinBuyPrice).
-                        Column("ChangeRate", item.Change).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
+                        Column("ChangeRate", item.Change).Column("MaxBuyPrice", item.MaxBuyPrice).Column("ItemName", "@itemName").DuplicateInsertUpdate().Build();
                 }
                 else
                 {
@@ -375,7 +391,7 @@ namespace DynShop
                     return shopObject;
                 command = Connection.CreateCommand();
                 if (type == ItemType.Item)
-                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Where("ItemID", itemID).Table(TableItems).Build();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("ItemID").Column("BuyCost").Column("SellMultiplier").Column("MinBuyPrice").Column("ChangeRate").Column("MaxBuyPrice").Where("ItemID", itemID).Table(TableItems).Build();
                 else
                     command.CommandText = new QueryBuilder(QueryBuilderType.SELECT).Column("itemID").Column("BuyCost").Column("SellMultiplier").Table(TableVehicles).Where("ItemID", itemID).Build();
                 reader = command.ExecuteReader();

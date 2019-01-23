@@ -13,7 +13,7 @@ namespace DynShop
     public class CommandBuy : IRocketCommand
     {
         internal static readonly string help = "Buys an item off of the shop.";
-        internal static readonly string syntax = "<\"Item Name\" | ItemID> [amount] || <v> <\"Vehicle Name\" | VehicleID>";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> [amount] || <v> <\"Vehicle Name\" | VehicleID>";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -52,7 +52,7 @@ namespace DynShop
 
             if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > 2)
             {
-                UnturnedChat.Say(caller, DShop.Instance.Translate("buy_help"));
+                UnturnedChat.Say(caller, DShop.Instance.Translate("buy_help2"));
                 return;
             }
 
@@ -69,7 +69,7 @@ namespace DynShop
             {
                 if (!ushort.TryParse(command[1], out count))
                 {
-                    UnturnedChat.Say(caller, "Invalid item count value used.");
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_amount"));
                     return;
                 }
                 if (count > DShop.Instance.Configuration.Instance.MaxBuyCount)
@@ -79,9 +79,21 @@ namespace DynShop
             }
 
 
-
+            UnturnedPlayer player = caller as UnturnedPlayer;
             if (!ushort.TryParse(command[type == ItemType.Item ? 0 : 1], out itemID))
-                itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
+            {
+                if (type == ItemType.Item && command[0].ToLower() == "h")
+                {
+                    itemID = player.Player.equipment.itemID;
+                    if (itemID == 0)
+                    {
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
+                        return;
+                    }
+                }
+                else
+                    itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
+            }
             if (itemID.AssetFromID(type) == null)
             {
                 UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
@@ -98,7 +110,6 @@ namespace DynShop
                 return;
             }
 
-            UnturnedPlayer player = caller as UnturnedPlayer;
             decimal balance = Uconomy.Instance.Database.GetBalance(caller.Id);
 
             decimal newCost = sObject.BuyCost;
