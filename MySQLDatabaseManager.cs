@@ -192,10 +192,20 @@ namespace DynShop
                     updated = true;
                     updatingVersion = 2;
                     command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD).Table(TableItems).AlterColumn("MaxBuyPrice", "DECIMAL(15,4) NOT NULL DEFAULT '0'").After("ChangeRate").Build();
-                    command.ExecuteNonQuery();
-                    command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_CHANGE).Table(TableItems).ChangeColumn("BuyCost", "BuyCost", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").
+                    command.CommandText += new QueryBuilder(QueryBuilderType.ALTERTABLE_CHANGE).Table(TableItems).ChangeColumn("BuyCost", "BuyCost", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").
                         ChangeColumn("SellMultiplier", "SellMultiplier", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").ChangeColumn("ChangeRate", "ChangeRate", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").Build();
                    command.ExecuteNonQuery();
+                    command.CommandText = new QueryBuilder(QueryBuilderType.UPDATE).Table(TableConfig).Column("value", updatingVersion).Where("key", "version").Build();
+                    command.ExecuteNonQuery();
+                }
+                if (version < 3)
+                {
+                    updated = true;
+                    updatingVersion = 3;
+                    command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD_INDEX).Table(TableMaps).IndexColumn(IndexType.Unique, null, "MapName").Build();
+                    command.CommandText += new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD_INDEX).Table(TableServerInstance).IndexColumn(IndexType.Unique, null, "InstanceName").Build();
+                    command.CommandText += new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD_INDEX).Table(TableVehicleInfos).IndexColumn(IndexType.Index, "VehicleOwner", "VehicleID", "SteamID").Build();
+                    command.ExecuteNonQuery();
                     command.CommandText = new QueryBuilder(QueryBuilderType.UPDATE).Table(TableConfig).Column("value", updatingVersion).Where("key", "version").Build();
                     command.ExecuteNonQuery();
                 }

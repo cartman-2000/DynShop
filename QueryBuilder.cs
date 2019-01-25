@@ -24,6 +24,9 @@ namespace DynShop
         private QueryBuilderType _type;
         private bool _first = false;
         private bool _dropdefault = false;
+        private string _indexName;
+        private string[] _indexColumns;
+        private IndexType _indexType;
 
         public QueryBuilder(QueryBuilderType queryType)
         {
@@ -118,6 +121,14 @@ namespace DynShop
             _dropdefault = true;
             return this;
         }
+        public QueryBuilder IndexColumn(IndexType indexType, string indexName, params string[] columns)
+        {
+            _indexName = indexName;
+            _indexColumns = columns;
+            _indexType = indexType;
+            return this;
+        }
+
         public string Build()
         {
             string query = string.Empty;
@@ -208,6 +219,7 @@ namespace DynShop
                         break;
                     }
                 case QueryBuilderType.ALTERTABLE_ADD:
+                case QueryBuilderType.ALTERTABLE_ADD_INDEX:
                 case QueryBuilderType.ALTERTABLE_ALTER:
                 case QueryBuilderType.ALTERTABLE_CHANGE:
                 case QueryBuilderType.ALTERTABLE_DROP:
@@ -254,6 +266,29 @@ namespace DynShop
                                         query += " AFTER `" + _after + "`";
                                     break;
                                 }
+                            case QueryBuilderType.ALTERTABLE_ADD_INDEX:
+                                {
+                                    query += "ADD";
+                                    switch (_indexType)
+                                    {
+                                        case IndexType.Unique:
+                                            {
+                                                query += " UNIQUE" + (!string.IsNullOrEmpty(_indexName) ? " `" + _indexName + "` " : string.Empty) + "(`" + string.Join("`, `", _indexColumns) + "`)";
+                                                break;
+                                            }
+                                        case IndexType.Index:
+                                            {
+                                                query += " INDEX" + (!string.IsNullOrEmpty(_indexName) ? " `" + _indexName + "` " : string.Empty) + "(`" + string.Join("`, `", _indexColumns) + "`)";
+                                                break;
+                                            }
+                                        case IndexType.Primary:
+                                            {
+                                                query += " PRIMARY KEY(`" + string.Join("`, `", _indexColumns) + "`)";
+                                                break;
+                                            }
+                                    }
+                                    break;
+                                }
                             default:
                                 {
                                     throw new NotImplementedException();
@@ -294,8 +329,16 @@ namespace DynShop
         DELETE,
         SHOW,
         ALTERTABLE_ADD,
+        ALTERTABLE_ADD_INDEX,
         ALTERTABLE_ALTER,
         ALTERTABLE_CHANGE,
-        ALTERTABLE_DROP
+        ALTERTABLE_DROP,
+    }
+
+    public enum IndexType
+    {
+        Unique,
+        Index,
+        Primary
     }
 }

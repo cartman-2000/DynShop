@@ -231,12 +231,10 @@ namespace DynShop
                         }
                         if (!ushort.TryParse(type == ItemType.Item ? command[1] : command[2], out itemID))
                         {
-                            Logger.Log("hit");
 
                             if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[1].ToLower() == "h" : command[2].ToLower() == "h"))
                             {
 
-                                Logger.Log("hit");
                                 player = (UnturnedPlayer)caller;
                                 if (type == ItemType.Item)
                                     itemID = player.Player.equipment.itemID;
