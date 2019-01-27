@@ -44,7 +44,7 @@ namespace DynShop
             decimal oldCost = BuyCost;
             for (int i = 0; i < numItems; i++)
             {
-                if (decimal.Subtract(decimal.Subtract(curBallance, totalCost), BuyCost) < 0m)
+                if (decimal.Subtract(curBallance, BuyCost) < 0m)
                 {
                     sufficientAmount = false;
                     break;
@@ -58,6 +58,7 @@ namespace DynShop
                         item.state = BitConverter.GetBytes(((ItemFuelAsset)itemAsset).fuel);
                     player.Inventory.forceAddItem(item, true);
                     totalCost = decimal.Add(totalCost, BuyCost);
+                    curBallance = decimal.Subtract(curBallance, BuyCost);
                     totalItems++;
                 }
                 catch (Exception ex)
@@ -92,15 +93,30 @@ namespace DynShop
             bool runStaticPrices = DShop.Instance.Configuration.Instance.RunInStaticPrices;
 
             Asset itemAsset = Assets.find(EAssetType.ITEM, ItemID);
+            if (itemAsset == null)
+                return false;
             List<InventorySearch> items = player.Inventory.search(ItemID, true, true);
+            // look for item in weapon slots, not handled by inventory search.
+            if (itemAsset is ItemWeaponAsset)
+            {
+                if (player.Inventory.items != null)
+                {
+                    // First two pages are for the weapon slots.
+                    for (byte p = 0; p < 2; p++)
+                    if (player.Inventory.items[p] != null && player.Inventory.getItemCount(p) > 0)
+                    {
+                        ItemJar item = player.Inventory.getItem(p, 0);
+                        if (item.item.id == ItemID)
+                            items.Add(new InventorySearch(p, item));
+                    }
+                }
+            }
             // if num items is maxed, set to the found item count in the inventory.
             if (numItems == ushort.MaxValue)
                 numItems = (ushort)items.Count;
             Dictionary<ushort, ShopObject> attatchments = new Dictionary<ushort, ShopObject>();
 
             if (items.Count == 0)
-                return false;
-            if (itemAsset == null)
                 return false;
             decimal oldCost = BuyCost;
             for (int i = 0; i < numItems; i++)
@@ -194,7 +210,7 @@ namespace DynShop
                 }
             }
             if (totalItems > 0)
-                DShop.Instance._OnShopSell(curBallance, player, numItems, this, ItemType.Item, newCost, totalCost, totalItems, totalAttatchmentCost);
+                DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, numItems, this, ItemType.Item, newCost, totalCost, totalItems, totalAttatchmentCost);
             return sufficientAmount;
         }
 
@@ -218,7 +234,7 @@ namespace DynShop
                     ShopItem tmp = sObject as ShopItem;
                     totalAttatchmentCost = decimal.Add(totalAttatchmentCost, tmp.CalcSellCost(iAsset, item));
                     totalCost = decimal.Add(totalCost, tmp.CalcSellCost(iAsset, item));
-                    if (decimal.Subtract(sObject.BuyCost, tmp.Change) > tmp.MinBuyPrice)
+                    if (decimal.Subtract(sObject.BuyCost, tmp.Change) > tmp.MinBuyPrice && !DShop.Instance.Configuration.Instance.RunInStaticPrices)
                         sObject.BuyCost = decimal.Subtract(sObject.BuyCost, tmp.Change);
                 }
                 else

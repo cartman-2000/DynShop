@@ -149,7 +149,7 @@ namespace DynShop
                         UnturnedChat.Say(caller, DShop.Instance.Translate("not_enough_to_buy", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
-                    if (actualCount < 0)
+                    if (actualCount == 2)
                     {
                         UnturnedChat.Say(caller, DShop.Instance.Translate("bought_vehicle_error", sObject.ItemName, sObject.ItemID));
                     }

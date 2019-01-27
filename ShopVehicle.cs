@@ -26,22 +26,22 @@ namespace DynShop
             totalItems = 0;
             totalCost = 0;
             Asset itemAsset = Assets.find(EAssetType.VEHICLE, ItemID);
-            curBallance -= BuyCost;
             if (decimal.Subtract(curBallance, BuyCost) < 0m)
                 return false;
             if (itemAsset == null)
                 return false;
             try
             {
-                DShop.Database.AddVehicleInfo((ulong)player.CSteamID, ItemID);
                 player.GiveVehicle(ItemID);
+                DShop.Database.AddVehicleInfo((ulong)player.CSteamID, ItemID);
                 totalCost = decimal.Add(totalCost, BuyCost);
+                curBallance = decimal.Subtract(curBallance, BuyCost);
                 totalItems++;
             }
             catch (Exception ex)
             {
                 Logger.LogException(ex);
-                totalItems--;
+                totalItems = 2;
                 return false;
             }
             DShop.Instance._OnShopBuy(curBallance, player, 1, this, ItemType.Vehicle, 0, totalCost, totalItems);
@@ -85,7 +85,7 @@ namespace DynShop
                     DShop.Database.DeleteVehicleInfo(vInfo);
                     vehicle.askDamage(ushort.MaxValue, false);
                     totalCost = decimal.Multiply(BuyCost, SellMultiplier);
-                    DShop.Instance._OnShopSell(curBallance, player, 1, this, ItemType.Item, BuyCost, totalCost, actualCount, 0);
+                    DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Item, BuyCost, totalCost, actualCount, 0);
                 }
             }
             return sufficientAmount;
