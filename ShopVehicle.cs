@@ -1,5 +1,6 @@
 ﻿using Rocket.Unturned.Player;
 using SDG.Unturned;
+using Steamworks;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -74,14 +75,32 @@ namespace DynShop
                 }
                 if (!hasLocked)
                     actualCount = 2;
+                else if (withinRange && !vehicle.isEmpty)
+                    actualCount = 4;
                 else if (!withinRange)
-                {
                     actualCount = 3;
-                }
                 else
                 {
                     sufficientAmount = true;
                     actualCount = 1;
+                    if (DShop.Instance.Configuration.Instance.VehicleSellDropElements)
+                    {
+                        BarricadeRegion vregion = null;
+                        byte x;
+                        byte y;
+                        ushort plant;
+                        if (BarricadeManager.tryGetPlant(vehicle.transform, out x, out y, out plant, out vregion))
+                        {
+                            for (int j = 0; j < vregion.drops.Count; j++)
+                            {
+                                if (j < vregion.drops.Count && vregion.barricades[j].barricade.id > 0)
+                                {
+                                    Item item = new Item(vregion.barricades[j].barricade.id, true);
+                                    ItemManager.dropItem(item, vregion.drops[j].model.position, false, true, true);
+                                }
+                            }
+                        }
+                    }
                     DShop.Database.DeleteVehicleInfo(vInfo);
                     vehicle.askDamage(ushort.MaxValue, false);
                     totalCost = decimal.Multiply(BuyCost, SellMultiplier);

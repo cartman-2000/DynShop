@@ -34,6 +34,7 @@ namespace DynShop
                 }
             }
         }
+
         public string DatabaseAddress = "address";
         public string DatabaseName = "Database Name";
         public string DatabaseUsername = "Username";
@@ -55,6 +56,7 @@ namespace DynShop
         public ushort MaxBuyCount = 300;
 
         public bool CanSellVehicles = true;
+        public bool VehicleSellDropElements = true;
         public bool IgnoreVehicleInfoMap = false;
         public bool IgnoreVehicleInfoSpecificServer = false;
 

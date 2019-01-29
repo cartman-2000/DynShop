@@ -183,6 +183,11 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_to_far", sObject.ItemName, sObject.ItemID));
                             return;
                         }
+                        if (actualCount == 4)
+                        {
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_has_player", sObject.ItemName, sObject.ItemID));
+                            return;
+                        }
                     }
                 }
                 if (totalCost > 0)
