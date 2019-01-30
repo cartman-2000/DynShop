@@ -91,7 +91,7 @@ namespace DynShop
                     }
                 case "add":
                     {
-                        if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 7 : 5))
+                        if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 8 : 6))
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("add_help4"));
                             return;
@@ -158,14 +158,14 @@ namespace DynShop
                         }
 
                         decimal changeRate = DShop.Instance.Configuration.Instance.DefaultIncrement;
-                        if (type == ItemType.Item && command.Length == 6 && !decimal.TryParse(command[5], out changeRate))
+                        if (type == ItemType.Item && command.Length >= 6 && !decimal.TryParse(command[5], out changeRate))
                         {
                             changeRate = DShop.Instance.Configuration.Instance.DefaultIncrement;
                             UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_changerate"));
                         }
 
                         decimal maxBuyPrice = 0;
-                        if (type == ItemType.Item && command.Length == 7 && !decimal.TryParse(command[6], out maxBuyPrice))
+                        if (type == ItemType.Item && command.Length >= 7 && !decimal.TryParse(command[6], out maxBuyPrice))
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_maxprice"));
                         }
@@ -283,7 +283,7 @@ namespace DynShop
                 case "upd":
                 case "update":
                     {
-                        if (command.Length > (type == ItemType.Item ? 4 : 5) && command.Length < (type == ItemType.Item ? 3 : 4))
+                        if (command.Length > (type == ItemType.Item ? 4 : 5) || command.Length < (type == ItemType.Item ? 2 : 4))
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
                             return;
