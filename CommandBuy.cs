@@ -114,7 +114,7 @@ namespace DynShop
 
             decimal newCost = sObject.BuyCost;
             decimal totalCost = 0;
-            ushort actualCount = 0;
+            short actualCount = 0;
             string moneyName = Uconomy.Instance.Configuration.Instance.MoneyName;
             if (type == ItemType.Item)
             {
@@ -128,6 +128,16 @@ namespace DynShop
                     if (actualCount == 0)
                     {
                         UnturnedChat.Say(caller, DShop.Instance.Translate("not_enough_to_buy", moneyName, sObject.ItemName, sObject.ItemID));
+                        return;
+                    }
+                    if (actualCount == -2)
+                    {
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("bought_item_error", sObject.ItemName, sObject.ItemID));
+                        return;
+                    }
+                    if (actualCount == -3)
+                    {
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("item_sell_only", sObject.ItemName, sObject.ItemID));
                         return;
                     }
                     if (actualCount < count)
@@ -149,9 +159,15 @@ namespace DynShop
                         UnturnedChat.Say(caller, DShop.Instance.Translate("not_enough_to_buy", moneyName, sObject.ItemName, sObject.ItemID));
                         return;
                     }
-                    if (actualCount == 2)
+                    if (actualCount == -2)
                     {
                         UnturnedChat.Say(caller, DShop.Instance.Translate("bought_vehicle_error", sObject.ItemName, sObject.ItemID));
+                        return;
+                    }
+                    if (actualCount == -3)
+                    {
+                        UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_only", sObject.ItemName, sObject.ItemID));
+                        return;
                     }
                 }
             }

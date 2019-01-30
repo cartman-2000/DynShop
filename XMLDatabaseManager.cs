@@ -64,6 +64,11 @@ namespace DynShop
             return false;
         }
 
+        public void SanityCheck()
+        {
+
+        }
+
         public Dictionary<ushort, ShopObject> GetAllItems(ItemType type)
         {
             return type == ItemType.Item ? Items.ToDictionary(k => k.Key, v => (ShopObject)v.Value) : Vehicles.ToDictionary(k => k.Key, v => (ShopObject)v.Value);

@@ -33,19 +33,19 @@ namespace DynShop
             Database = null;
         }
 
-        public delegate void PlayerDShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems);
+        public delegate void PlayerDShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems);
 
         public event PlayerDShopBuy OnShopBuy;
 
-        internal void _OnShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems)
+        internal void _OnShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems)
         {
             OnShopBuy?.Invoke(curBallance, player, numItems, sObject, type, newCost, totalCost, totalItems);
         }
 
-        public delegate void PlayerDShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems, decimal totalAttatchmentCost);
+        public delegate void PlayerDShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems, decimal totalAttatchmentCost);
         public event PlayerDShopSell OnShopSell;
 
-        internal void _OnShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, ushort totalItems, decimal totalAttatchmentCost)
+        internal void _OnShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems, decimal totalAttatchmentCost)
         {
             OnShopSell?.Invoke(curBallance, player, numItems, sObject, type, newCost, totalCost, totalItems, totalAttatchmentCost);
         }
@@ -71,20 +71,25 @@ namespace DynShop
                     { "no_item_held_vehicle", "You're currently not in a vehicle." },
 
                     // Cost Command.
-                    { "costs_item", "Item: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell." },
-                    { "costs_vehicle", "Vehicle: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell." },
+                    { "costs_item2", "Item: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell, Shop Restictions: {6}." },
+                    { "costs_vehicle2", "Vehicle: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell, Shop Restictions: {6}." },
 
                     // Buy Command.
                     { "not_enough_to_buy", "You don't have enough {0}(s) to buy any of: {1}({2})!" },
                     { "bought_item_complete", "You've bought: {0} items, of: {1}({2}), for {3} {4}(s), your current balance is now: {5} {6}(s)" },
                     { "bought_item_partial", "You only had enough to buy: {0} of {1} items, of: {2}({3}), for {4} {5}(s), your current balance is now: {6} {7}(s)" },
+                    { "bought_item_error", "There was an error giving you the Item: {0}({1}), you haven't been charged!" },
+                    { "item_sell_only", "The item: {0}({1}), can't be bought from the shop, it's been set to sell only in the shop!" },
                     { "bought_vehicle", "You've bought the Vehicle: {0}({1}), for {2} {3}(s), your current balance is now: {4} {5}(s)" },
                     { "bought_vehicle_error", "There was an error giving you the vehicle: {0}({1}), you haven't been charged!" },
+                    { "vehicle_sell_only", "The vehicle: {0}({1}), can't be bought from the shop, it's been set to sell only in the shop!" },
+
 
                     // Sell Command.
                     { "sold_items_complete", "You've sold: {0} items, of: {1}({2}), for: {3} {4}(s), your current balance is now: {5} {6}(s)" },
                     { "sold_items_complete_w_attatchments", "You've sold: {0} items, of: {1}({2}), for: {3} {4}(s) ({5} {6}(s) is from attachments.), your current balance is now: {7} {8}(s)" },
                     { "no_items_sell", "You don't have any of: {0}({1}), to sell!" },
+                    { "item_buy_only", "The item: {0}({1}), can't be sold to the shop, it's been set to buy only in the shop!" },
                     { "sold_items_partial", "You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s), your current balance is now: {6} {7}(s)" },
                     { "sold_items_partial_w_attatchments", "You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s) ({6} {7}(s) is from attachments.), your current balance is now: {8} {9}(s)" },
                     { "vehicle_sell_not_allowed", "You can't sell vehicles on this server!" },
@@ -92,15 +97,17 @@ namespace DynShop
                     { "vehicle_sell_unlocked", "You don't have any of: {0}({1}), locked to you on the map!" },
                     { "vehicle_sell_to_far", "There was an error selliing your vehicle: {0}({1}), you need to be standing next to it(within 10 units)!" },
                     { "vehicle_has_player", "The vehicle: {0}({1}), has players in it, you can't sell it until they exit the vehicle!" },
+                    { "vehicle_buy_only", "The vehicle: {0}({1}), can't be sold to the shop, it's been set to buy only in the shop!" },
                     { "vehicle_sold2", "You've sold the Vehicle: {0}({1}), for: {2} {3}(s), your current balance is now: {4} {5}(s)" },
 
                     // Shop command.
 
                     { "convert_help", "convert <mysql|xml>" },
-                    { "add_help3", "add <ItemID | \"Item Name\" | h(held item)> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] [MaxBuyPrice] || add v <VehicleID | \"VehicleName\" | h(in vehicle)> [cost] [mult]" },
+                    { "add_help4", "add <ItemID | \"Item Name\" | h(held item)> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] [MaxBuyPrice] [ShopRestrict] || add v <VehicleID | \"VehicleName\" | h(in vehicle)> [cost] [mult] [ShopRestrict]" },
                     { "remove_help2", "rem <ItemID | \"Item Name\" | h(held item)> | rem v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
                     { "get_help2", "get <ItemID | \"Item Name\" | h(held item)> | get v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
-                    { "update_help3", "update <cost|mult|min|rate|max> <ItemID | \"Item Name\" | h(held item)> <amount> | update <cost|mult> v <VehicleID | \"Vehicle Name\" | h(in vehicle)> <amount>" },
+                    { "update_help4", "update <cost|mult|min|rate|max|sr> <ItemID | \"Item Name\" | h(held item)> <amount> | update <cost|mult|sr> v <VehicleID | \"Vehicle Name\" | h(in vehicle)> <amount>" },
+                    { "update_shoprestrict_help", "Valid values are: none(0), sellonly(1), buyonly(2)" },
 
                     { "converting", "Converting Database to: {0}." },
                     { "conversion_success", "Database conversion Successful!" },
@@ -113,6 +120,7 @@ namespace DynShop
                     { "parse_fail_minprice", "Warning: Couldn't parse the Min Buy Price, using default!" },
                     { "parse_fail_chagerate", "Warning: Couldn't parse the Change rate, using default!" },
                     { "parse_fail_maxprice", "Warning: Couldn't parse the Max Buy Price, using default!" },
+                    { "parse_fail_shoprestrict", "Warning: Couldn't parse the Sell Only value, using default!" },
                     { "item_add_fail", "Failed to add Item to Database!" },
 
                     { "bad_cost", "Error: Couldn't parse the Buy Cost value!" },
@@ -120,12 +128,13 @@ namespace DynShop
                     { "bad_minprice", "Error: Couldn't parse the Minimum Buy Price value!" },
                     { "bad_chagerate", "Error: Couldn't parse the Change Rate value!" },
                     { "bad_maxprice", "Error: Couldn't parse the Maximum Buy Price value!" },
+                    { "bad_shoprestrict", "Error: Couldn't parse the Sell Only value!" },
                     { "update_fail", "Failed to Update Database Record!" },
 
-                    { "format_item_info_p1_add", "Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} Added to the Database!" },
-                    { "format_item_info_p1_delete", "Deleted Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5} From the Database!" },
-                    { "format_item_info_p1_get", "Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}." },
-                    { "format_item_info_p1_update", "Updated Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}{5}." },
+                    { "format_item_info_p1_addv2", "Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}, With RestrictBuySell: {5}({6}){7} Added to the Database!" },
+                    { "format_item_info_p1_deletev2", "Deleted Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}, With RestrictBuySell: {5}({6}){7} From the Database!" },
+                    { "format_item_info_p1_getv2", "Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}, With RestrictBuySell: {5}({6}){7}." },
+                    { "format_item_info_p1_updatev2", "Updated Info for Item: {0}({1}), With Type: {2}, With BuyCost: {3}, With Sell Multiplier: {4}, With RestrictBuySell: {5}({6}){7}." },
                     { "format_item_info_p2v2", ", With Min Cost: {0}, With Change Rate: {1}, With Max Buy Price: {2}" },
                     { "item_not_in_shop_db", "Item Not in Database!" },
 

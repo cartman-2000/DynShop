@@ -100,8 +100,8 @@ namespace DynShop
                 return;
             }
 
-                UnturnedChat.Say(caller, DShop.Instance.Translate(type == ItemType.Item ? "costs_item" : "costs_vehicle", shopObject.ItemName, shopObject.ItemID, Math.Round(shopObject.BuyCost, 2), Uconomy.Instance.Configuration.Instance.MoneyName,
-                    Math.Round(decimal.Multiply(shopObject.BuyCost, shopObject.SellMultiplier), 2), Uconomy.Instance.Configuration.Instance.MoneyName));
+                UnturnedChat.Say(caller, DShop.Instance.Translate(type == ItemType.Item ? "costs_item2" : "costs_vehicle2", shopObject.ItemName, shopObject.ItemID, Math.Round(shopObject.BuyCost, 2), Uconomy.Instance.Configuration.Instance.MoneyName,
+                    Math.Round(decimal.Multiply(shopObject.BuyCost, shopObject.SellMultiplier), 2), Uconomy.Instance.Configuration.Instance.MoneyName, Enum.GetName(typeof(RestrictBuySell), shopObject.RestrictBuySell)));
         }
     }
 }

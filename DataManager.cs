@@ -7,6 +7,7 @@ namespace DynShop
         void Unload();
         void CheckSchema();
         bool ConvertDB(BackendType toBackend);
+        void SanityCheck();
         bool AddItem(ItemType type, ShopObject shopObject);
         ShopObject GetItem(ItemType type, ushort itemID);
         Dictionary<ushort, ShopObject> GetAllItems(ItemType type);

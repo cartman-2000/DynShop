@@ -19,7 +19,7 @@ namespace DynShop
         public decimal MaxBuyPrice = 0;
 
         public ShopItem() {}
-        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change, decimal maxBuyPrice)
+        public ShopItem(ushort itemID, decimal buyCost, decimal sellMultiplier, decimal minBuyPrice, decimal change, decimal maxBuyPrice, RestrictBuySell restrictBuySell)
         {
             ItemID = itemID;
             BuyCost = buyCost;
@@ -27,10 +27,11 @@ namespace DynShop
             MinBuyPrice = minBuyPrice;
             Change = change;
             MaxBuyPrice = maxBuyPrice;
+            RestrictBuySell = restrictBuySell;
             AssetName();
         }
 
-        internal bool Buy(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out ushort totalItems)
+        internal bool Buy(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out short totalItems)
         {
             bool sufficientAmount = true;
             totalItems = 0;
@@ -39,8 +40,15 @@ namespace DynShop
 
             Asset itemAsset = Assets.find(EAssetType.ITEM, ItemID);
             if (itemAsset == null || ((ItemAsset)itemAsset).isPro)
+            {
+                totalItems = -1;
                 return false;
-
+            }
+            if (RestrictBuySell == RestrictBuySell.SellOnly)
+            {
+                totalItems = -3;
+                return false;
+            }
             decimal oldCost = BuyCost;
             for (int i = 0; i < numItems; i++)
             {
@@ -64,6 +72,7 @@ namespace DynShop
                 catch (Exception ex)
                 {
                     Logger.LogException(ex);
+                    totalItems = -2;
                     return false;
                 }
                 if (!DShop.Instance.Configuration.Instance.RunInStaticPrices)
@@ -82,14 +91,18 @@ namespace DynShop
             return sufficientAmount;
         }
 
-        internal bool Sell(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out ushort totalItems, out decimal totalAttatchmentCost)
+        internal bool Sell(decimal curBallance, UnturnedPlayer player, ushort numItems, out decimal newCost, out decimal totalCost, out short totalItems, out decimal totalAttatchmentCost)
         {
             bool sufficientAmount = true;
             totalItems = 0;
             newCost = 0;
             totalCost = 0;
             totalAttatchmentCost = 0;
-
+            if (RestrictBuySell == RestrictBuySell.BuyOnly)
+            {
+                totalItems = -1;
+                return false;
+            }
             bool runStaticPrices = DShop.Instance.Configuration.Instance.RunInStaticPrices;
 
             Asset itemAsset = Assets.find(EAssetType.ITEM, ItemID);

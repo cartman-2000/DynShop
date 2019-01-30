@@ -16,6 +16,8 @@ namespace DynShop
         [XmlAttribute]
         public decimal SellMultiplier = .25m;
         [XmlAttribute]
+        public RestrictBuySell RestrictBuySell = RestrictBuySell.None;
+        [XmlAttribute]
         public string ItemName = "";
 
         public void AssetName()
@@ -41,5 +43,16 @@ namespace DynShop
             return;
         }
 
+    }
+
+    [Serializable]
+    public enum RestrictBuySell : byte
+    {
+        [XmlEnum(Name = "0")]
+        None = 0,
+        [XmlEnum(Name = "1")]
+        SellOnly = 1,
+        [XmlEnum(Name = "2")]
+        BuyOnly = 2
     }
 }

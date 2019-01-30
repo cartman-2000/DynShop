@@ -14,15 +14,16 @@ namespace DynShop
     public class ShopVehicle : ShopObject
     {
         public ShopVehicle() {}
-        public ShopVehicle(ushort itemID, decimal buyCost, decimal sellMultiplier)
+        public ShopVehicle(ushort itemID, decimal buyCost, decimal sellMultiplier, RestrictBuySell restrictBuySell)
         {
             ItemID = itemID;
             BuyCost = buyCost;
             SellMultiplier = sellMultiplier;
+            RestrictBuySell = restrictBuySell;
             AssetName();
         }
 
-        internal bool Buy(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out ushort totalItems)
+        internal bool Buy(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out short totalItems)
         {
             totalItems = 0;
             totalCost = 0;
@@ -30,7 +31,15 @@ namespace DynShop
             if (decimal.Subtract(curBallance, BuyCost) < 0m)
                 return false;
             if (itemAsset == null)
+            {
+                totalItems = -1;
                 return false;
+            }
+            if (RestrictBuySell == RestrictBuySell.SellOnly)
+            {
+                totalItems = -3;
+                return false;
+            }
             try
             {
                 player.GiveVehicle(ItemID);
@@ -42,18 +51,23 @@ namespace DynShop
             catch (Exception ex)
             {
                 Logger.LogException(ex);
-                totalItems = 2;
+                totalItems = -2;
                 return false;
             }
             DShop.Instance._OnShopBuy(curBallance, player, 1, this, ItemType.Vehicle, 0, totalCost, totalItems);
             return true;
         }
 
-        internal bool Sell(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out ushort actualCount)
+        internal bool Sell(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out short actualCount)
         {
             bool sufficientAmount = false;
             totalCost = 0;
             actualCount = 0;
+            if (RestrictBuySell == RestrictBuySell.BuyOnly)
+            {
+                actualCount = -4;
+                return false;
+            }
             VehicleInfo vInfo = DShop.Database.GetVehicleInfo((ulong)player.CSteamID, ItemID);
             if (vInfo != null)
             {
@@ -74,11 +88,11 @@ namespace DynShop
                     }
                 }
                 if (!hasLocked)
-                    actualCount = 2;
+                    actualCount = -1;
                 else if (withinRange && !vehicle.isEmpty)
-                    actualCount = 4;
+                    actualCount = -3;
                 else if (!withinRange)
-                    actualCount = 3;
+                    actualCount = -2;
                 else
                 {
                     sufficientAmount = true;

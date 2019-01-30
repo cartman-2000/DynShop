@@ -93,7 +93,7 @@ namespace DynShop
                     {
                         if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 7 : 5))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("add_help3"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("add_help4"));
                             return;
                         }
                         if (!ushort.TryParse(type == ItemType.Item ? command[1] : command[2], out itemID))
@@ -170,11 +170,25 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_maxprice"));
                         }
 
+                        RestrictBuySell restrictBuySell = RestrictBuySell.None;
+                        if (command.Length >= (type == ItemType.Item ? 8 : 6))
+                        {
+                            try
+                            {
+                                restrictBuySell = (RestrictBuySell)Enum.Parse(typeof(RestrictBuySell), type == ItemType.Item ? command[7] : command[5], true);
+                            }
+                            catch
+                            {
+                                restrictBuySell = RestrictBuySell.None;
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_shoprestrict"));
+                            }
+                        }
+
                         // Construct new item to add to the database.
-                        shopObject = (type == ItemType.Item ? (ShopObject)new ShopItem(itemID, buyCost, sellMultiplier, minBuyPrice, changeRate, maxBuyPrice) : new ShopVehicle(itemID, buyCost, sellMultiplier));
+                        shopObject = (type == ItemType.Item ? (ShopObject)new ShopItem(itemID, buyCost, sellMultiplier, minBuyPrice, changeRate, maxBuyPrice, restrictBuySell) : new ShopVehicle(itemID, buyCost, sellMultiplier, restrictBuySell));
 
                         if (DShop.Database.AddItem(type, shopObject))
-                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_add", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_addv2", shopObject, type));
                         else
                             UnturnedChat.Say(caller, DShop.Instance.Translate("item_add_fail"));
                         break;
@@ -217,7 +231,7 @@ namespace DynShop
                         shopObject = DShop.Database.GetItem(type, itemID);
 
                         if (DShop.Database.DeleteItem(type, itemID))
-                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_delete", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_deletev2", shopObject, type));
                         else
                             UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_shop_db"));
                         break;
@@ -260,7 +274,7 @@ namespace DynShop
                         shopObject = DShop.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
-                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_get", shopObject, type));
+                            UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_getv2", shopObject, type));
                         }
                         else
                             UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_shop_db"));
@@ -269,9 +283,9 @@ namespace DynShop
                 case "upd":
                 case "update":
                     {
-                        if (command.Length != (type == ItemType.Item ? 4 : 5))
+                        if (command.Length > (type == ItemType.Item ? 4 : 5) && command.Length < (type == ItemType.Item ? 3 : 4))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("update_help3"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
                             return;
                         }
                         type = ItemType.Item;
@@ -392,15 +406,37 @@ namespace DynShop
                                     ((ShopItem)shopObject).MaxBuyPrice = maxCost;
                                     goto set;
                                 }
+                            case "sr":
+                                {
+                                    if (command.Length != (type == ItemType.Item ? 4 : 5))
+                                    {
+                                        UnturnedChat.Say(caller, DShop.Instance.Translate("update_shoprestrict_help"));
+                                        return;
+                                    }
+
+                                    RestrictBuySell restrictBuySell = RestrictBuySell.None;
+                                    try
+                                    {
+                                        restrictBuySell = (RestrictBuySell)Enum.Parse(typeof(RestrictBuySell), type == ItemType.Item ? command[3] : command[4], true);
+                                    }
+                                    catch
+                                    {
+                                        UnturnedChat.Say(caller, DShop.Instance.Translate("bad_shoprestrict"));
+                                        return;
+                                    }
+                                    shopObject.RestrictBuySell = restrictBuySell;
+                                    goto set;
+
+                                }
                             default:
                                 {
-                                    UnturnedChat.Say(caller, DShop.Instance.Translate("update_help3"));
+                                    UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
                                     return;
                                 }
                             set:
                                 {
                                     if (DShop.Database.AddItem(type, shopObject))
-                                        UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_update", shopObject, type));
+                                        UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_updatev2", shopObject, type));
                                     else
                                         UnturnedChat.Say(caller, DShop.Instance.Translate("update_fail"));
                                     break;
@@ -417,7 +453,7 @@ namespace DynShop
 
         public string FormatItemInfo(string primaryLiteral, ShopObject shopObject, ItemType type)
         {
-            return DShop.Instance.Translate(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost, shopObject.SellMultiplier, 
+            return DShop.Instance.Translate(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost, shopObject.SellMultiplier, Enum.GetName(typeof(RestrictBuySell), shopObject.RestrictBuySell), ((byte)shopObject.RestrictBuySell).ToString(), 
                 type == ItemType.Item ? DShop.Instance.Translate("format_item_info_p2v2", ((ShopItem)shopObject).MinBuyPrice, ((ShopItem)shopObject).Change, ((ShopItem)shopObject).MaxBuyPrice) : string.Empty);
         }
     }

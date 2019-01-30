@@ -117,7 +117,7 @@ namespace DynShop
                 decimal balance = Uconomy.Instance.Database.GetBalance(caller.Id);
                 decimal newCost = sObject.BuyCost;
                 decimal totalCost = 0;
-                ushort actualCount = 0;
+                short actualCount = 0;
                 decimal totalAttatchmentCost = 0;
                 string moneyName = Uconomy.Instance.Configuration.Instance.MoneyName;
 
@@ -140,6 +140,11 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("no_items_sell", sObject.ItemName, sObject.ItemID));
                             return;
                         }
+                        if (actualCount == -1)
+                        {
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("item_buy_only", sObject.ItemName, sObject.ItemID));
+                            return;
+                        }
                         if (actualCount < count)
                         {
                             if (totalAttatchmentCost > 0)
@@ -148,8 +153,6 @@ namespace DynShop
                             else
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("sold_items_partial", actualCount, count, sObject.ItemName, sObject.ItemID,
     Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
-
-
                         }
                     }
                 }
@@ -173,19 +176,24 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("vehicel_sell_no_own", sObject.ItemName, sObject.ItemID));
                             return;
                         }
-                        if (actualCount == 2)
+                        if (actualCount == -1)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_unlocked", sObject.ItemName, sObject.ItemID));
                             return;
                         }
-                        if (actualCount == 3)
+                        if (actualCount == -2)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_to_far", sObject.ItemName, sObject.ItemID));
                             return;
                         }
-                        if (actualCount == 4)
+                        if (actualCount == -3)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_has_player", sObject.ItemName, sObject.ItemID));
+                            return;
+                        }
+                        if (actualCount == -4)
+                        {
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_buy_only", sObject.ItemName, sObject.ItemID));
                             return;
                         }
                     }
