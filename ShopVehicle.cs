@@ -118,7 +118,7 @@ namespace DynShop
                     DShop.Database.DeleteVehicleInfo(vInfo);
                     vehicle.askDamage(ushort.MaxValue, false);
                     totalCost = decimal.Multiply(BuyCost, SellMultiplier);
-                    DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Item, BuyCost, totalCost, actualCount, 0);
+                    DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Vehicle, BuyCost, totalCost, actualCount, 0);
                 }
             }
             return sufficientAmount;
