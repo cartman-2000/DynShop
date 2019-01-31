@@ -59,6 +59,7 @@ namespace DynShop
         public bool VehicleSellDropElements = true;
         public bool IgnoreVehicleInfoMap = false;
         public bool IgnoreVehicleInfoSpecificServer = false;
+        public bool EnableBuySellLogging = true;
 
         public int FlatFileSchemaVersion = 0;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]

@@ -1,4 +1,5 @@
 ﻿using Rocket.API.Collections;
+using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
 using Rocket.Unturned.Player;
 using System;
@@ -25,12 +26,22 @@ namespace DynShop
                 Instance.Configuration.Instance.DefaultItems();
             Instance.Configuration.Save();
             Debug = Instance.Configuration.Instance.Debug;
+            if (Instance.Configuration.Instance.EnableBuySellLogging)
+            {
+                Instance.OnShopBuy += Instance_OnShopBuy;
+                Instance.OnShopSell += Instance_OnShopSell;
+            }
         }
 
         protected override void Unload()
         {
             Database.Unload();
             Database = null;
+            if (Instance.Configuration.Instance.EnableBuySellLogging)
+            {
+                Instance.OnShopBuy -= Instance_OnShopBuy;
+                Instance.OnShopSell -= Instance_OnShopSell;
+            }
         }
 
         public delegate void PlayerDShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems);
@@ -48,6 +59,20 @@ namespace DynShop
         internal void _OnShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems, decimal totalAttatchmentCost)
         {
             OnShopSell?.Invoke(curBallance, player, numItems, sObject, type, newCost, totalCost, totalItems, totalAttatchmentCost);
+        }
+
+        // logging for sells.
+        private void Instance_OnShopSell(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems, decimal totalAttatchmentCost)
+        {
+            Logger.Log(string.Format("Player {0} [{1}] ({2}) at location: {3}, has sold {4} items, with type: {5}, with id: {6}({7}), for {8} credits, {9} credits from attatchments. Players balance is now {10} credits.",
+                player.CharacterName, player.SteamName, player.CSteamID, player.IsInVehicle ? player.CurrentVehicle.transform.position.ToString() : player.Position.ToString(), totalItems, type.ToString(), sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 4), Math.Round(totalAttatchmentCost, 4), Math.Round(curBallance, 2)));
+        }
+
+        // logging for buys.
+        private void Instance_OnShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems)
+        {
+            Logger.Log(string.Format("Player {0} [{1}] ({2}) at location: {3}, has bought {4} items, with type: {5}, with id: {6}({7}), for {8} credits. Players balance is now {9} credits.",
+                player.CharacterName, player.SteamName, player.CSteamID, player.IsInVehicle ? player.CurrentVehicle.transform.position.ToString() : player.Position.ToString(), totalItems, type.ToString(), sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 4), Math.Round(curBallance, 2)));
         }
 
         public override TranslationList DefaultTranslations
