@@ -85,7 +85,7 @@ namespace DynShop
                 }
             }
             if (oldCost != BuyCost)
-                DShop.Database.AddItem(ItemType.Item, this);
+                DShop.Instance.Database.AddItem(ItemType.Item, this);
             if (totalItems > 0)
                 DShop.Instance._OnShopBuy(curBallance, player, numItems, this, ItemType.Item, newCost, totalCost, totalItems);
             return sufficientAmount;
@@ -211,7 +211,7 @@ namespace DynShop
                 }
             }
             if (oldCost != BuyCost)
-                DShop.Database.AddItem(ItemType.Item, this);
+                DShop.Instance.Database.AddItem(ItemType.Item, this);
 
             // Update costs for all sold attachments.
             if(!runStaticPrices && attatchments.Count != 0)
@@ -219,7 +219,7 @@ namespace DynShop
                 foreach (KeyValuePair<ushort, ShopObject> item in attatchments)
                 {
                     if (item.Key == item.Value.ItemID)
-                        DShop.Database.AddItem(ItemType.Item, item.Value);
+                        DShop.Instance.Database.AddItem(ItemType.Item, item.Value);
                 }
             }
             if (totalItems > 0)
@@ -238,7 +238,7 @@ namespace DynShop
                     sObject = attatchments[itemID];
                 else
                 {
-                    sObject = DShop.Database.GetItem(ItemType.Item, itemID);
+                    sObject = DShop.Instance.Database.GetItem(ItemType.Item, itemID);
                     attatchments.Add(itemID, sObject);
                 }
                 if (sObject.ItemID == itemID)

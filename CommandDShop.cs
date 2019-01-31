@@ -52,7 +52,7 @@ namespace DynShop
                 return;
             }
 
-            if (!DShop.Database.IsLoaded)
+            if (!DShop.Instance.Database.IsLoaded)
             {
                 UnturnedChat.Say(caller, DShop.Instance.Translate("db_load_error"));
                 return;
@@ -78,7 +78,7 @@ namespace DynShop
                         {
                             backend = (BackendType)Enum.Parse(typeof(BackendType), command[1], true);
                             UnturnedChat.Say(caller, DShop.Instance.Translate("converting", backend.ToString()));
-                            if (DShop.Database.ConvertDB(backend))
+                            if (DShop.Instance.Database.ConvertDB(backend))
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("conversion_success"));
                             else
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("conversion_fail"));
@@ -122,7 +122,7 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                             return;
                         }
-                        shopObject = DShop.Database.GetItem(type, itemID);
+                        shopObject = DShop.Instance.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("duplicate"));
@@ -187,7 +187,7 @@ namespace DynShop
                         // Construct new item to add to the database.
                         shopObject = (type == ItemType.Item ? (ShopObject)new ShopItem(itemID, buyCost, sellMultiplier, minBuyPrice, changeRate, maxBuyPrice, restrictBuySell) : new ShopVehicle(itemID, buyCost, sellMultiplier, restrictBuySell));
 
-                        if (DShop.Database.AddItem(type, shopObject))
+                        if (DShop.Instance.Database.AddItem(type, shopObject))
                             UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_addv2", shopObject, type));
                         else
                             UnturnedChat.Say(caller, DShop.Instance.Translate("item_add_fail"));
@@ -228,9 +228,9 @@ namespace DynShop
                             return;
                         }
 
-                        shopObject = DShop.Database.GetItem(type, itemID);
+                        shopObject = DShop.Instance.Database.GetItem(type, itemID);
 
-                        if (DShop.Database.DeleteItem(type, itemID))
+                        if (DShop.Instance.Database.DeleteItem(type, itemID))
                             UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_deletev2", shopObject, type));
                         else
                             UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_shop_db"));
@@ -271,7 +271,7 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                             return;
                         }
-                        shopObject = DShop.Database.GetItem(type, itemID);
+                        shopObject = DShop.Instance.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
                             UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_getv2", shopObject, type));
@@ -319,7 +319,7 @@ namespace DynShop
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                                 return;
                             }
-                            shopObject = DShop.Database.GetItem(type, itemID);
+                            shopObject = DShop.Instance.Database.GetItem(type, itemID);
                             if (shopObject.ItemID != itemID)
                             {
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("item_not_in_shop_db"));
@@ -435,7 +435,7 @@ namespace DynShop
                                 }
                             set:
                                 {
-                                    if (DShop.Database.AddItem(type, shopObject))
+                                    if (DShop.Instance.Database.AddItem(type, shopObject))
                                         UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_updatev2", shopObject, type));
                                     else
                                         UnturnedChat.Say(caller, DShop.Instance.Translate("update_fail"));

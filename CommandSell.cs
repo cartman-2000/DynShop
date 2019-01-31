@@ -57,7 +57,7 @@ namespace DynShop
                     return;
                 }
 
-                if (!DShop.Database.IsLoaded)
+                if (!DShop.Instance.Database.IsLoaded)
                 {
                     UnturnedChat.Say(caller, DShop.Instance.Translate("db_load_error"));
                     return;
@@ -103,7 +103,7 @@ namespace DynShop
                     UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
                     return;
                 }
-                ShopObject sObject = DShop.Database.GetItem(type, itemID);
+                ShopObject sObject = DShop.Instance.Database.GetItem(type, itemID);
                 if (sObject.ItemID != itemID)
                 {
                     Asset asset = itemID.AssetFromID(type);

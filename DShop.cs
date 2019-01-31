@@ -12,7 +12,7 @@ namespace DynShop
     public class DShop : RocketPlugin<DShopConfig>
     {
         public static DShop Instance;
-        internal static DataManager Database;
+        public DataManager Database;
         internal static bool Debug = false;
 
         protected override void Load()

@@ -43,7 +43,7 @@ namespace DynShop
             try
             {
                 player.GiveVehicle(ItemID);
-                DShop.Database.AddVehicleInfo((ulong)player.CSteamID, ItemID);
+                DShop.Instance.Database.AddVehicleInfo((ulong)player.CSteamID, ItemID);
                 totalCost = decimal.Add(totalCost, BuyCost);
                 curBallance = decimal.Subtract(curBallance, BuyCost);
                 totalItems++;
@@ -68,7 +68,7 @@ namespace DynShop
                 actualCount = -4;
                 return false;
             }
-            VehicleInfo vInfo = DShop.Database.GetVehicleInfo((ulong)player.CSteamID, ItemID);
+            VehicleInfo vInfo = DShop.Instance.Database.GetVehicleInfo((ulong)player.CSteamID, ItemID);
             if (vInfo != null)
             {
                 bool hasLocked = false;
@@ -115,7 +115,7 @@ namespace DynShop
                             }
                         }
                     }
-                    DShop.Database.DeleteVehicleInfo(vInfo);
+                    DShop.Instance.Database.DeleteVehicleInfo(vInfo);
                     vehicle.askDamage(ushort.MaxValue, false);
                     totalCost = decimal.Multiply(BuyCost, SellMultiplier);
                     DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Vehicle, BuyCost, totalCost, actualCount, 0);

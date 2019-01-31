@@ -83,8 +83,8 @@ namespace DynShop
                 if (ObjectListConfigVersion < defaultValues.Instance.FileVersion)
                 {
                     ObjectListConfigVersion = defaultValues.Instance.FileVersion;
-                    Dictionary<ushort, ShopObject> items = DShop.Database.GetAllItems(ItemType.Item);
-                    Dictionary<ushort, ShopObject> vehicles = DShop.Database.GetAllItems(ItemType.Vehicle);
+                    Dictionary<ushort, ShopObject> items = DShop.Instance.Database.GetAllItems(ItemType.Item);
+                    Dictionary<ushort, ShopObject> vehicles = DShop.Instance.Database.GetAllItems(ItemType.Vehicle);
                     Logger.Log("Adding new Default items to database!");
                     // Start adding items to the database from the defaults file that aren't present in the database.
                     foreach (ShopItem item in defaultValues.Instance.Items)
@@ -93,7 +93,7 @@ namespace DynShop
                         {
                             // Get generate the asset name for the database.
                             item.AssetName();
-                            DShop.Database.AddItem(ItemType.Item, item as ShopObject);
+                            DShop.Instance.Database.AddItem(ItemType.Item, item as ShopObject);
                         }
                     }
                     foreach (ShopVehicle vehicle in defaultValues.Instance.Vehicles)
@@ -102,7 +102,7 @@ namespace DynShop
                         {
                             // Get generate the asset name for the database.
                             vehicle.AssetName();
-                            DShop.Database.AddItem(ItemType.Vehicle, vehicle as ShopObject);
+                            DShop.Instance.Database.AddItem(ItemType.Vehicle, vehicle as ShopObject);
                         }
                     }
                     Logger.Log("Finished!");
