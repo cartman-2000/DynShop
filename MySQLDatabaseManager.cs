@@ -192,8 +192,8 @@ namespace DynShop
                     updated = true;
                     updatingVersion = 2;
                     command.CommandText = new QueryBuilder(QueryBuilderType.ALTERTABLE_ADD).Table(TableItems).AlterColumn("MaxBuyPrice", "DECIMAL(15,4) NOT NULL DEFAULT '0'").After("ChangeRate").Build();
-                    command.CommandText += new QueryBuilder(QueryBuilderType.ALTERTABLE_CHANGE).Table(TableItems).ChangeColumn("BuyCost", "BuyCost", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").
-                        ChangeColumn("SellMultiplier", "SellMultiplier", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").ChangeColumn("ChangeRate", "ChangeRate", "DECIMAL(11,6) NOT NULL DEFAULT '10.0000'").Build();
+                    command.CommandText += new QueryBuilder(QueryBuilderType.ALTERTABLE_CHANGE).Table(TableItems).ChangeColumn("BuyCost", "BuyCost", "DECIMAL(11,6) NOT NULL DEFAULT '10'").
+                        ChangeColumn("SellMultiplier", "SellMultiplier", "DECIMAL(11,6) NOT NULL DEFAULT '0.25'").ChangeColumn("ChangeRate", "ChangeRate", "DECIMAL(11,6) NOT NULL DEFAULT '0.01'").Build();
                    command.ExecuteNonQuery();
                 }
                 if (version < 3)
