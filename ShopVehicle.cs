@@ -58,71 +58,53 @@ namespace DynShop
             return true;
         }
 
-        internal bool Sell(decimal curBallance, UnturnedPlayer player, out decimal totalCost, out short actualCount)
+        internal bool Sell(decimal curBallance, UnturnedPlayer player, RaycastInfo raycastInfo, out decimal totalCost, out short actualCount)
         {
             bool sufficientAmount = false;
             totalCost = 0;
             actualCount = 0;
+            InteractableVehicle vehicle = null;
             if (RestrictBuySell == RestrictBuySell.BuyOnly)
             {
-                actualCount = -4;
+                actualCount = -1;
                 return false;
             }
             VehicleInfo vInfo = DShop.Instance.Database.GetVehicleInfo((ulong)player.CSteamID, ItemID);
-            if (vInfo != null)
+            if (vInfo == null)
             {
-                bool hasLocked = false;
-                bool withinRange = false;
-                InteractableVehicle vehicle = null;
-                for (int i = 0; i < VehicleManager.vehicles.Count; i++)
+                // The car the player's looking at hasn't been bought before from them, from the shop.
+                actualCount = -2;
+                return false;
+            }
+            else
+            {
+                vehicle = raycastInfo.vehicle;
+                sufficientAmount = true;
+                actualCount = 1;
+                if (DShop.Instance.Configuration.Instance.VehicleSellDropElements)
                 {
-                    vehicle = VehicleManager.vehicles[i];
-                    if (vehicle.id == ItemID && vehicle.isLocked && vehicle.lockedOwner == player.CSteamID)
+                    BarricadeRegion vregion = null;
+                    byte x;
+                    byte y;
+                    ushort plant;
+                    if (BarricadeManager.tryGetPlant(vehicle.transform, out x, out y, out plant, out vregion))
                     {
-                        hasLocked = true;
-                        if (Vector3.Distance(player.Position, vehicle.transform.position) <= 10 && !vehicle.isDead && !vehicle.isDrowned)
+                        for (int j = 0; j < vregion.drops.Count; j++)
                         {
-                            withinRange = true;
-                            break;
-                        }
-                    }
-                }
-                if (!hasLocked)
-                    actualCount = -1;
-                else if (withinRange && !vehicle.isEmpty)
-                    actualCount = -3;
-                else if (!withinRange)
-                    actualCount = -2;
-                else
-                {
-                    sufficientAmount = true;
-                    actualCount = 1;
-                    if (DShop.Instance.Configuration.Instance.VehicleSellDropElements)
-                    {
-                        BarricadeRegion vregion = null;
-                        byte x;
-                        byte y;
-                        ushort plant;
-                        if (BarricadeManager.tryGetPlant(vehicle.transform, out x, out y, out plant, out vregion))
-                        {
-                            for (int j = 0; j < vregion.drops.Count; j++)
+                            if (j < vregion.drops.Count && vregion.barricades[j].barricade.id > 0)
                             {
-                                if (j < vregion.drops.Count && vregion.barricades[j].barricade.id > 0)
-                                {
-                                    Item item = new Item(vregion.barricades[j].barricade.id, true);
-                                    ItemManager.dropItem(item, vregion.drops[j].model.position, false, true, true);
-                                }
+                                Item item = new Item(vregion.barricades[j].barricade.id, true);
+                                ItemManager.dropItem(item, vregion.drops[j].model.position, false, true, true);
                             }
                         }
                     }
-                    DShop.Instance.Database.DeleteVehicleInfo(vInfo);
-                    vehicle.askDamage(ushort.MaxValue, false);
-                    totalCost = decimal.Multiply(BuyCost, SellMultiplier);
-                    DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Vehicle, BuyCost, totalCost, actualCount, 0);
                 }
+                DShop.Instance.Database.DeleteVehicleInfo(vInfo);
+                vehicle.askDamage(ushort.MaxValue, false);
+                totalCost = decimal.Multiply(BuyCost, SellMultiplier);
+                DShop.Instance._OnShopSell(decimal.Add(curBallance, totalCost), player, 1, this, ItemType.Vehicle, BuyCost, totalCost, actualCount, 0);
             }
             return sufficientAmount;
         }
-
     }
 }

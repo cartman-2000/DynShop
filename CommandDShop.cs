@@ -21,7 +21,7 @@ namespace DynShop
 
         public AllowedCaller AllowedCaller
         {
-            get{ return AllowedCaller.Both; }
+            get { return AllowedCaller.Both; }
         }
 
         public string Help
@@ -63,7 +63,6 @@ namespace DynShop
                 type = ItemType.Vehicle;
             ShopObject shopObject = null;
             ushort itemID = 0;
-            UnturnedPlayer player = null;
             switch (command[0].ToLower())
             {
                 case "convert":
@@ -93,30 +92,11 @@ namespace DynShop
                     {
                         if (command.Length < (type == ItemType.Item ? 2 : 3) || command.Length > (type == ItemType.Item ? 8 : 6))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("add_help4"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("add_help5"));
                             return;
                         }
-                        if (!ushort.TryParse(type == ItemType.Item ? command[1] : command[2], out itemID))
-                        {
-                            if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[1].ToLower() == "h" : command[2].ToLower() == "h"))
-                            {
-                                player = (UnturnedPlayer)caller;
-                                if (type == ItemType.Item)
-                                    itemID = player.Player.equipment.itemID;
-                                else if (player.IsInVehicle)
-                                    itemID = player.CurrentVehicle.id;
-                                if (itemID == 0)
-                                {
-                                    if (type == ItemType.Item)
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
-                                    else
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held_vehicle"));
-                                    return;
-                                }
-                            }
-                            else
-                                itemID = type == ItemType.Item ? command[1].AssetIDFromName(type) : command[2].AssetIDFromName(type);
-                        }
+                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                            return;
                         if (itemID.AssetFromID(type) == null)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
@@ -198,30 +178,11 @@ namespace DynShop
                     {
                         if (command.Length != (type == ItemType.Item ? 2 : 3))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("remove_help2"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("remove_help3"));
                             return;
                         }
-                        if (!ushort.TryParse(type == ItemType.Item ? command[1] : command[2], out itemID))
-                        {
-                            if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[1].ToLower() == "h" : command[2].ToLower() == "h"))
-                            {
-                                player = (UnturnedPlayer)caller;
-                                if (type == ItemType.Item)
-                                    itemID = player.Player.equipment.itemID;
-                                else if (player.IsInVehicle)
-                                    itemID = player.CurrentVehicle.id;
-                                if (itemID == 0)
-                                {
-                                    if (type == ItemType.Item)
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
-                                    else
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held_vehicle"));
-                                    return;
-                                }
-                            }
-                            else
-                                itemID = type == ItemType.Item ? command[1].AssetIDFromName(type) : command[2].AssetIDFromName(type);
-                        }
+                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                            return;
                         if (itemID.AssetFromID(type) == null)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
@@ -240,32 +201,11 @@ namespace DynShop
                     {
                         if (command.Length != (type == ItemType.Item ? 2 : 3))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("get_help2"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("get_help3"));
                             return;
                         }
-                        if (!ushort.TryParse(type == ItemType.Item ? command[1] : command[2], out itemID))
-                        {
-
-                            if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[1].ToLower() == "h" : command[2].ToLower() == "h"))
-                            {
-
-                                player = (UnturnedPlayer)caller;
-                                if (type == ItemType.Item)
-                                    itemID = player.Player.equipment.itemID;
-                                else if (player.IsInVehicle)
-                                    itemID = player.CurrentVehicle.id;
-                                if (itemID == 0)
-                                {
-                                    if (type == ItemType.Item)
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
-                                    else
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held_vehicle"));
-                                    return;
-                                }
-                            }
-                            else
-                                itemID = type == ItemType.Item ? command[1].AssetIDFromName(type) : command[2].AssetIDFromName(type);
-                        }
+                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                            return;
                         if (itemID.AssetFromID(type) == null)
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
@@ -285,7 +225,7 @@ namespace DynShop
                     {
                         if (command.Length > (type == ItemType.Item ? 4 : 5) || command.Length < (type == ItemType.Item ? 2 : 4))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("update_help5"));
                             return;
                         }
                         type = ItemType.Item;
@@ -293,27 +233,8 @@ namespace DynShop
                             type = ItemType.Vehicle;
                         if (command.Length == (type == ItemType.Item ? 4 : 5))
                         {
-                            if (!ushort.TryParse(type == ItemType.Item ? command[2] : command[3], out itemID))
-                            {
-                                if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[2].ToLower() == "h" : command[3].ToLower() == "h"))
-                                {
-                                    player = (UnturnedPlayer)caller;
-                                    if (type == ItemType.Item)
-                                        itemID = player.Player.equipment.itemID;
-                                    else if (player.IsInVehicle)
-                                        itemID = player.CurrentVehicle.id;
-                                    if (itemID == 0)
-                                    {
-                                        if (type == ItemType.Item)
-                                            UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
-                                        else
-                                            UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held_vehicle"));
-                                        return;
-                                    }
-                                }
-                                else
-                                    itemID = type == ItemType.Item ? command[2].AssetIDFromName(type) : command[3].AssetIDFromName(type);
-                            }
+                            if (!DShop.GetItemID(caller, command, type, 2, ref itemID))
+                                return;
                             if (itemID.AssetFromID(type) == null)
                             {
                                 UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
@@ -433,7 +354,7 @@ namespace DynShop
                                     UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
                                     return;
                                 }
-                            set:
+                                set:
                                 {
                                     if (DShop.Instance.Database.AddItem(type, shopObject))
                                         UnturnedChat.Say(caller, FormatItemInfo("format_item_info_p1_updatev2", shopObject, type));
@@ -453,7 +374,7 @@ namespace DynShop
 
         public string FormatItemInfo(string primaryLiteral, ShopObject shopObject, ItemType type)
         {
-            return DShop.Instance.Translate(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost, shopObject.SellMultiplier, Enum.GetName(typeof(RestrictBuySell), shopObject.RestrictBuySell), ((byte)shopObject.RestrictBuySell).ToString(), 
+            return DShop.Instance.Translate(primaryLiteral, shopObject.ItemName, shopObject.ItemID, type.ToString(), shopObject.BuyCost, shopObject.SellMultiplier, Enum.GetName(typeof(RestrictBuySell), shopObject.RestrictBuySell), ((byte)shopObject.RestrictBuySell).ToString(),
                 type == ItemType.Item ? DShop.Instance.Translate("format_item_info_p2v2", ((ShopItem)shopObject).MinBuyPrice, ((ShopItem)shopObject).Change, ((ShopItem)shopObject).MaxBuyPrice) : string.Empty);
         }
     }

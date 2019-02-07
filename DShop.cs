@@ -1,11 +1,16 @@
-﻿using Rocket.API.Collections;
+﻿using Rocket.API;
+using Rocket.API.Collections;
 using Rocket.Core.Logging;
 using Rocket.Core.Plugins;
+using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
+using SDG.Unturned;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using UnityEngine;
+using Logger = Rocket.Core.Logging.Logger;
 
 namespace DynShop
 {
@@ -42,6 +47,49 @@ namespace DynShop
                 Instance.OnShopBuy -= Instance_OnShopBuy;
                 Instance.OnShopSell -= Instance_OnShopSell;
             }
+        }
+
+        public static RaycastInfo RaycastInfoVehicle(UnturnedPlayer player, float distance)
+        {
+            Ray ray = new Ray(player.Player.look.aim.position, player.Player.look.aim.forward);
+            return DamageTool.raycast(ray, distance, RayMasks.VEHICLE);
+        }
+
+        // Gets ItemID out of buy/cost/shop command.
+        public static bool GetItemID(IRocketPlayer caller, string[] command, ItemType type, int start, ref ushort itemID)
+        {
+            UnturnedPlayer player = null;
+            if (!ushort.TryParse(type == ItemType.Item ? command[start] : command[start + 1], out itemID))
+            {
+                if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[start].ToLower() == "h" : command[start + 1].ToLower() == "h"))
+                {
+                    player = (UnturnedPlayer)caller;
+                    if (type == ItemType.Item)
+                        itemID = player.Player.equipment.itemID;
+                    else if (player.IsInVehicle)
+                        itemID = player.CurrentVehicle.id;
+                    else if (type == ItemType.Vehicle && !player.IsInVehicle)
+                    {
+                        RaycastInfo raycastInfo = RaycastInfoVehicle(player, 10);
+                        if (raycastInfo.vehicle != null)
+                        {
+                            itemID = raycastInfo.vehicle.id;
+                        }
+                    }
+                    if (itemID == 0)
+                    {
+                        if (type == ItemType.Item)
+                            UnturnedChat.Say(caller, Instance.Translate("no_item_held"));
+                        else
+                            UnturnedChat.Say(caller, Instance.Translate("no_item_held_vehicle2"));
+                        return false;
+                    }
+                }
+
+            }
+            else
+                itemID = type == ItemType.Item ? command[start].AssetIDFromName(type) : command[start + 1].AssetIDFromName(type);
+            return true;
         }
 
         public delegate void PlayerDShopBuy(decimal curBallance, UnturnedPlayer player, ushort numItems, ShopObject sObject, ItemType type, decimal newCost, decimal totalCost, short totalItems);
@@ -82,9 +130,9 @@ namespace DynShop
                 return new TranslationList
                 {
                     // Command help messages.
-                    { "buy_help2", CommandBuy.syntax + " - " + CommandBuy.help },
-                    { "cost_help2", CommandCost.syntax + " - " + CommandCost.help },
-                    { "sell_help2", CommandSell.syntax + " - " + CommandSell.help },
+                    { "buy_help3", CommandBuy.syntax + " - " + CommandBuy.help },
+                    { "cost_help3", CommandCost.syntax + " - " + CommandCost.help },
+                    { "sell_help4", CommandSell.syntax + " - " + CommandSell.help },
                     { "shop_help", CommandDShop.syntax + " - " + CommandDShop.help },
 
                     // Shared messages.
@@ -93,7 +141,7 @@ namespace DynShop
                     { "item_not_in_db", "Item/Vehicle: {0}({1}) not in the shop database." },
                     { "db_load_error", "The command can't be ran, There was an issue with loading the plugin." },
                     { "no_item_held", "There's no item being held." },
-                    { "no_item_held_vehicle", "You're currently not in a vehicle." },
+                    { "no_item_held_vehicle2", "You're currently not in, looking at, a vehicle." },
 
                     // Cost Command.
                     { "costs_item2", "Item: {0}({1}), Costs: {2} {3}(s) to buy and {4} {5}(s) to sell, Shop Restictions: {6}." },
@@ -118,20 +166,22 @@ namespace DynShop
                     { "sold_items_partial", "You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s), your current balance is now: {6} {7}(s)" },
                     { "sold_items_partial_w_attatchments", "You only had enough to sell: {0} of {1} items, of: {2}({3}), for: {4} {5}(s) ({6} {7}(s) is from attachments.), your current balance is now: {8} {9}(s)" },
                     { "vehicle_sell_not_allowed", "You can't sell vehicles on this server!" },
-                    { "vehicel_sell_no_own", "You don't own any of: {0}({1}), to sell, on this map!" },
-                    { "vehicle_sell_unlocked", "You don't have any of: {0}({1}), locked to you on the map!" },
-                    { "vehicle_sell_to_far", "There was an error selliing your vehicle: {0}({1}), you need to be standing next to it(within 10 units)!" },
-                    { "vehicle_has_player", "The vehicle: {0}({1}), has players in it, you can't sell it until they exit the vehicle!" },
-                    { "vehicle_buy_only", "The vehicle: {0}({1}), can't be sold to the shop, it's been set to buy only in the shop!" },
+                    { "vehicel_sell_no_own2", "You haven't bought any of the vehicle you're looking at before." },
+                    { "vehicle_sell_dead", "The vehicle you're looking at has been destroyed, unable to sell!" },
+                    { "vehicle_sell_unlocked2", "The vehicle you're looking at isn't locked to anyone, unable to sell!" },
+                    { "vehicle_sell_locked_mismatch", "The vehicle you're looking at isn't locked to you, unable to sell!" },
+                    { "vehicle_sell_to_far2", "Vehicle being looked at is either too far away, or isn't a vehicle(within 10 units)!" },
+                    { "vehicle_has_player2", "The vehicle that you're looking at still has players in it, unable to sell!" },
+                    { "vehicle_buy_only2", "The vehicle being looked at can't be sold to the shop, it's been set to buy only in the shop!" },
                     { "vehicle_sold2", "You've sold the Vehicle: {0}({1}), for: {2} {3}(s), your current balance is now: {4} {5}(s)" },
 
                     // Shop command.
 
                     { "convert_help", "convert <mysql|xml>" },
-                    { "add_help4", "add <ItemID | \"Item Name\" | h(held item)> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] [MaxBuyPrice] [ShopRestrict] || add v <VehicleID | \"VehicleName\" | h(in vehicle)> [cost] [mult] [ShopRestrict]" },
-                    { "remove_help2", "rem <ItemID | \"Item Name\" | h(held item)> | rem v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
-                    { "get_help2", "get <ItemID | \"Item Name\" | h(held item)> | get v <VehicleID | \"Vehicle Name\" | h(in vehicle)>" },
-                    { "update_help4", "update <cost|mult|min|rate|max|sr> <ItemID | \"Item Name\" | h(held item)> <amount> | update <cost|mult|sr> v <VehicleID | \"Vehicle Name\" | h(in vehicle)> <amount>" },
+                    { "add_help5", "add <ItemID | \"Item Name\" | h(held item)> [Cost] [SellMult] [MinBuyPrice] [ChangeRate] [MaxBuyPrice] [ShopRestrict] || add v <VehicleID | \"VehicleName\" | h(in/looking at vehicle)> [cost] [mult] [ShopRestrict]" },
+                    { "remove_help3", "rem <ItemID | \"Item Name\" | h(held item)> | rem v <VehicleID | \"Vehicle Name\" | h(in/looking at vehicle)>" },
+                    { "get_help3", "get <ItemID | \"Item Name\" | h(held item)> | get v <VehicleID | \"Vehicle Name\" | h(in/looking at vehicle)>" },
+                    { "update_help5", "update <cost|mult|min|rate|max|sr> <ItemID | \"Item Name\" | h(held item)> <amount> | update <cost|mult|sr> v <VehicleID | \"Vehicle Name\" | h(in/looking at vehicle)> <amount>" },
                     { "update_shoprestrict_help", "Valid values are: none(0), sellonly(1), buyonly(2)" },
 
                     { "converting", "Converting Database to: {0}." },

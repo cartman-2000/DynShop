@@ -13,7 +13,7 @@ namespace DynShop
     public class CommandSell : IRocketCommand
     {
         internal static readonly string help = "Sell's an item on the shop.";
-        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> [amount('all' = sell all.)] || <v> <\"Vehicle Name\" | VehicleID>";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> [amount('all'|'a' = sell all.)] || <v> (While looking at a vehicle)";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -48,12 +48,14 @@ namespace DynShop
         {
             {
                 ItemType type = ItemType.Item;
+                RaycastInfo raycastInfo = null;
+                InteractableVehicle vehicle = null;
                 if (command.Length >= 1)
                     type = command[0].ToLower() == "v" ? ItemType.Vehicle : ItemType.Item;
 
-                if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > 2)
+                if (command.Length == 0 || command.Length > (type == ItemType.Item ? 2 : 1))
                 {
-                    UnturnedChat.Say(caller, DShop.Instance.Translate("sell_help2"));
+                    UnturnedChat.Say(caller, DShop.Instance.Translate("sell_help4"));
                     return;
                 }
 
@@ -70,7 +72,7 @@ namespace DynShop
                 {
                     if (!ushort.TryParse(command[1], out count))
                     {
-                        if (command[1].ToLower() == "all")
+                        if (command[1].ToLower() == "all" || command[1].ToLower() == "a")
                             count = ushort.MaxValue;
                         else
                         {
@@ -84,7 +86,7 @@ namespace DynShop
 
 
                 UnturnedPlayer player = caller as UnturnedPlayer;
-                if (!ushort.TryParse(command[type == ItemType.Item ? 0 : 1], out itemID))
+                if (!ushort.TryParse(command[0], out itemID))
                 {
                     if (type == ItemType.Item && command[0].ToLower() == "h")
                     {
@@ -95,8 +97,48 @@ namespace DynShop
                             return;
                         }
                     }
-                    else
-                        itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
+                    else if (type == ItemType.Item)
+                        itemID = command[0].AssetIDFromName(type);
+                    else if (type == ItemType.Vehicle)
+                    {
+                        // Try to grab the vehicle that the player is looking at.
+                        raycastInfo = DShop.RaycastInfoVehicle(player, 10);
+                        if (raycastInfo.vehicle == null)
+                        {
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_to_far2"));
+                            return;
+                        }
+                        else
+                        {
+                            itemID = raycastInfo.vehicle.id;
+                            vehicle = raycastInfo.vehicle;
+                            // Run checks before accepting this vehicle to run through ShopVehicle.sell.
+                            if (vehicle.isDead)
+                            {
+                                // Don't allow a destroyed vehicle to be sold.
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_dead"));
+                                return;
+                            }
+                            if (!vehicle.isLocked)
+                            {
+                                // Vehicle isn't locked to any player.
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_unlocked2"));
+                                return;
+                            }
+                            if (vehicle.isLocked && vehicle.lockedOwner != player.CSteamID)
+                            {
+                                // This vehicle isn't locked to this player.
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_locked_mismatch"));
+                                return;
+                            }
+                            if (!vehicle.isEmpty)
+                            {
+                                // The vehicle still has players in it, don't sell.
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_has_player2"));
+                                return;
+                            }
+                        }
+                    }
                 }
                 if (itemID.AssetFromID(type) == null)
                 {
@@ -165,35 +207,20 @@ namespace DynShop
                         UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_not_allowed"));
                         return;
                     }
-                    if (sVehicle.Sell(balance, player, out totalCost, out actualCount))
+                    if (sVehicle.Sell(balance, player, raycastInfo, out totalCost, out actualCount))
                     {
                         UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sold2", sObject.ItemName, sObject.ItemID, Math.Round(totalCost, 2), moneyName, Math.Round(balance + totalCost, 2), moneyName));
                     }
                     else
                     {
-                        if (actualCount == 0)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicel_sell_no_own", sObject.ItemName, sObject.ItemID));
-                            return;
-                        }
                         if (actualCount == -1)
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_unlocked", sObject.ItemName, sObject.ItemID));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_buy_only2"));
                             return;
                         }
                         if (actualCount == -2)
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_sell_to_far", sObject.ItemName, sObject.ItemID));
-                            return;
-                        }
-                        if (actualCount == -3)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_has_player", sObject.ItemName, sObject.ItemID));
-                            return;
-                        }
-                        if (actualCount == -4)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicle_buy_only", sObject.ItemName, sObject.ItemID));
+                            UnturnedChat.Say(caller, DShop.Instance.Translate("vehicel_sell_no_own2"));
                             return;
                         }
                     }

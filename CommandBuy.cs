@@ -13,7 +13,7 @@ namespace DynShop
     public class CommandBuy : IRocketCommand
     {
         internal static readonly string help = "Buys an item off of the shop.";
-        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> [amount] || <v> <\"Vehicle Name\" | VehicleID>";
+        internal static readonly string syntax = "<\"Item Name\" | ItemID | h(held item)> [amount] || <v> <\"Vehicle Name\" | VehicleID | h(in/lookin at vehicle)>";
         public List<string> Aliases
         {
             get { return new List<string>(); }
@@ -52,7 +52,7 @@ namespace DynShop
 
             if (command.Length == (type == ItemType.Item ? 0 : 1) || command.Length > 2)
             {
-                UnturnedChat.Say(caller, DShop.Instance.Translate("buy_help2"));
+                UnturnedChat.Say(caller, DShop.Instance.Translate("buy_help3"));
                 return;
             }
 
@@ -78,22 +78,9 @@ namespace DynShop
                     count = 1;
             }
 
-
             UnturnedPlayer player = caller as UnturnedPlayer;
-            if (!ushort.TryParse(command[type == ItemType.Item ? 0 : 1], out itemID))
-            {
-                if (type == ItemType.Item && command[0].ToLower() == "h")
-                {
-                    itemID = player.Player.equipment.itemID;
-                    if (itemID == 0)
-                    {
-                        UnturnedChat.Say(caller, DShop.Instance.Translate("no_item_held"));
-                        return;
-                    }
-                }
-                else
-                    itemID = type == ItemType.Item ? command[0].AssetIDFromName(type) : command[1].AssetIDFromName(type);
-            }
+            if (!DShop.GetItemID(caller, command, type, 0, ref itemID))
+                return;
             if (itemID.AssetFromID(type) == null)
             {
                 UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
