@@ -56,14 +56,13 @@ namespace DynShop
         }
 
         // Gets ItemID out of buy/cost/shop command.
-        public static bool GetItemID(IRocketPlayer caller, string[] command, ItemType type, int start, ref ushort itemID)
+        public static bool GetItemID(IRocketPlayer caller, string[] command, ItemType type, int start, out ushort itemID)
         {
-            UnturnedPlayer player = null;
             if (!ushort.TryParse(type == ItemType.Item ? command[start] : command[start + 1], out itemID))
             {
                 if (!(caller is ConsolePlayer) && (type == ItemType.Item ? command[start].ToLower() == "h" : command[start + 1].ToLower() == "h"))
                 {
-                    player = (UnturnedPlayer)caller;
+                    UnturnedPlayer player = (UnturnedPlayer)caller;
                     if (type == ItemType.Item)
                         itemID = player.Player.equipment.itemID;
                     else if (player.IsInVehicle)
@@ -85,10 +84,9 @@ namespace DynShop
                         return false;
                     }
                 }
-
+                else
+                    itemID = type == ItemType.Item ? command[start].AssetIDFromName(type) : command[start + 1].AssetIDFromName(type);
             }
-            else
-                itemID = type == ItemType.Item ? command[start].AssetIDFromName(type) : command[start + 1].AssetIDFromName(type);
             return true;
         }
 

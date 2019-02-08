@@ -1,5 +1,6 @@
 using fr34kyn01535.Uconomy;
 using Rocket.API;
+using Rocket.Core.Logging;
 using Rocket.Unturned.Chat;
 using Rocket.Unturned.Player;
 using SDG.Unturned;
@@ -62,8 +63,7 @@ namespace DynShop
                 return;
             }
 
-            ushort itemID = 0;
-            if (!DShop.GetItemID(caller, command, type, 0, ref itemID))
+            if (!DShop.GetItemID(caller, command, type, 0, out ushort itemID))
                 return;
             if (itemID.AssetFromID(type) == null)
             {

@@ -62,7 +62,6 @@ namespace DynShop
             if (command.Length >= 2 && command[1].ToLower() == "v")
                 type = ItemType.Vehicle;
             ShopObject shopObject = null;
-            ushort itemID = 0;
             switch (command[0].ToLower())
             {
                 case "convert":
@@ -95,7 +94,7 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("add_help5"));
                             return;
                         }
-                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
                             return;
                         if (itemID.AssetFromID(type) == null)
                         {
@@ -181,7 +180,7 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("remove_help3"));
                             return;
                         }
-                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
                             return;
                         if (itemID.AssetFromID(type) == null)
                         {
@@ -204,7 +203,7 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("get_help3"));
                             return;
                         }
-                        if (!DShop.GetItemID(caller, command, type, 1, ref itemID))
+                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
                             return;
                         if (itemID.AssetFromID(type) == null)
                         {
@@ -233,7 +232,7 @@ namespace DynShop
                             type = ItemType.Vehicle;
                         if (command.Length == (type == ItemType.Item ? 4 : 5))
                         {
-                            if (!DShop.GetItemID(caller, command, type, 2, ref itemID))
+                            if (!DShop.GetItemID(caller, command, type, 2, out ushort itemID))
                                 return;
                             if (itemID.AssetFromID(type) == null)
                             {

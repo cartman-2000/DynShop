@@ -62,7 +62,6 @@ namespace DynShop
                 return;
             }
 
-            ushort itemID = 0;
             ushort count = 1;
 
             if (command.Length == 2 && type == ItemType.Item)
@@ -79,7 +78,7 @@ namespace DynShop
             }
 
             UnturnedPlayer player = caller as UnturnedPlayer;
-            if (!DShop.GetItemID(caller, command, type, 0, ref itemID))
+            if (!DShop.GetItemID(caller, command, type, 0, out ushort itemID))
                 return;
             if (itemID.AssetFromID(type) == null)
             {
