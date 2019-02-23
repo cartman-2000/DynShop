@@ -56,7 +56,7 @@ namespace DynShop
         }
 
         // Gets ItemID out of buy/cost/shop command.
-        public static bool GetItemID(IRocketPlayer caller, string[] command, ItemType type, int start, out ushort itemID)
+        public static bool GetItemID(IRocketPlayer caller, string[] command, ItemType type, int start, out ushort itemID, bool checkValidAsset = true)
         {
             if (!ushort.TryParse(type == ItemType.Item ? command[start] : command[start + 1], out itemID))
             {
@@ -86,6 +86,11 @@ namespace DynShop
                 }
                 else
                     itemID = type == ItemType.Item ? command[start].AssetIDFromName(type) : command[start + 1].AssetIDFromName(type);
+            }
+            if (checkValidAsset && itemID.AssetFromID(type) == null)
+            {
+                UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
+                return false;
             }
             return true;
         }

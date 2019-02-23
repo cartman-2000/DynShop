@@ -18,14 +18,12 @@ namespace DynShop
         [XmlAttribute]
         public RestrictBuySell RestrictBuySell = RestrictBuySell.None;
         [XmlAttribute]
-        public string ItemName = "";
+        public string ItemName = "#NULL";
 
         public void AssetName()
         {
-            Asset asset = Assets.find(this is ShopItem? EAssetType.ITEM : EAssetType.VEHICLE, ItemID);
-            if (asset == null)
-                ItemName = string.Empty;
-            else
+            Asset asset = Assets.find(this is ShopItem ? EAssetType.ITEM : EAssetType.VEHICLE, ItemID);
+            if (asset != null)
             {
                 if (this is ShopItem)
                 {
@@ -42,7 +40,6 @@ namespace DynShop
             }
             return;
         }
-
     }
 
     [Serializable]

@@ -96,11 +96,6 @@ namespace DynShop
                         }
                         if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
                             return;
-                        if (itemID.AssetFromID(type) == null)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
-                            return;
-                        }
                         shopObject = DShop.Instance.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
@@ -132,8 +127,19 @@ namespace DynShop
                         decimal minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
                         if (type == ItemType.Item && command.Length >= 5 && !decimal.TryParse(command[4], out minBuyPrice))
                         {
-                            minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_minprice"));
+                            decimal fraction = 0m;
+                            if (command[4].ToLower() == "dm" || command[4].IsFraction(out fraction) || DShop.Instance.Configuration.Instance.MinDefaultAsCostMultiple)
+                            {
+                                if (fraction == 0m)
+                                    minBuyPrice = Decimal.Multiply(buyCost, DShop.Instance.Configuration.Instance.MinDefaultMultiple);
+                                else
+                                    minBuyPrice = decimal.Multiply(buyCost, fraction);
+                            }
+                            else
+                            {
+                                minBuyPrice = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_minprice"));
+                            }
                         }
 
                         decimal changeRate = DShop.Instance.Configuration.Instance.DefaultIncrement;
@@ -146,7 +152,10 @@ namespace DynShop
                         decimal maxBuyPrice = 0;
                         if (type == ItemType.Item && command.Length >= 7 && !decimal.TryParse(command[6], out maxBuyPrice))
                         {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_maxprice"));
+                            if (command[4].IsFraction(out decimal fraction))
+                                maxBuyPrice = decimal.Multiply(buyCost, fraction);
+                            else
+                                UnturnedChat.Say(caller, DShop.Instance.Translate("parse_fail_maxprice"));
                         }
 
                         RestrictBuySell restrictBuySell = RestrictBuySell.None;
@@ -180,13 +189,8 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("remove_help3"));
                             return;
                         }
-                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
+                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID, false))
                             return;
-                        if (itemID.AssetFromID(type) == null)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
-                            return;
-                        }
 
                         shopObject = DShop.Instance.Database.GetItem(type, itemID);
 
@@ -203,13 +207,8 @@ namespace DynShop
                             UnturnedChat.Say(caller, DShop.Instance.Translate("get_help3"));
                             return;
                         }
-                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID))
+                        if (!DShop.GetItemID(caller, command, type, 1, out ushort itemID, false))
                             return;
-                        if (itemID.AssetFromID(type) == null)
-                        {
-                            UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
-                            return;
-                        }
                         shopObject = DShop.Instance.Database.GetItem(type, itemID);
                         if (shopObject.ItemID == itemID)
                         {
@@ -234,11 +233,6 @@ namespace DynShop
                         {
                             if (!DShop.GetItemID(caller, command, type, 2, out ushort itemID))
                                 return;
-                            if (itemID.AssetFromID(type) == null)
-                            {
-                                UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
-                                return;
-                            }
                             shopObject = DShop.Instance.Database.GetItem(type, itemID);
                             if (shopObject.ItemID != itemID)
                             {
@@ -272,9 +266,7 @@ namespace DynShop
                                     {
                                         decimal fraction = 0;
                                         if ((type == ItemType.Item && command[3].IsFraction(out fraction)) || (type == ItemType.Vehicle && command[4].IsFraction(out fraction)))
-                                        {
                                             sellMult = fraction;
-                                        }
                                         else
                                         {
                                             UnturnedChat.Say(caller, DShop.Instance.Translate("bad_mult"));
@@ -292,8 +284,15 @@ namespace DynShop
                                     decimal minCost = DShop.Instance.Configuration.Instance.MinDefaultBuyCost;
                                     if (!decimal.TryParse(command[3], out minCost))
                                     {
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("bad_minprice"));
-                                        return;
+                                        if (command[3].ToLower() == "dm")
+                                            minCost = decimal.Multiply(shopObject.BuyCost, DShop.Instance.Configuration.Instance.MinDefaultMultiple);
+                                        else if (command[3].IsFraction(out decimal fraction))
+                                            minCost = decimal.Multiply(shopObject.BuyCost, fraction);
+                                        else
+                                        {
+                                            UnturnedChat.Say(caller, DShop.Instance.Translate("bad_minprice"));
+                                            return;
+                                        }
                                     }
                                     ((ShopItem)shopObject).MinBuyPrice = minCost;
                                     goto set;
@@ -320,8 +319,13 @@ namespace DynShop
                                     decimal maxCost = 0;
                                     if (!decimal.TryParse(command[3], out maxCost))
                                     {
-                                        UnturnedChat.Say(caller, DShop.Instance.Translate("bad_maxprice"));
-                                        return;
+                                        if (command[3].IsFraction(out decimal fraction))
+                                            maxCost = decimal.Multiply(shopObject.BuyCost, fraction);
+                                        else
+                                        {
+                                            UnturnedChat.Say(caller, DShop.Instance.Translate("bad_maxprice"));
+                                            return;
+                                        }
                                     }
                                     ((ShopItem)shopObject).MaxBuyPrice = maxCost;
                                     goto set;

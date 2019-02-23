@@ -80,11 +80,6 @@ namespace DynShop
             UnturnedPlayer player = caller as UnturnedPlayer;
             if (!DShop.GetItemID(caller, command, type, 0, out ushort itemID))
                 return;
-            if (itemID.AssetFromID(type) == null)
-            {
-                UnturnedChat.Say(caller, DShop.Instance.Translate("invalid_id"));
-                return;
-            }
             ShopObject sObject = DShop.Instance.Database.GetItem(type, itemID);
             if (sObject.ItemID != itemID)
             {

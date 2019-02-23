@@ -50,6 +50,8 @@ namespace DynShop
         public bool SellAttatchmentsOnGun = false;
         public decimal DefaultSellMultiplier = .25m;
         public decimal MinDefaultBuyCost = .4m;
+        public bool MinDefaultAsCostMultiple = true;
+        public decimal MinDefaultMultiple = .5m;
         public decimal DefaultBuyCost = 10;
         public decimal MaxBuyCost = 6000m;
         public decimal DefaultIncrement = .01m;
