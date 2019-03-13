@@ -73,7 +73,7 @@ namespace DynShop
                     command.CommandText += "CREATE TABLE `" + TableVehicles + "` (" +
                         " `ItemID` SMALLINT UNSIGNED NOT NULL," +
                         " `BuyCost` DECIMAL(11, 4) NOT NULL DEFAULT '150.0000'," +
-                        " `SellMultiplier` DECIMAL(11, 4) NOT NULLDEFAULT '0.5000'," +
+                        " `SellMultiplier` DECIMAL(11, 4) NOT NULL DEFAULT '0.5000'," +
                         " `ItemName` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL," +
                         " PRIMARY KEY (`ItemID`)" +
                         ") ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_unicode_ci;";
@@ -86,7 +86,7 @@ namespace DynShop
                         " `BoughtTime` BIGINT NOT NULL," +
                         " PRIMARY KEY (`ID`)" +
                         ") ENGINE = InnoDB CHARSET=utf8 COLLATE utf8_unicode_ci;";
-                    command.CommandText += "CREATE TABLE `" + TableServerInstance + " ` (" +
+                    command.CommandText += "CREATE TABLE `" + TableServerInstance + "` (" +
                         " `ID` INT NOT NULL AUTO_INCREMENT," +
                         " `InstanceName` VARCHAR(60) NOT NULL," +
                         " `ServerName` VARCHAR(255) NOT NULL," +
