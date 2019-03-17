@@ -1,0 +1,108 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net35;net40</TargetFrameworks>
+    <AssemblyVersion>1.2.5.1</AssemblyVersion>
+    <Description>A server shop with dynamic item prices.</Description>
+    <Copyright>Cartman-2000 ©  2018</Copyright>
+    <PackageProjectUrl>https://github.com/cartman-2000/DynShop</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/cartman-2000/DynShop</RepositoryUrl>
+    <NeutralLanguage>en-US</NeutralLanguage>
+    <Version>1.2.5.1</Version>
+  </PropertyGroup>
+
+  <!-- .NET 4.0 references, compilation flags and build options -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net40' ">		
+      <Reference Include="lib.net4\Assembly-CSharp.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net4\Assembly-CSharp-firstpass.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net4\UnityEngine.CoreModule.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net4\UnityEngine.dll">
+        <Private>false</Private>
+      </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net40'">
+      <DefineConstants>NET40</DefineConstants>
+  </PropertyGroup>
+
+  <!-- .NET 3.5 references, compilation flags and build options -->
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">		
+      <Reference Include="lib.net2\Assembly-CSharp.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net2\Assembly-CSharp-firstpass.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net2\UnityEngine.CoreModule.dll">
+        <Private>false</Private>
+      </Reference>
+      <Reference Include="lib.net2\UnityEngine.dll">
+        <Private>false</Private>
+      </Reference>
+  </ItemGroup>
+  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35'">
+      <DefineConstants>NET35</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="I18N">
+      <HintPath>lib.mysql\I18N.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="I18N.West">
+      <HintPath>lib.mysql\I18N.West.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>lib.mysql\MySql.Data.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rocket.API">
+      <HintPath>lib.rocket\Rocket.API.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rocket.Core">
+      <HintPath>lib.rocket\Rocket.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Rocket.Unturned">
+      <HintPath>lib.rocket\Rocket.Unturned.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="System.Management">
+    </Reference>
+    <Reference Include="System.Transactions">
+    </Reference>
+    <Reference Include="Uconomy">
+      <HintPath>lib.uconomy\Uconomy.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Libraries\I18N.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\I18N.West.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libraries\MySql.Data.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DynShop\DynShop.defaultvalues.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+
+  <PropertyGroup>
+    <PostBuildEvent>copy "$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop.dll" "$(SolutionDir)..\Rocket_Ref\DynShopLib_$(TargetFramework)\"
+
+powershell Compress-Archive -Update -Path '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop.dll', '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\Libraries\', '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop\' -DestinationPath '$(SolutionDir)DynShop\bin\Release\DynShop_$(TargetFramework).zip'</PostBuildEvent>
+  </PropertyGroup>
+</Project>

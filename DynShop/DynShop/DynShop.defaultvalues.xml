@@ -1,0 +1,1381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DefaultValues xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <FileVersion>1</FileVersion>
+  <Items>
+    <Item ItemID="2" BuyCost="2" SellMultiplier="0.5" RestrictBuySell="0" MinBuyPrice="0.5" Change="0.01" MaxBuyPrice="0" />
+    <Item ItemID="2" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="4" BuyCost="48.0000" SellMultiplier="0.166700" MinBuyPrice="24.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="5" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="6" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="7" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="8" BuyCost="16.0000" SellMultiplier="0.187500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="9" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="10" BuyCost="15.0000" SellMultiplier="0.133300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="11" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="13" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.005000" MaxBuyPrice="2.0000" RestrictBuySell="0" />
+    <Item ItemID="14" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.005000" MaxBuyPrice="2.0000" RestrictBuySell="0" />
+    <Item ItemID="15" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="16" BuyCost="24.0000" SellMultiplier="0.100000" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="17" BuyCost="40.0000" SellMultiplier="0.100000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="18" BuyCost="100.0000" SellMultiplier="0.140000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="19" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="20" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="21" BuyCost="24.0000" SellMultiplier="0.166700" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="22" BuyCost="20.0000" SellMultiplier="0.175000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="27" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="28" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="29" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="30" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="31" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="32" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="33" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="34" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="35" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="36" BuyCost="1.2000" SellMultiplier="0.166700" MinBuyPrice="0.6000" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="37" BuyCost="0.6000" SellMultiplier="0.166600" MinBuyPrice="0.3000" Change="0.005000" MaxBuyPrice="1.5000" RestrictBuySell="0" />
+    <Item ItemID="38" BuyCost="0.0800" SellMultiplier="0.250000" MinBuyPrice="0.0400" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="39" BuyCost="0.6000" SellMultiplier="0.166600" MinBuyPrice="0.3000" Change="0.005000" MaxBuyPrice="1.5000" RestrictBuySell="0" />
+    <Item ItemID="40" BuyCost="0.0800" SellMultiplier="0.250000" MinBuyPrice="0.0400" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="41" BuyCost="0.6000" SellMultiplier="0.166600" MinBuyPrice="0.3000" Change="0.005000" MaxBuyPrice="1.5000" RestrictBuySell="0" />
+    <Item ItemID="42" BuyCost="0.0800" SellMultiplier="0.250000" MinBuyPrice="0.0400" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="43" BuyCost="10.0000" SellMultiplier="0.125000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="44" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="45" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="46" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="47" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="48" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="49" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="50" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="51" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="52" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="53" BuyCost="1.2000" SellMultiplier="0.166700" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="54" BuyCost="1.2000" SellMultiplier="0.166700" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="55" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="56" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="57" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="58" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="59" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="60" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="61" BuyCost="0.1600" SellMultiplier="0.250000" MinBuyPrice="0.0800" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="62" BuyCost="0.1600" SellMultiplier="0.250000" MinBuyPrice="0.0800" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="63" BuyCost="0.1600" SellMultiplier="0.250000" MinBuyPrice="0.0800" Change="0.001000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="64" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="65" BuyCost="2.0000" SellMultiplier="0.125000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="66" BuyCost="0.6000" SellMultiplier="0.083300" MinBuyPrice="0.3000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="67" BuyCost="0.7500" SellMultiplier="0.333333" MinBuyPrice="0.3750" Change="0.005000" MaxBuyPrice="2.0000" RestrictBuySell="0" />
+    <Item ItemID="68" BuyCost="1.5000" SellMultiplier="0.333333" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="3.0000" RestrictBuySell="0" />
+    <Item ItemID="69" BuyCost="6.0000" SellMultiplier="0.083300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="70" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="71" BuyCost="1.7500" SellMultiplier="0.228600" MinBuyPrice="0.8750" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="72" BuyCost="4.0000" SellMultiplier="0.312500" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="73" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="74" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="75" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="76" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="77" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="78" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="79" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="80" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="81" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="82" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="83" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="84" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="85" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="86" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="87" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="88" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="89" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="90" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="91" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="92" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="93" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="94" BuyCost="1.2000" SellMultiplier="0.500000" MinBuyPrice="0.6000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="95" BuyCost="2.0000" SellMultiplier="0.075000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="96" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="97" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="98" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="99" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="100" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="101" BuyCost="40.0000" SellMultiplier="0.187500" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="103" BuyCost="10.0000" SellMultiplier="0.050000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="104" BuyCost="30.0000" SellMultiplier="0.166700" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="105" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="106" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="107" BuyCost="28.0000" SellMultiplier="0.178600" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="108" BuyCost="10.0000" SellMultiplier="0.050000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="109" BuyCost="60.0000" SellMultiplier="0.166700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="110" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="111" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="112" BuyCost="70.0000" SellMultiplier="0.171400" MinBuyPrice="35.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="113" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="114" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="115" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="116" BuyCost="60.0000" SellMultiplier="0.166700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="117" BuyCost="80.0000" SellMultiplier="0.100000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="118" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="119" BuyCost="10.0000" SellMultiplier="0.125000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="120" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="121" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="122" BuyCost="48.0000" SellMultiplier="0.166700" MinBuyPrice="24.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="123" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="125" BuyCost="30.0000" SellMultiplier="0.100000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="126" BuyCost="75.0000" SellMultiplier="0.173300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="127" BuyCost="40.0000" SellMultiplier="0.100000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="128" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="129" BuyCost="60.0000" SellMultiplier="0.166700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="130" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="132" BuyCost="75.0000" SellMultiplier="0.173300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="133" BuyCost="40.0000" SellMultiplier="0.100000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="134" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="135" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="136" BuyCost="36.0000" SellMultiplier="0.138900" MinBuyPrice="18.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="137" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="138" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="139" BuyCost="16.0000" SellMultiplier="0.156300" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="140" BuyCost="16.0000" SellMultiplier="0.156300" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="141" BuyCost="20.0000" SellMultiplier="0.025000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="142" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="143" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="144" BuyCost="18.0000" SellMultiplier="0.194400" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="145" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="146" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="147" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="148" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="149" BuyCost="18.0000" SellMultiplier="0.194400" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="150" BuyCost="18.0000" SellMultiplier="0.194400" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="151" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="152" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="153" BuyCost="22.0000" SellMultiplier="0.181800" MinBuyPrice="11.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="154" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="155" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="156" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="157" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="158" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="159" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="160" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="161" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="162" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="163" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="164" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="165" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="166" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="167" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="168" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="169" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="170" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="171" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="172" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="173" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="174" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="175" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="176" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="177" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="178" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="179" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="180" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="181" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="182" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="183" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="184" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="185" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="186" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="187" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="188" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="189" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="190" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="191" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="192" BuyCost="2.0000" SellMultiplier="0.010000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="193" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="194" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="195" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="196" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="197" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="198" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="199" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="200" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="201" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="202" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="203" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="204" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="205" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="206" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="207" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="208" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="209" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="210" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="211" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="212" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="213" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="214" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="215" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="216" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="217" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="218" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="219" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="220" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="221" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="222" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="223" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="224" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="225" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="226" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="227" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="228" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="229" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="230" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="231" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="232" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="233" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="234" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="235" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="236" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="237" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="238" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="239" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="240" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="241" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="242" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="243" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="244" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="245" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="246" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="247" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="248" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="249" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="250" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="251" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="252" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="253" BuyCost="60.0000" SellMultiplier="0.133300" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="254" BuyCost="80.0000" SellMultiplier="0.056300" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="255" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="256" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="257" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="258" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="259" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="260" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="261" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="262" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="263" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="264" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="265" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="266" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="267" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="268" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="269" BuyCost="15.0000" SellMultiplier="0.133300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="270" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="271" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="272" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="273" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="274" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="275" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="276" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="277" BuyCost="12.0000" SellMultiplier="0.375000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="278" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="279" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="280" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="281" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="282" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="283" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="284" BuyCost="8.0000" SellMultiplier="0.093800" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="285" BuyCost="2.0000" SellMultiplier="0.050000" MinBuyPrice="1.0000" Change="0.005000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="286" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="287" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="288" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="289" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="290" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="291" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="292" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="293" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="294" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="295" BuyCost="8.0000" SellMultiplier="0.187500" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="296" BuyCost="32.0000" SellMultiplier="0.187500" MinBuyPrice="16.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="297" BuyCost="120.0000" SellMultiplier="0.125000" MinBuyPrice="60.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="298" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="299" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="300" BuyCost="500.0000" SellMultiplier="0.120000" MinBuyPrice="250.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="301" BuyCost="18.0000" SellMultiplier="0.166700" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="302" BuyCost="28.0000" SellMultiplier="0.160700" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="303" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="304" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="305" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="306" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="307" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="308" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="309" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="310" BuyCost="20.0000" SellMultiplier="0.225000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="311" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="312" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="313" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="314" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="315" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="316" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="317" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="318" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="319" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="320" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="321" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="322" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="323" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="324" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="325" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="326" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="327" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="328" BuyCost="16.0000" SellMultiplier="0.281300" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="329" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="330" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="331" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="332" BuyCost="0.7500" SellMultiplier="0.506700" MinBuyPrice="0.3750" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="333" BuyCost="7.0000" SellMultiplier="0.142900" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="334" BuyCost="20.0000" SellMultiplier="0.250000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="335" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="336" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="337" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="338" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="339" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="340" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="341" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="342" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="343" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="344" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="345" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="346" BuyCost="40.0000" SellMultiplier="0.162500" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="347" BuyCost="6.0000" SellMultiplier="0.083300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="348" BuyCost="3.0000" SellMultiplier="0.083300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="349" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="350" BuyCost="80.0000" SellMultiplier="0.100000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="351" BuyCost="3.0000" SellMultiplier="0.083300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="352" BuyCost="3.0000" SellMultiplier="0.083300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="353" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="354" BuyCost="80.0000" SellMultiplier="0.100000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="355" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="356" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="357" BuyCost="40.0000" SellMultiplier="0.150000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="358" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="359" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="360" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="361" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="362" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="363" BuyCost="44.0000" SellMultiplier="0.170500" MinBuyPrice="22.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="364" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="365" BuyCost="7.0000" SellMultiplier="0.042900" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="366" BuyCost="12.0000" SellMultiplier="0.100000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="367" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="368" BuyCost="14.0000" SellMultiplier="0.100000" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="369" BuyCost="7.5000" SellMultiplier="0.166667" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="370" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="371" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="372" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="373" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="374" BuyCost="4.5000" SellMultiplier="0.266700" MinBuyPrice="2.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="375" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="376" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="377" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="378" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="379" BuyCost="16.0000" SellMultiplier="0.125000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="380" BuyCost="40.0000" SellMultiplier="0.150000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="381" BuyCost="1.0000" SellMultiplier="0.200000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="382" BuyCost="3.0000" SellMultiplier="0.083300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="383" BuyCost="8.0000" SellMultiplier="0.031300" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="384" BuyCost="8.0000" SellMultiplier="0.031300" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="385" BuyCost="8.0000" SellMultiplier="0.031300" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="386" BuyCost="12.0000" SellMultiplier="0.104200" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="387" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="388" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="389" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="390" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="391" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="392" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="393" BuyCost="2.0000" SellMultiplier="0.050000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="394" BuyCost="8.0000" SellMultiplier="0.025000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="395" BuyCost="10.0000" SellMultiplier="0.250000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="396" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="397" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="398" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="399" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="400" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="401" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="402" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="403" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="404" BuyCost="5.0000" SellMultiplier="0.300000" MinBuyPrice="2.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="405" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="406" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="407" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="408" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="409" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="410" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="411" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="412" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="413" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="414" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="415" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="416" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="417" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="418" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="421" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="422" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="423" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="424" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="425" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="426" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="427" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="428" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="429" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="430" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="431" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="432" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="433" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="434" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="435" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="436" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="437" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="438" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="439" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="440" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="441" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="442" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="443" BuyCost="0.6000" SellMultiplier="0.166700" MinBuyPrice="0.3000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="444" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="445" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="446" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="447" BuyCost="0.6000" SellMultiplier="0.166700" MinBuyPrice="0.3000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="448" BuyCost="0.6000" SellMultiplier="0.166700" MinBuyPrice="0.3000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="449" BuyCost="4.5000" SellMultiplier="0.266700" MinBuyPrice="2.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="450" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="451" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="452" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="453" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="454" BuyCost="15.0000" SellMultiplier="0.133300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="455" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="456" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="457" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="458" BuyCost="15.0000" SellMultiplier="0.366700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="459" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="460" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="461" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="462" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="463" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="464" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="465" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="466" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="467" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="468" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="469" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="470" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="471" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="472" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="473" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="474" BuyCost="28.0000" SellMultiplier="0.071400" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="476" BuyCost="16.0000" SellMultiplier="0.125000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="477" BuyCost="16.0000" SellMultiplier="0.125000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="478" BuyCost="10.0000" SellMultiplier="0.050000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="479" BuyCost="24.0000" SellMultiplier="0.072900" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="480" BuyCost="32.0000" SellMultiplier="0.070300" MinBuyPrice="16.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="481" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="482" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="483" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="484" BuyCost="48.0000" SellMultiplier="0.156300" MinBuyPrice="24.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="485" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="487" BuyCost="16.0000" SellMultiplier="0.125000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="488" BuyCost="24.0000" SellMultiplier="0.187500" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="489" BuyCost="8.0000" SellMultiplier="0.093800" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="490" BuyCost="50.0000" SellMultiplier="0.060000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="503" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="504" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="505" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="506" BuyCost="4.0000" SellMultiplier="0.500000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="507" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="508" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="509" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="510" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="511" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="512" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="513" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="514" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="515" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="516" BuyCost="6.0000" SellMultiplier="0.083300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="517" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="518" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="519" BuyCost="600.0000" SellMultiplier="0.083300" MinBuyPrice="300.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="520" BuyCost="80.0000" SellMultiplier="0.062500" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="521" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="786" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1000" BuyCost="100.0000" SellMultiplier="0.140000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1001" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1002" BuyCost="80.0000" SellMultiplier="0.100000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1003" BuyCost="15.0000" SellMultiplier="0.066700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1004" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1005" BuyCost="30.0000" SellMultiplier="0.066700" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1006" BuyCost="16.0000" SellMultiplier="0.093800" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1007" BuyCost="20.0000" SellMultiplier="0.250000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1008" BuyCost="22.0000" SellMultiplier="0.227300" MinBuyPrice="11.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1009" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1010" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1011" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1012" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1013" BuyCost="20.0000" SellMultiplier="0.125000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1014" BuyCost="20.0000" SellMultiplier="0.225000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1015" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1016" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1017" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1018" BuyCost="60.0000" SellMultiplier="0.200000" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1019" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1020" BuyCost="18.0000" SellMultiplier="0.055600" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1021" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1022" BuyCost="6.0000" SellMultiplier="0.125000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1023" BuyCost="14.0000" SellMultiplier="0.285700" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1024" BuyCost="40.0000" SellMultiplier="0.175000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1025" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1026" BuyCost="15.0000" SellMultiplier="0.066700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1027" BuyCost="40.0000" SellMultiplier="0.175000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1028" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1029" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1030" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1031" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1032" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1033" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1034" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1035" BuyCost="12.0000" SellMultiplier="0.208300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1036" BuyCost="14.0000" SellMultiplier="0.214300" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1037" BuyCost="42.0000" SellMultiplier="0.178600" MinBuyPrice="21.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1038" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1039" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1040" BuyCost="6.0000" SellMultiplier="0.125000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1041" BuyCost="40.0000" SellMultiplier="0.175000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1042" BuyCost="16.0000" SellMultiplier="0.062500" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1044" BuyCost="17.5000" SellMultiplier="0.257100" MinBuyPrice="8.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1045" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1046" BuyCost="3.0000" SellMultiplier="0.416700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1047" BuyCost="2.5000" SellMultiplier="0.500000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1048" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1049" BuyCost="7.0000" SellMultiplier="0.178600" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1050" BuyCost="120.0000" SellMultiplier="0.100000" MinBuyPrice="60.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1051" BuyCost="5.0000" SellMultiplier="1.000000" MinBuyPrice="2.5000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1052" BuyCost="10.0000" SellMultiplier="1.000000" MinBuyPrice="5.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1053" BuyCost="20.0000" SellMultiplier="1.000000" MinBuyPrice="10.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1054" BuyCost="50.0000" SellMultiplier="1.000000" MinBuyPrice="25.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1055" BuyCost="100.0000" SellMultiplier="1.000000" MinBuyPrice="50.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1056" BuyCost="1.0000" SellMultiplier="1.000000" MinBuyPrice="0.5000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1057" BuyCost="2.0000" SellMultiplier="1.000000" MinBuyPrice="1.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1058" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1059" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1060" BuyCost="6.0000" SellMultiplier="0.053300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1061" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1062" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1063" BuyCost="1.5000" SellMultiplier="0.106700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1064" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1065" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1066" BuyCost="6.0000" SellMultiplier="0.053300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1067" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1068" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1069" BuyCost="1.5000" SellMultiplier="0.106700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1070" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1071" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1072" BuyCost="6.0000" SellMultiplier="0.053300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1073" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1074" BuyCost="1.5000" SellMultiplier="0.053300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1075" BuyCost="1.5000" SellMultiplier="0.106700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1076" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1077" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1078" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1079" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1080" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1081" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1082" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1083" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1084" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1085" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1086" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1087" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1088" BuyCost="3.0000" SellMultiplier="0.066700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1089" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1090" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1091" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1092" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1093" BuyCost="3.0000" SellMultiplier="0.166700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1094" BuyCost="3.0000" SellMultiplier="0.166700" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1095" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1096" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1097" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1098" BuyCost="6.5000" SellMultiplier="0.230800" MinBuyPrice="3.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1099" BuyCost="450.0000" SellMultiplier="0.055600" MinBuyPrice="225.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1100" BuyCost="100.0000" SellMultiplier="0.045000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1101" BuyCost="80.0000" SellMultiplier="0.037500" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1102" BuyCost="60.0000" SellMultiplier="0.050000" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1103" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1104" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1105" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1106" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1107" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1108" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1109" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1110" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1111" BuyCost="550.0000" SellMultiplier="0.054500" MinBuyPrice="275.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1112" BuyCost="350.0000" SellMultiplier="0.057100" MinBuyPrice="175.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1113" BuyCost="10.0000" SellMultiplier="0.250000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1114" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1115" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1116" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1117" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1118" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1119" BuyCost="20.0000" SellMultiplier="0.087500" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1120" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1121" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1122" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1123" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1124" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1125" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1126" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1127" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1128" BuyCost="75.0000" SellMultiplier="0.133300" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1129" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1130" BuyCost="14.0000" SellMultiplier="0.071400" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1131" BuyCost="24.0000" SellMultiplier="0.041700" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1132" BuyCost="15.0000" SellMultiplier="0.200000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1133" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1134" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1135" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1136" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1137" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1138" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1139" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1140" BuyCost="3.5000" SellMultiplier="0.428600" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1143" BuyCost="45.0000" SellMultiplier="0.161100" MinBuyPrice="22.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1144" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1145" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1146" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1147" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1148" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1149" BuyCost="6.0000" SellMultiplier="0.066700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1150" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1151" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1152" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1153" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1154" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1155" BuyCost="1.5000" SellMultiplier="0.066700" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1156" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1157" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1158" BuyCost="50.0000" SellMultiplier="0.060000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1159" BuyCost="1.0000" SellMultiplier="0.250000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1160" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1161" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1162" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1163" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1164" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1165" BuyCost="30.0000" SellMultiplier="0.233300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1166" BuyCost="4.0000" SellMultiplier="0.187500" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1167" BuyCost="80.0000" SellMultiplier="0.250000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1168" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1169" BuyCost="20.0000" SellMultiplier="0.150000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1170" BuyCost="28.0000" SellMultiplier="0.232100" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1171" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1172" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1173" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1174" BuyCost="28.0000" SellMultiplier="0.196400" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1175" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1176" BuyCost="20.0000" SellMultiplier="0.250000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1177" BuyCost="15.0000" SellMultiplier="0.083300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1178" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1179" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1180" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1181" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1182" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1183" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1184" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1185" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1186" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1187" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1188" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1189" BuyCost="25.0000" SellMultiplier="0.240000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1190" BuyCost="15.0000" SellMultiplier="0.200000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1191" BuyCost="15.0000" SellMultiplier="0.200000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1192" BuyCost="12.0000" SellMultiplier="0.125000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1193" BuyCost="12.0000" SellMultiplier="0.125000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1194" BuyCost="100.0000" SellMultiplier="0.100000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1195" BuyCost="30.0000" SellMultiplier="0.200000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1196" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1197" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1198" BuyCost="30.0000" SellMultiplier="0.200000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1199" BuyCost="17.5000" SellMultiplier="0.257100" MinBuyPrice="8.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1200" BuyCost="40.0000" SellMultiplier="0.062500" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1201" BuyCost="35.0000" SellMultiplier="0.171400" MinBuyPrice="17.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1202" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1203" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1204" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1205" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1206" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1207" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1208" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1209" BuyCost="24.0000" SellMultiplier="0.104200" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1210" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1211" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1212" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1213" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1214" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1215" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1216" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1217" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1218" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1219" BuyCost="100.0000" SellMultiplier="0.200000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1220" BuyCost="15.0000" SellMultiplier="0.133300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1221" BuyCost="18.0000" SellMultiplier="0.138900" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1222" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1223" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1224" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1225" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1226" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1227" BuyCost="25.0000" SellMultiplier="0.120000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1228" BuyCost="75.0000" SellMultiplier="0.100000" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1229" BuyCost="100.0000" SellMultiplier="0.100000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1230" BuyCost="80.0000" SellMultiplier="0.250000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1231" BuyCost="5.0000" SellMultiplier="0.300000" MinBuyPrice="2.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1232" BuyCost="5.0000" SellMultiplier="0.300000" MinBuyPrice="2.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1233" BuyCost="5.0000" SellMultiplier="0.300000" MinBuyPrice="2.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1234" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1235" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1236" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1237" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1238" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1239" BuyCost="14.0000" SellMultiplier="0.160700" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1240" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1241" BuyCost="120.0000" SellMultiplier="0.037500" MinBuyPrice="60.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1242" BuyCost="60.0000" SellMultiplier="0.037500" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1243" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1244" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1245" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1246" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1247" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1248" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1249" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1250" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1251" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1252" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1253" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1254" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1255" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1256" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1257" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1258" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1259" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1260" BuyCost="30.0000" SellMultiplier="0.200000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1261" BuyCost="25.0000" SellMultiplier="0.320000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1262" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1263" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1264" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1265" BuyCost="3.7500" SellMultiplier="0.266700" MinBuyPrice="1.8750" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1266" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1267" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1268" BuyCost="0.9000" SellMultiplier="0.166700" MinBuyPrice="0.4500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1269" BuyCost="3.7500" SellMultiplier="0.266700" MinBuyPrice="1.8750" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1270" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1271" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1272" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1273" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1274" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1275" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1276" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1277" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1278" BuyCost="6.0000" SellMultiplier="0.208300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1279" BuyCost="6.0000" SellMultiplier="0.208300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1280" BuyCost="6.0000" SellMultiplier="0.208300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1281" BuyCost="20.0000" SellMultiplier="0.300000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1282" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1283" BuyCost="10.0000" SellMultiplier="0.200000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1284" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1285" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1286" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1287" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1288" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1289" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1290" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1291" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1292" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1293" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1294" BuyCost="4.0000" SellMultiplier="0.125000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1295" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1296" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1297" BuyCost="8.0000" SellMultiplier="0.375000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1298" BuyCost="12.0000" SellMultiplier="0.375000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1299" BuyCost="12.0000" SellMultiplier="0.375000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1302" BuyCost="100.0000" SellMultiplier="0.040000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1303" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1304" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1305" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1306" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1307" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1308" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1309" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1310" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1311" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1312" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1313" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1314" BuyCost="16.0000" SellMultiplier="0.250000" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1315" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1316" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1317" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1318" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1319" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1320" BuyCost="6.0000" SellMultiplier="0.333300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1321" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1322" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1323" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1324" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1325" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1326" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1327" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1328" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1329" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1330" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1331" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1332" BuyCost="8.0000" SellMultiplier="0.250000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1333" BuyCost="14.0000" SellMultiplier="0.357100" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1334" BuyCost="14.0000" SellMultiplier="0.357100" MinBuyPrice="7.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1335" BuyCost="16.0000" SellMultiplier="0.328100" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1336" BuyCost="20.0000" SellMultiplier="0.300000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1337" BuyCost="30.0000" SellMultiplier="0.250000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1338" BuyCost="80.0000" SellMultiplier="0.100000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1339" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1340" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1341" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1342" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1343" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1344" BuyCost="8.0000" SellMultiplier="0.125000" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1345" BuyCost="24.0000" SellMultiplier="0.166700" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1346" BuyCost="60.0000" SellMultiplier="0.075000" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1347" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1348" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1349" BuyCost="1.0000" SellMultiplier="0.500000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1350" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1351" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1352" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1353" BuyCost="40.0000" SellMultiplier="0.100000" MinBuyPrice="20.0000" Change="0.000000" MaxBuyPrice="0.0000" RestrictBuySell="1" />
+    <Item ItemID="1354" BuyCost="16.0000" SellMultiplier="0.328100" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1355" BuyCost="16.0000" SellMultiplier="0.328100" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1356" BuyCost="16.0000" SellMultiplier="0.328100" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1357" BuyCost="16.0000" SellMultiplier="0.328100" MinBuyPrice="8.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1358" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1359" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1360" BuyCost="25.0000" SellMultiplier="0.200000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1361" BuyCost="8.0000" SellMultiplier="0.093800" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1362" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1363" BuyCost="20.0000" SellMultiplier="0.200000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1364" BuyCost="250.0000" SellMultiplier="0.120000" MinBuyPrice="125.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1365" BuyCost="60.0000" SellMultiplier="0.100000" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1366" BuyCost="35.0000" SellMultiplier="0.185700" MinBuyPrice="17.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1368" BuyCost="3.5000" SellMultiplier="0.114300" MinBuyPrice="1.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1369" BuyCost="45.0000" SellMultiplier="0.166700" MinBuyPrice="22.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1370" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1371" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1372" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1373" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1375" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1377" BuyCost="55.0000" SellMultiplier="0.154500" MinBuyPrice="27.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1379" BuyCost="40.0000" SellMultiplier="0.175000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1381" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1382" BuyCost="110.0000" SellMultiplier="0.127300" MinBuyPrice="55.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1383" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1384" BuyCost="18.0000" SellMultiplier="0.055600" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1385" BuyCost="10.0000" SellMultiplier="0.400000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1386" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1387" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1388" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1389" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1390" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1391" BuyCost="7.5000" SellMultiplier="1.000000" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1392" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1393" BuyCost="120.0000" SellMultiplier="0.037500" MinBuyPrice="60.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1395" BuyCost="30.0000" SellMultiplier="0.100000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1396" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1397" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1398" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1399" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1400" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1401" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1402" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1403" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1404" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1405" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1406" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1407" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1408" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1409" BuyCost="20.0000" SellMultiplier="0.125000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1410" BuyCost="10.0000" SellMultiplier="0.125000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1411" BuyCost="10.0000" SellMultiplier="0.125000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1412" BuyCost="10.0000" SellMultiplier="0.125000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1413" BuyCost="15.0000" SellMultiplier="0.116700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1414" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1415" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1416" BuyCost="1.8000" SellMultiplier="0.166700" MinBuyPrice="0.9000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1417" BuyCost="7.5000" SellMultiplier="0.266700" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1418" BuyCost="6.0000" SellMultiplier="0.250000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1419" BuyCost="7.0000" SellMultiplier="0.142900" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1420" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1421" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1422" BuyCost="12.0000" SellMultiplier="0.083300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1423" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1424" BuyCost="12.0000" SellMultiplier="0.166700" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1425" BuyCost="20.0000" SellMultiplier="0.225000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1426" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1427" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1428" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1431" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1432" BuyCost="18.0000" SellMultiplier="0.250000" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1434" BuyCost="1.5000" SellMultiplier="0.500000" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1435" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1436" BuyCost="60.0000" SellMultiplier="0.166700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1438" BuyCost="32.0000" SellMultiplier="0.218800" MinBuyPrice="16.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1440" BuyCost="60.0000" SellMultiplier="0.333300" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1441" BuyCost="1000.0000" SellMultiplier="0.120000" MinBuyPrice="500.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1442" BuyCost="30.0000" SellMultiplier="0.233300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1443" BuyCost="100.0000" SellMultiplier="0.100000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1444" BuyCost="80.0000" SellMultiplier="0.125000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1445" BuyCost="20.0000" SellMultiplier="0.250000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1446" BuyCost="18.0000" SellMultiplier="0.250000" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1447" BuyCost="60.0000" SellMultiplier="0.166700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1449" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1450" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1451" BuyCost="15.0000" SellMultiplier="0.266700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1452" BuyCost="2.0000" SellMultiplier="0.250000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1453" BuyCost="1.0000" SellMultiplier="0.250000" MinBuyPrice="0.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1454" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1455" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1456" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1457" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1458" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1459" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1460" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1461" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1462" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1463" BuyCost="7.0000" SellMultiplier="0.357100" MinBuyPrice="3.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1464" BuyCost="3.0000" SellMultiplier="0.333300" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1466" BuyCost="20.0000" SellMultiplier="0.275000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1467" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1468" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1469" BuyCost="1.5000" SellMultiplier="0.333300" MinBuyPrice="0.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1470" BuyCost="6.5000" SellMultiplier="0.230800" MinBuyPrice="3.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1472" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1473" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1474" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1475" BuyCost="60.0000" SellMultiplier="0.066700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1476" BuyCost="13.0000" SellMultiplier="0.192300" MinBuyPrice="6.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1477" BuyCost="30.0000" SellMultiplier="0.183300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1479" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1480" BuyCost="25.0000" SellMultiplier="0.200000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1481" BuyCost="40.0000" SellMultiplier="0.162500" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1482" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1483" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1484" BuyCost="44.0000" SellMultiplier="0.170500" MinBuyPrice="22.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1485" BuyCost="9.0000" SellMultiplier="0.111100" MinBuyPrice="4.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1486" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1487" BuyCost="4.5000" SellMultiplier="0.111100" MinBuyPrice="2.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1488" BuyCost="50.0000" SellMultiplier="0.170000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1490" BuyCost="8.0000" SellMultiplier="0.093800" MinBuyPrice="4.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1492" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1493" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1494" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1495" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1498" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1499" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1500" BuyCost="4.0000" SellMultiplier="0.250000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1503" BuyCost="250.0000" SellMultiplier="0.080000" MinBuyPrice="125.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1504" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1505" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1506" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1507" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1508" BuyCost="30.0000" SellMultiplier="0.233300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1509" BuyCost="15.0000" SellMultiplier="0.300000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1510" BuyCost="25.0000" SellMultiplier="0.220000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1511" BuyCost="60.0000" SellMultiplier="0.066700" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1512" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1513" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1514" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1515" BuyCost="15.0000" SellMultiplier="0.333300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1516" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1517" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1518" BuyCost="20.0000" SellMultiplier="0.125000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1519" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1520" BuyCost="100.0000" SellMultiplier="0.060000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1800" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1801" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1802" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1803" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1804" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1805" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="1806" BuyCost="100.0000" SellMultiplier="0.150000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2010" BuyCost="3.0000" SellMultiplier="0.250000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2011" BuyCost="6.0000" SellMultiplier="0.208300" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2013" BuyCost="4.5000" SellMultiplier="0.222200" MinBuyPrice="2.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2014" BuyCost="26.0000" SellMultiplier="0.125000" MinBuyPrice="13.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2015" BuyCost="26.0000" SellMultiplier="0.125000" MinBuyPrice="13.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2016" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2017" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2018" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2019" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2020" BuyCost="32.0000" SellMultiplier="0.171900" MinBuyPrice="16.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2021" BuyCost="500.0000" SellMultiplier="0.100000" MinBuyPrice="250.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="2022" BuyCost="950.0000" SellMultiplier="0.063200" MinBuyPrice="475.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3000" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3001" BuyCost="4.0000" SellMultiplier="0.375000" MinBuyPrice="2.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3002" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3003" BuyCost="2.5000" SellMultiplier="0.400000" MinBuyPrice="1.2500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3004" BuyCost="5.0000" SellMultiplier="0.200000" MinBuyPrice="2.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3005" BuyCost="30.0000" SellMultiplier="0.333300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3006" BuyCost="0.2500" SellMultiplier="0.200000" MinBuyPrice="0.1250" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3007" BuyCost="45.0000" SellMultiplier="0.277800" MinBuyPrice="22.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3008" BuyCost="55.0000" SellMultiplier="0.181800" MinBuyPrice="27.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3010" BuyCost="15.0000" SellMultiplier="0.066700" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3011" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3012" BuyCost="50.0000" SellMultiplier="0.140000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3014" BuyCost="30.0000" SellMultiplier="0.133300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3015" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3016" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3017" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3018" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3019" BuyCost="25.0000" SellMultiplier="0.250000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3020" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3021" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3022" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3023" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3025" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3026" BuyCost="110.0000" SellMultiplier="0.140000" MinBuyPrice="55.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3027" BuyCost="3.0000" SellMultiplier="0.500000" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3028" BuyCost="20.0000" SellMultiplier="0.075000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3029" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3030" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3031" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3032" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3033" BuyCost="50.0000" SellMultiplier="0.160000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3035" BuyCost="30.0000" SellMultiplier="0.166700" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3036" BuyCost="65.0000" SellMultiplier="0.307700" MinBuyPrice="32.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3039" BuyCost="12.0000" SellMultiplier="0.250000" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3040" BuyCost="6.0000" SellMultiplier="0.125000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3041" BuyCost="45.0000" SellMultiplier="0.177800" MinBuyPrice="22.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3043" BuyCost="80.0000" SellMultiplier="0.125000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3045" BuyCost="75.0000" SellMultiplier="0.200000" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3046" BuyCost="3.0000" SellMultiplier="0.333333" MinBuyPrice="1.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3047" BuyCost="40.0000" SellMultiplier="0.050000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3048" BuyCost="55.0000" SellMultiplier="0.072700" MinBuyPrice="27.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3049" BuyCost="150.0000" SellMultiplier="0.133300" MinBuyPrice="75.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3051" BuyCost="40.0000" SellMultiplier="0.050000" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3052" BuyCost="125.0000" SellMultiplier="0.160000" MinBuyPrice="62.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3054" BuyCost="20.0000" SellMultiplier="0.150000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3055" BuyCost="50.0000" SellMultiplier="0.045000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3056" BuyCost="250.0000" SellMultiplier="0.120000" MinBuyPrice="125.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3057" BuyCost="20.0000" SellMultiplier="0.250000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3060" BuyCost="100.0000" SellMultiplier="0.060000" MinBuyPrice="50.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3062" BuyCost="30.0000" SellMultiplier="0.125000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3063" BuyCost="35.0000" SellMultiplier="0.125000" MinBuyPrice="17.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3064" BuyCost="35.0000" SellMultiplier="0.125000" MinBuyPrice="17.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3065" BuyCost="35.0000" SellMultiplier="0.125000" MinBuyPrice="17.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3066" BuyCost="25.0000" SellMultiplier="0.250000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3067" BuyCost="25.0000" SellMultiplier="0.250000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3068" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3069" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3070" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3071" BuyCost="6.0000" SellMultiplier="0.500000" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3072" BuyCost="200.0000" SellMultiplier="0.200000" MinBuyPrice="100.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3073" BuyCost="24.0000" SellMultiplier="0.208300" MinBuyPrice="12.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3074" BuyCost="18.0000" SellMultiplier="0.166700" MinBuyPrice="9.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3076" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3078" BuyCost="28.0000" SellMultiplier="0.178600" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3079" BuyCost="10.0000" SellMultiplier="0.050000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3080" BuyCost="70.0000" SellMultiplier="0.171400" MinBuyPrice="35.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3081" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3082" BuyCost="28.0000" SellMultiplier="0.232100" MinBuyPrice="14.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3083" BuyCost="60.0000" SellMultiplier="0.133300" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3084" BuyCost="15.0000" SellMultiplier="0.200000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3085" BuyCost="30.0000" SellMultiplier="0.133300" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3086" BuyCost="25.0000" SellMultiplier="0.133333" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3087" BuyCost="500.0000" SellMultiplier="0.090000" MinBuyPrice="250.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3088" BuyCost="50.0000" SellMultiplier="0.100000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3089" BuyCost="20.0000" SellMultiplier="0.150000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3090" BuyCost="50.0000" SellMultiplier="0.083333" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3091" BuyCost="15.0000" SellMultiplier="0.200000" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3092" BuyCost="12.0000" SellMultiplier="0.333333" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3093" BuyCost="80.0000" SellMultiplier="0.050000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3094" BuyCost="80.0000" SellMultiplier="0.050000" MinBuyPrice="40.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3095" BuyCost="75.0000" SellMultiplier="0.150000" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3096" BuyCost="30.0000" SellMultiplier="0.100000" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3097" BuyCost="25.0000" SellMultiplier="0.050000" MinBuyPrice="12.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3098" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3099" BuyCost="10.0000" SellMultiplier="0.333333" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3100" BuyCost="50.0000" SellMultiplier="0.200000" MinBuyPrice="25.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3106" BuyCost="15.0000" SellMultiplier="0.333333" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3108" BuyCost="90.0000" SellMultiplier="0.133300" MinBuyPrice="45.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3110" BuyCost="20.0000" SellMultiplier="0.050000" MinBuyPrice="10.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3111" BuyCost="45.0000" SellMultiplier="0.177800" MinBuyPrice="22.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3113" BuyCost="30.0000" SellMultiplier="0.116700" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3116" BuyCost="75.0000" SellMultiplier="0.080000" MinBuyPrice="37.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3118" BuyCost="22.0000" SellMultiplier="0.227300" MinBuyPrice="11.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3119" BuyCost="30.0000" SellMultiplier="0.166700" MinBuyPrice="15.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3120" BuyCost="0.4000" SellMultiplier="0.200000" MinBuyPrice="0.2000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3501" BuyCost="400.0000" SellMultiplier="0.050000" MinBuyPrice="200.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3502" BuyCost="40.0000" SellMultiplier="0.037500" MinBuyPrice="20.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3503" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3504" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3505" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3506" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3507" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3508" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3509" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3510" BuyCost="10.0000" SellMultiplier="0.300000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3511" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3512" BuyCost="60.0000" SellMultiplier="0.133300" MinBuyPrice="30.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3513" BuyCost="10.0000" SellMultiplier="0.100000" MinBuyPrice="5.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3515" BuyCost="15.0000" SellMultiplier="0.233300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3516" BuyCost="6.0000" SellMultiplier="0.166700" MinBuyPrice="3.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3517" BuyCost="800.0000" SellMultiplier="0.081300" MinBuyPrice="400.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3518" BuyCost="120.0000" SellMultiplier="0.045800" MinBuyPrice="60.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3519" BuyCost="23.0000" SellMultiplier="0.195700" MinBuyPrice="11.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3520" BuyCost="90.0000" SellMultiplier="0.155600" MinBuyPrice="45.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3522" BuyCost="65.0000" SellMultiplier="0.138500" MinBuyPrice="32.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3523" BuyCost="15.0000" SellMultiplier="0.083300" MinBuyPrice="7.5000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3525" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3526" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3527" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3528" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3529" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3530" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3531" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3532" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3533" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3534" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3535" BuyCost="7.5000" SellMultiplier="0.333300" MinBuyPrice="3.7500" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3536" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="3537" BuyCost="12.0000" SellMultiplier="0.333300" MinBuyPrice="6.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="4000" BuyCost="1000.0000" SellMultiplier="0.200000" MinBuyPrice="500.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+    <Item ItemID="6000" BuyCost="2.0000" SellMultiplier="0.500000" MinBuyPrice="1.0000" Change="0.010000" MaxBuyPrice="0.0000" RestrictBuySell="0" />
+  </Items>
+  <Vehicles>
+    <Vehicle ItemID="1" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="2" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="4" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="5" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="6" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="7" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="8" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="9" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="10" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="11" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="12" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="13" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="14" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="15" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="16" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="17" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="18" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="19" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="20" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="21" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="22" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="23" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="24" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="25" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="26" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="27" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="28" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="29" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="30" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="31" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="32" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="33" BuyCost="499.20" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="34" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="35" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="36" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="37" BuyCost="643.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="38" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="39" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="40" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="41" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="42" BuyCost="482.04" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="43" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="44" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="45" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="46" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="47" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="48" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="49" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="50" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="51" BuyCost="789.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="52" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="53" BuyCost="702.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="54" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="55" BuyCost="789.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="56" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="57" BuyCost="702.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="58" BuyCost="468.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="59" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="60" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="61" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="62" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="63" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="64" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="65" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="66" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="67" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="68" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="69" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="70" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="71" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="72" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="73" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="74" BuyCost="292.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="75" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="76" BuyCost="409.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="77" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="78" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="79" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="80" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="81" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="82" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="83" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="84" BuyCost="438.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="85" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="86" BuyCost="702.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="87" BuyCost="526.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="88" BuyCost="526.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="92" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="93" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="94" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="95" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="96" BuyCost="936.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="97" BuyCost="585.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="98" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="99" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="100" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="101" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="102" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="103" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="104" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="105" BuyCost="351.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="106" BuyCost="1092.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="107" BuyCost="1170.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="108" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="109" BuyCost="585.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="110" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="111" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="112" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="113" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="114" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="115" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="116" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="117" BuyCost="312.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="118" BuyCost="526.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="119" BuyCost="702.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="120" BuyCost="1200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="121" BuyCost="1200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="122" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="123" BuyCost="440.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="124" BuyCost="585.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="125" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="126" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="127" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="128" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="129" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="130" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="131" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="132" BuyCost="375.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="133" BuyCost="1100.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="134" BuyCost="1000.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="135" BuyCost="1150.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="136" BuyCost="789.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="137" BuyCost="1200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="138" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="139" BuyCost="650.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="140" BuyCost="1050.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="141" BuyCost="950.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="142" BuyCost="750.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="143" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="144" BuyCost="1053.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="145" BuyCost="526.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="146" BuyCost="526.50" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="147" BuyCost="789.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="148" BuyCost="702.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="149" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="150" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="151" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="152" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="153" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="154" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="155" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="156" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="157" BuyCost="600.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="158" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="159" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="160" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="161" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="162" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="163" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="164" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="165" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="166" BuyCost="499.20" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="167" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="168" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="169" BuyCost="1092.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="176" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="177" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="178" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="179" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="180" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="181" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="182" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="183" BuyCost="234.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="185" BuyCost="200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="188" BuyCost="380.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="189" BuyCost="1200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="802" BuyCost="675.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="803" BuyCost="680.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="804" BuyCost="610.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="805" BuyCost="610.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="806" BuyCost="1170.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="807" BuyCost="690.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="808" BuyCost="1170.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="809" BuyCost="789.76" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="810" BuyCost="1200.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="811" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="812" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="813" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="814" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="815" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="816" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="817" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="818" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="819" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="820" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="821" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="822" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="823" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="824" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="825" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="826" BuyCost="397.80" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="827" BuyCost="595.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="828" BuyCost="550.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="829" BuyCost="550.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="830" BuyCost="1000.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="831" BuyCost="680.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="832" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="833" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="834" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="835" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="836" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="837" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="838" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="839" BuyCost="350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="840" BuyCost="500.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="841" BuyCost="550.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="842" BuyCost="450.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="843" BuyCost="500.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="844" BuyCost="500.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="845" BuyCost="500.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="847" BuyCost="614.26" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="848" BuyCost="500.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="849" BuyCost="900.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3500" BuyCost="900.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3501" BuyCost="803.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3502" BuyCost="1350.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3503" BuyCost="700.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3504" BuyCost="600.00" SellMultiplier="0.5" RestrictBuySell="0" />
+    <Vehicle ItemID="3505" BuyCost="1400.00" SellMultiplier="0.5" RestrictBuySell="0" />
+  </Vehicles>
+</DefaultValues>

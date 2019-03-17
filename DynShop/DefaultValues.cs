@@ -7,7 +7,7 @@ namespace DynShop
 {
     public class DefaultValues : IDefaultable
     {
-        public int FileVersion = 0;
+        public int FileVersion = 1;
         [XmlArray("Items"), XmlArrayItem(ElementName = "Item")]
         public List<ShopItem> Items = new List<ShopItem>();
 
