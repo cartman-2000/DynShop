@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>net35;net40</TargetFrameworks>
-    <AssemblyVersion>1.2.5.1</AssemblyVersion>
+    <AssemblyVersion>1.2.5.2</AssemblyVersion>
     <Description>A server shop with dynamic item prices.</Description>
     <Copyright>Cartman-2000 ©  2018</Copyright>
     <PackageProjectUrl>https://github.com/cartman-2000/DynShop</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cartman-2000/DynShop</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.2.5.1</Version>
+    <Version>1.2.5.2</Version>
   </PropertyGroup>
 
   <!-- .NET 4.0 references, compilation flags and build options -->

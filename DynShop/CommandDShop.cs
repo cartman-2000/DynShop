@@ -221,14 +221,14 @@ namespace DynShop
                 case "upd":
                 case "update":
                     {
+                        type = ItemType.Item;
+                        if (command.Length >= 3 && command[2].ToLower() == "v")
+                            type = ItemType.Vehicle;
                         if (command.Length > (type == ItemType.Item ? 4 : 5) || command.Length < (type == ItemType.Item ? 2 : 4))
                         {
                             UnturnedChat.Say(caller, DShop.Instance.Translate("update_help5"));
                             return;
                         }
-                        type = ItemType.Item;
-                        if (command.Length >= 3 && command[2].ToLower() == "v")
-                            type = ItemType.Vehicle;
                         if (command.Length == (type == ItemType.Item ? 4 : 5))
                         {
                             if (!DShop.GetItemID(caller, command, type, 2, out ushort itemID))
@@ -354,7 +354,7 @@ namespace DynShop
                                 }
                             default:
                                 {
-                                    UnturnedChat.Say(caller, DShop.Instance.Translate("update_help4"));
+                                    UnturnedChat.Say(caller, DShop.Instance.Translate("update_help5"));
                                     return;
                                 }
                                 set:
