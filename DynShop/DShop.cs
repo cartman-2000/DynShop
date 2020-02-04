@@ -11,6 +11,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Logger = Rocket.Core.Logging.Logger;
+using Math = System.Math;
 
 namespace DynShop
 {

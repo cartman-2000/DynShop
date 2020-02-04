@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net35;net40</TargetFrameworks>
-    <AssemblyVersion>1.2.5.2</AssemblyVersion>
+    <TargetFrameworks>net40</TargetFrameworks>
+    <AssemblyVersion>1.2.5.3</AssemblyVersion>
     <Description>A server shop with dynamic item prices.</Description>
     <Copyright>Cartman-2000 ©  2018</Copyright>
     <PackageProjectUrl>https://github.com/cartman-2000/DynShop</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cartman-2000/DynShop</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.2.5.2</Version>
+    <Version>1.2.5.3</Version>
   </PropertyGroup>
 
   <!-- .NET 4.0 references, compilation flags and build options -->
@@ -28,25 +28,6 @@
   </ItemGroup>
   <PropertyGroup Condition=" '$(TargetFramework)' == 'net40'">
       <DefineConstants>NET40</DefineConstants>
-  </PropertyGroup>
-
-  <!-- .NET 3.5 references, compilation flags and build options -->
-  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">		
-      <Reference Include="lib.net2\Assembly-CSharp.dll">
-        <Private>false</Private>
-      </Reference>
-      <Reference Include="lib.net2\Assembly-CSharp-firstpass.dll">
-        <Private>false</Private>
-      </Reference>
-      <Reference Include="lib.net2\UnityEngine.CoreModule.dll">
-        <Private>false</Private>
-      </Reference>
-      <Reference Include="lib.net2\UnityEngine.dll">
-        <Private>false</Private>
-      </Reference>
-  </ItemGroup>
-  <PropertyGroup Condition=" '$(TargetFramework)' == 'net35'">
-      <DefineConstants>NET35</DefineConstants>
   </PropertyGroup>
 
   <ItemGroup>

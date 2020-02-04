@@ -52,13 +52,10 @@ namespace DynShop
             {
                 if (decimal.TryParse(value.Split('/')[0], out p1) && decimal.TryParse(value.Split('/')[1], out p2))
                 {
-                    try
+                    if (p2 != 0)
                     {
                         fraction = decimal.Divide(p1, p2);
                         return true;
-                    }
-                    catch
-                    {
                     }
                 }
             }
