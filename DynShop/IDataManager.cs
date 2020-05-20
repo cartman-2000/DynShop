@@ -2,7 +2,7 @@
 
 namespace DynShop
 {
-    public interface DataManager
+    public interface IDataManager
     {
         void Unload();
         void CheckSchema();

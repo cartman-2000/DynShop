@@ -6,7 +6,7 @@ using System.Text;
 
 namespace DynShop
 {
-    internal class XMLDatabaseManager : DataManager
+    internal class XMLDatabaseManager : IDataManager
     {
         private Dictionary<ushort, ShopVehicle> Vehicles = new Dictionary<ushort, ShopVehicle>();
         private Dictionary<ushort, ShopItem> Items = new Dictionary<ushort, ShopItem>();
@@ -46,7 +46,7 @@ namespace DynShop
                 return false;
             else if (toBackend == BackendType.MySQL)
             {
-                DataManager database = new MySQLDatabaseManager();
+                IDataManager database = new MySQLDatabaseManager();
                 if (!database.IsLoaded)
                     return false;
                 foreach (ShopItem item in Items.Values)

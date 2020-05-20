@@ -9,7 +9,7 @@ using System.Text;
 
 namespace DynShop
 {
-    internal class MySQLDatabaseManager : DataManager
+    internal class MySQLDatabaseManager : IDataManager
     {
         private MySqlConnection Connection = null;
 
@@ -249,7 +249,7 @@ namespace DynShop
                 return result;
             else if (toBackend == BackendType.XML)
             {
-                DataManager database = new XMLDatabaseManager();
+                IDataManager database = new XMLDatabaseManager();
                 if (!database.IsLoaded)
                     return result;
                 try

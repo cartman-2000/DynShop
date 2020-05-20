@@ -2,13 +2,13 @@
 
   <PropertyGroup>
     <TargetFrameworks>net40</TargetFrameworks>
-    <AssemblyVersion>1.2.5.3</AssemblyVersion>
+    <AssemblyVersion>1.2.5.4</AssemblyVersion>
     <Description>A server shop with dynamic item prices.</Description>
     <Copyright>Cartman-2000 ©  2018</Copyright>
     <PackageProjectUrl>https://github.com/cartman-2000/DynShop</PackageProjectUrl>
     <RepositoryUrl>https://github.com/cartman-2000/DynShop</RepositoryUrl>
     <NeutralLanguage>en-US</NeutralLanguage>
-    <Version>1.2.5.3</Version>
+    <Version>1.2.5.4</Version>
   </PropertyGroup>
 
   <!-- .NET 4.0 references, compilation flags and build options -->
@@ -85,5 +85,6 @@
     <PostBuildEvent>copy "$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop.dll" "$(SolutionDir)..\Rocket_Ref\DynShopLib_$(TargetFramework)\"
 
 powershell Compress-Archive -Update -Path '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop.dll', '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\Libraries\', '$(SolutionDir)\DynShop\bin\Release\$(TargetFramework)\DynShop\' -DestinationPath '$(SolutionDir)DynShop\bin\Release\DynShop_$(TargetFramework).zip'</PostBuildEvent>
+    <FileVersion>1.2.5.4</FileVersion>
   </PropertyGroup>
 </Project>
